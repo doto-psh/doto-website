@@ -1,0 +1,119 @@
+{
+	"meta": {
+		"title": "doto — 생각을 정리하는 도구",
+		"description": "생산성 Notion 템플릿과 글을 만드는 doto. 일과 삶을 정돈하는 디지털 도구를 소개합니다."
+	},
+	"nav": {
+		"home": "홈",
+		"templates": "템플릿",
+		"blog": "블로그",
+		"about": "소개",
+		"menu": "메뉴",
+		"close": "닫기"
+	},
+	"language": {
+		"label": "언어",
+		"ko": "한국어",
+		"en": "English",
+		"ja": "日本語"
+	},
+	"hero": {
+		"eyebrow": "Notion 템플릿 · 글 · 디지털 도구",
+		"title": "생각을 정리하는\n도구를 만듭니다",
+		"subtitle": "복잡한 일상을 단정하게 다듬는 Notion 템플릿과, 그 과정에서 얻은 생각을 글로 나눕니다.",
+		"ctaPrimary": "템플릿 둘러보기",
+		"ctaSecondary": "블로그 읽기",
+		"scroll": "아래로 스크롤"
+	},
+	"pillars": {
+		"eyebrow": "무엇을 하나요",
+		"title": "정돈된 시스템, 부드러운 흐름",
+		"items": {
+			"templates": {
+				"title": "Notion 템플릿",
+				"body": "바로 쓸 수 있도록 다듬은 생산성·기록 템플릿. 설치하고 채우기만 하면 됩니다."
+			},
+			"writing": {
+				"title": "생각의 기록",
+				"body": "일하는 방식, 도구, 시스템에 대한 생각을 꾸준히 글로 남깁니다."
+			},
+			"projects": {
+				"title": "디지털 프로젝트",
+				"body": "더 나은 도구를 향한 실험. 작은 제품들이 하나의 브랜드로 이어집니다."
+			}
+		}
+	},
+	"featured": {
+		"eyebrow": "추천 템플릿",
+		"title": "오늘 바로 시작하세요",
+		"subtitle": "가장 사랑받는 템플릿을 골랐습니다.",
+		"cta": "전체 템플릿 보기"
+	},
+	"blogPreview": {
+		"eyebrow": "최근 글",
+		"title": "기록과 생각",
+		"subtitle": "도구와 시스템, 그리고 일상에 대하여.",
+		"cta": "블로그로 이동",
+		"readMore": "읽기"
+	},
+	"aboutTeaser": {
+		"eyebrow": "소개",
+		"title": "안녕하세요, doto입니다",
+		"body": "낮에는 만들고, 밤에는 정리합니다. 복잡함을 덜어내는 도구를 좋아하고, 그 과정을 기록으로 남깁니다.",
+		"cta": "더 알아보기"
+	},
+	"footer": {
+		"tagline": "생각을 정리하는 도구를 만듭니다.",
+		"explore": "둘러보기",
+		"connect": "연결",
+		"newsletterHint": "새 템플릿과 글 소식을 받아보세요.",
+		"rights": "All rights reserved.",
+		"madeWith": "정성껏 만들었습니다"
+	},
+	"templatesPage": {
+		"eyebrow": "템플릿",
+		"title": "일과 삶을 정돈하는 도구",
+		"subtitle": "필요한 흐름에 맞는 Notion 템플릿을 찾아보세요.",
+		"all": "전체",
+		"categories": {
+			"productivity": "생산성",
+			"finance": "가계·재정",
+			"study": "학습",
+			"creator": "크리에이터"
+		},
+		"from": "가격",
+		"viewDetail": "자세히 보기",
+		"empty": "해당 카테고리의 템플릿이 곧 추가됩니다."
+	},
+	"productPage": {
+		"buy": "구매하기",
+		"features": "포함된 기능",
+		"backToTemplates": "템플릿 목록으로",
+		"related": "이런 템플릿도 있어요",
+		"gallery": "미리보기"
+	},
+	"blogPage": {
+		"eyebrow": "블로그",
+		"title": "기록과 생각",
+		"subtitle": "도구, 시스템, 그리고 일하는 방식에 대한 글.",
+		"readOn": "원문 읽기"
+	},
+	"aboutPage": {
+		"eyebrow": "소개",
+		"title": "복잡함을 덜어내는 일",
+		"intro": "doto는 한 사람이 운영하는 작은 브랜드입니다. 생산성 도구를 만들고, 그 생각을 글로 남깁니다.",
+		"story": "처음에는 제 일상을 정리하려고 만든 템플릿이었습니다. 정돈된 시스템이 주는 여유를 다른 사람과 나누고 싶어 브랜드로 이어졌습니다. 앞으로도 단정하고 오래 쓰는 도구를 천천히 만들어 갑니다.",
+		"valuesTitle": "지향하는 것",
+		"values": {
+			"clarity": { "title": "단정함", "body": "더하기보다 덜어내기. 꼭 필요한 것만 남깁니다." },
+			"craft": { "title": "정성", "body": "오래 쓸 수 있도록 끝까지 다듬습니다." },
+			"sharing": { "title": "나눔", "body": "배운 것은 글과 도구로 돌려드립니다." }
+		},
+		"contactTitle": "연결하기",
+		"contactBody": "협업, 문의, 또는 그냥 인사도 환영합니다."
+	},
+	"common": {
+		"comingSoon": "곧 공개됩니다",
+		"backHome": "홈으로"
+	}
+}

@@ -1,0 +1,119 @@
+{
+	"meta": {
+		"title": "doto — tools for a clearer mind",
+		"description": "doto makes productivity Notion templates and writes about the systems behind them. Calm digital tools for work and life."
+	},
+	"nav": {
+		"home": "Home",
+		"templates": "Templates",
+		"blog": "Blog",
+		"about": "About",
+		"menu": "Menu",
+		"close": "Close"
+	},
+	"language": {
+		"label": "Language",
+		"ko": "한국어",
+		"en": "English",
+		"ja": "日本語"
+	},
+	"hero": {
+		"eyebrow": "Notion templates · Writing · Digital tools",
+		"title": "Tools for a\nclearer mind",
+		"subtitle": "Notion templates that tidy the noise of everyday work — and notes on the thinking behind them.",
+		"ctaPrimary": "Browse templates",
+		"ctaSecondary": "Read the blog",
+		"scroll": "Scroll down"
+	},
+	"pillars": {
+		"eyebrow": "What I do",
+		"title": "Quiet systems, gentle flow",
+		"items": {
+			"templates": {
+				"title": "Notion templates",
+				"body": "Ready-to-use systems for productivity and journaling. Install, fill in, and go."
+			},
+			"writing": {
+				"title": "Writing & notes",
+				"body": "Ongoing thoughts on the ways, tools, and systems I use to work."
+			},
+			"projects": {
+				"title": "Digital projects",
+				"body": "Small experiments toward better tools, growing into one brand."
+			}
+		}
+	},
+	"featured": {
+		"eyebrow": "Featured templates",
+		"title": "Start today",
+		"subtitle": "A few of the most-loved templates.",
+		"cta": "View all templates"
+	},
+	"blogPreview": {
+		"eyebrow": "Recent writing",
+		"title": "Notes & thinking",
+		"subtitle": "On tools, systems, and everyday life.",
+		"cta": "Go to the blog",
+		"readMore": "Read"
+	},
+	"aboutTeaser": {
+		"eyebrow": "About",
+		"title": "Hi, I'm doto",
+		"body": "I build by day and tidy by night. I like tools that remove friction — and I write down what I learn along the way.",
+		"cta": "Learn more"
+	},
+	"footer": {
+		"tagline": "Building tools for a clearer mind.",
+		"explore": "Explore",
+		"connect": "Connect",
+		"newsletterHint": "Get news on new templates and posts.",
+		"rights": "All rights reserved.",
+		"madeWith": "Made with care"
+	},
+	"templatesPage": {
+		"eyebrow": "Templates",
+		"title": "Tools to tidy work & life",
+		"subtitle": "Find the Notion template that fits the flow you need.",
+		"all": "All",
+		"categories": {
+			"productivity": "Productivity",
+			"finance": "Finance",
+			"study": "Study",
+			"creator": "Creator"
+		},
+		"from": "Price",
+		"viewDetail": "View details",
+		"empty": "Templates in this category are coming soon."
+	},
+	"productPage": {
+		"buy": "Buy now",
+		"features": "What's included",
+		"backToTemplates": "Back to templates",
+		"related": "You might also like",
+		"gallery": "Preview"
+	},
+	"blogPage": {
+		"eyebrow": "Blog",
+		"title": "Notes & thinking",
+		"subtitle": "Writing on tools, systems, and the way I work.",
+		"readOn": "Read the full post"
+	},
+	"aboutPage": {
+		"eyebrow": "About",
+		"title": "The work of removing friction",
+		"intro": "doto is a small one-person brand. I make productivity tools and write down the thinking behind them.",
+		"story": "It began as templates to tidy my own days. The calm of a well-ordered system was worth sharing, so it grew into a brand. I keep making clean, long-lasting tools — slowly, with care.",
+		"valuesTitle": "What I value",
+		"values": {
+			"clarity": { "title": "Clarity", "body": "Subtract before adding. Keep only what matters." },
+			"craft": { "title": "Craft", "body": "Refined to last, down to the details." },
+			"sharing": { "title": "Sharing", "body": "What I learn comes back as writing and tools." }
+		},
+		"contactTitle": "Get in touch",
+		"contactBody": "Collaborations, questions, or just a hello are all welcome."
+	},
+	"common": {
+		"comingSoon": "Coming soon",
+		"backHome": "Back home"
+	}
+}

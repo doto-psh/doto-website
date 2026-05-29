@@ -1,0 +1,119 @@
+{
+	"meta": {
+		"title": "doto — 思考を整える道具",
+		"description": "生産性を高めるNotionテンプレートと、その背景にある考えを綴るdoto。仕事と暮らしを整える静かなデジタル道具。"
+	},
+	"nav": {
+		"home": "ホーム",
+		"templates": "テンプレート",
+		"blog": "ブログ",
+		"about": "について",
+		"menu": "メニュー",
+		"close": "閉じる"
+	},
+	"language": {
+		"label": "言語",
+		"ko": "한국어",
+		"en": "English",
+		"ja": "日本語"
+	},
+	"hero": {
+		"eyebrow": "Notionテンプレート · 文章 · デジタル道具",
+		"title": "思考を整える\n道具をつくる",
+		"subtitle": "日々の雑多さを整えるNotionテンプレートと、その過程で得た考えを文章で分かち合います。",
+		"ctaPrimary": "テンプレートを見る",
+		"ctaSecondary": "ブログを読む",
+		"scroll": "下へスクロール"
+	},
+	"pillars": {
+		"eyebrow": "していること",
+		"title": "静かな仕組み、やわらかな流れ",
+		"items": {
+			"templates": {
+				"title": "Notionテンプレート",
+				"body": "すぐ使える生産性・記録のテンプレート。入れて、書き込むだけ。"
+			},
+			"writing": {
+				"title": "文章と記録",
+				"body": "働き方や道具、仕組みについての考えを綴り続けます。"
+			},
+			"projects": {
+				"title": "デジタルプロジェクト",
+				"body": "より良い道具への小さな実験。やがてひとつのブランドへ。"
+			}
+		}
+	},
+	"featured": {
+		"eyebrow": "おすすめテンプレート",
+		"title": "今日から始める",
+		"subtitle": "もっとも愛されているテンプレートを選びました。",
+		"cta": "すべてのテンプレートを見る"
+	},
+	"blogPreview": {
+		"eyebrow": "最近の文章",
+		"title": "記録と思考",
+		"subtitle": "道具と仕組み、そして日々について。",
+		"cta": "ブログへ",
+		"readMore": "読む"
+	},
+	"aboutTeaser": {
+		"eyebrow": "について",
+		"title": "こんにちは、dotoです",
+		"body": "昼はつくり、夜は整える。摩擦を減らす道具が好きで、その過程を記録に残しています。",
+		"cta": "もっと知る"
+	},
+	"footer": {
+		"tagline": "思考を整える道具をつくっています。",
+		"explore": "見てまわる",
+		"connect": "つながる",
+		"newsletterHint": "新しいテンプレートと記事のお知らせを。",
+		"rights": "All rights reserved.",
+		"madeWith": "丁寧につくりました"
+	},
+	"templatesPage": {
+		"eyebrow": "テンプレート",
+		"title": "仕事と暮らしを整える道具",
+		"subtitle": "必要な流れに合うNotionテンプレートを探しましょう。",
+		"all": "すべて",
+		"categories": {
+			"productivity": "生産性",
+			"finance": "家計・お金",
+			"study": "学習",
+			"creator": "クリエイター"
+		},
+		"from": "価格",
+		"viewDetail": "詳しく見る",
+		"empty": "このカテゴリーのテンプレートは近日公開です。"
+	},
+	"productPage": {
+		"buy": "購入する",
+		"features": "含まれるもの",
+		"backToTemplates": "テンプレート一覧へ",
+		"related": "こんなテンプレートも",
+		"gallery": "プレビュー"
+	},
+	"blogPage": {
+		"eyebrow": "ブログ",
+		"title": "記録と思考",
+		"subtitle": "道具、仕組み、そして働き方についての文章。",
+		"readOn": "全文を読む"
+	},
+	"aboutPage": {
+		"eyebrow": "について",
+		"title": "摩擦を減らすという仕事",
+		"intro": "dotoは一人で営む小さなブランドです。生産性の道具をつくり、その背景にある考えを綴ります。",
+		"story": "はじめは自分の日々を整えるためのテンプレートでした。整った仕組みがくれる余白を分かち合いたくて、ブランドへと育ちました。これからも、長く使える静かな道具をゆっくりつくっていきます。",
+		"valuesTitle": "大切にすること",
+		"values": {
+			"clarity": { "title": "簡潔さ", "body": "足すより引く。必要なものだけを残します。" },
+			"craft": { "title": "丁寧さ", "body": "長く使えるよう、細部まで仕上げます。" },
+			"sharing": { "title": "分かち合い", "body": "学んだことは文章と道具でお返しします。" }
+		},
+		"contactTitle": "つながる",
+		"contactBody": "コラボ、お問い合わせ、ご挨拶だけでも歓迎です。"
+	},
+	"common": {
+		"comingSoon": "近日公開",
+		"backHome": "ホームへ"
+	}
+}
