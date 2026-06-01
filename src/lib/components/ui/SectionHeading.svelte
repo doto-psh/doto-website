@@ -17,7 +17,7 @@
 >
 	{#if eyebrow}
 		<span
-			class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]"
+			class="w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent)]"
 		>
 			{eyebrow}
 		</span>

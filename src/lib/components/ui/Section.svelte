@@ -4,7 +4,7 @@
 
 	interface Props {
 		id?: string;
-		/** Adds a subtle warm surface background to alternate sections. */
+		/** Adds a quiet blue-tinted band to alternate sections. */
 		surface?: boolean;
 		class?: string;
 		children: Snippet;
@@ -15,7 +15,9 @@
 
 <section
 	{id}
-	class="py-20 md:py-28 lg:py-36 {surface ? 'bg-[var(--color-surface)]' : ''} {extra}"
+	class="py-20 md:py-24 lg:py-28 {surface
+		? 'border-y border-[var(--color-line)] bg-[var(--color-surface-blue)]'
+		: ''} {extra}"
 >
 	<Container>
 		{@render children()}

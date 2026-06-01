@@ -1,24 +1,24 @@
 @import 'tailwindcss';
 
-@import '@fontsource-variable/newsreader';
 @import '@fontsource-variable/inter';
 
-/* ──────────────────────────────────────────────────────────────
-   Deep Ocean design tokens — cool, calm, maritime
-   ────────────────────────────────────────────────────────────── */
+/* doto design tokens: cobalt desk, precise grids, quiet contrast */
 @theme {
 	/* Palette */
-	--color-bg: #f3f7fb; /* cool near-white, faint sea haze */
-	--color-surface: #e7f0f7; /* sea-mist panel */
-	--color-ink: #0c2436; /* deep ocean navy */
-	--color-muted: #58748a; /* slate blue-grey, secondary text */
-	--color-line: #d2e1ec; /* soft tidal hairline */
-	--color-accent: #1e78b4; /* ocean blue */
-	--color-accent-strong: #15608f; /* deeper swell */
-	--color-teal: #1fa39a; /* shallow-water teal, secondary accent */
+	--color-bg: #f7f9fd;
+	--color-surface: #ffffff;
+	--color-surface-blue: #edf4ff;
+	--color-ink: #101827;
+	--color-muted: #637085;
+	--color-line: #d9e2ee;
+	--color-accent: #135dff;
+	--color-accent-strong: #003fc7;
+	--color-cyan: #16a7c8;
+	--color-lime: #9bbf24;
+	--color-coral: #ff6b4a;
+	--color-paper: #fbfdff;
 
 	/* Typography */
-	--font-serif: 'Newsreader Variable', ui-serif, Georgia, 'Times New Roman', serif;
 	--font-sans:
 		'Inter Variable', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard',
 		'Hiragino Kaku Gothic ProN', 'Noto Sans KR', 'Noto Sans JP', system-ui, sans-serif;
@@ -49,10 +49,10 @@
 	h2,
 	h3,
 	h4 {
-		font-family: var(--font-serif);
-		font-weight: 500;
+		font-family: var(--font-sans);
+		font-weight: 720;
 		line-height: 1.1;
-		letter-spacing: -0.01em;
+		letter-spacing: 0;
 	}
 
 	::selection {
@@ -140,5 +140,19 @@
 		width: 56px;
 		height: 56px;
 		background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+	}
+
+	.blueprint-grid {
+		background-image:
+			linear-gradient(color-mix(in srgb, var(--color-accent) 10%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 10%, transparent) 1px, transparent 1px);
+		background-size: 28px 28px;
+	}
+
+	.blueprint-grid-strong {
+		background-image:
+			linear-gradient(color-mix(in srgb, var(--color-accent) 16%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 16%, transparent) 1px, transparent 1px);
+		background-size: 22px 22px;
 	}
 }

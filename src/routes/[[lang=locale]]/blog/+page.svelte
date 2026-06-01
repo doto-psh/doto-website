@@ -23,14 +23,16 @@
 	locale={data.locale}
 />
 
-<header class="border-b border-[var(--color-line)] py-16 md:py-24">
+<header class="blueprint-grid border-b border-[var(--color-line)] bg-[var(--color-paper)] py-16 md:py-24">
 	<Container>
 		<div use:reveal class="flex max-w-2xl flex-col gap-4">
-			<span class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+			<span class="w-fit rounded-md border border-[var(--color-line)] bg-white px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
 				{$_('blogPage.eyebrow')}
 			</span>
-			<h1 class="text-4xl text-[var(--color-ink)] md:text-5xl lg:text-6xl">{$_('blogPage.title')}</h1>
-			<p class="text-lg text-[var(--color-muted)]">{$_('blogPage.subtitle')}</p>
+			<h1 class="text-4xl font-black text-[var(--color-ink)] md:text-5xl lg:text-6xl">
+				{$_('blogPage.title')}
+			</h1>
+			<p class="text-lg font-medium text-[var(--color-muted)]">{$_('blogPage.subtitle')}</p>
 		</div>
 	</Container>
 </header>
@@ -45,10 +47,10 @@
 						target="_blank"
 						rel="noopener noreferrer"
 						data-cursor-hover
-						class="group grid gap-3 border-b border-[var(--color-line)] py-8 first:border-t md:grid-cols-[180px_1fr] md:gap-10"
+						class="group grid gap-3 border-b border-[var(--color-line)] py-8 transition-colors first:border-t hover:bg-[var(--color-surface)] md:grid-cols-[180px_1fr] md:gap-10 md:px-3"
 					>
 						<div class="flex flex-col gap-2">
-							<time class="text-sm text-[var(--color-muted)]" datetime={post.date}>
+							<time class="text-sm font-semibold text-[var(--color-muted)]" datetime={post.date}>
 								{formatDate(post.date)}
 							</time>
 							<div class="flex flex-wrap gap-2">
@@ -58,9 +60,7 @@
 							</div>
 						</div>
 						<div class="flex flex-col gap-2">
-							<h2
-								class="font-serif text-2xl text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-accent)] md:text-3xl"
-							>
+							<h2 class="text-2xl font-extrabold text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-accent)] md:text-3xl">
 								{pick(post.title, data.locale)}
 							</h2>
 							<p class="max-w-2xl text-[var(--color-muted)]">{pick(post.excerpt, data.locale)}</p>

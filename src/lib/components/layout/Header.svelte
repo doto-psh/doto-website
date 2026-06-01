@@ -36,26 +36,34 @@
 
 <header
 	class="fixed inset-x-0 top-0 z-50 transition-all duration-300 {scrolled
-		? 'border-b border-[var(--color-line)] bg-[var(--color-bg)]/85 backdrop-blur-md'
-		: 'border-b border-transparent'}"
+		? 'border-b border-[var(--color-line)] bg-[var(--color-bg)]/92 shadow-[0_8px_30px_rgba(16,24,39,0.05)] backdrop-blur-md'
+		: 'border-b border-transparent bg-[var(--color-bg)]/70 backdrop-blur-sm'}"
 >
 	<div class="container-page flex h-16 items-center justify-between md:h-20">
 		<a
 			href={localizeHref('/', locale)}
-			class="font-serif text-xl tracking-tight text-[var(--color-ink)]"
+			class="group inline-flex items-center gap-2 text-lg font-black text-[var(--color-ink)]"
 			data-cursor-hover
 		>
-			{site.brand}<span class="text-[var(--color-accent)]">.</span>
+			<span
+				class="grid h-7 w-7 place-items-center rounded-lg bg-[var(--color-accent)] text-xs font-black text-white transition-transform group-hover:rotate-6"
+				aria-hidden="true"
+			>
+				d
+			</span>
+			<span>{site.brand}</span>
 		</a>
 
 		<!-- Desktop nav -->
-		<nav class="hidden items-center gap-8 md:flex">
+		<nav class="hidden items-center gap-2 md:flex">
 			{#each navItems as item (item.key)}
 				<a
 					href={localizeHref(item.path, locale)}
-					class="text-sm transition-colors hover:text-[var(--color-accent)] {isActive(item.path)
-						? 'text-[var(--color-accent)]'
-						: 'text-[var(--color-ink)]'}"
+					class="rounded-lg px-3 py-2 text-sm font-semibold transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)] {isActive(
+						item.path
+					)
+						? 'bg-[var(--color-surface-blue)] text-[var(--color-accent)]'
+						: 'text-[var(--color-muted)]'}"
 				>
 					{$_(`nav.${item.key}`)}
 				</a>
@@ -67,7 +75,7 @@
 		<!-- Mobile toggle -->
 		<button
 			type="button"
-			class="flex h-10 w-10 items-center justify-center md:hidden"
+			class="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] md:hidden"
 			aria-expanded={menuOpen}
 			aria-label={menuOpen ? $_('nav.close') : $_('nav.menu')}
 			onclick={() => (menuOpen = !menuOpen)}
@@ -95,13 +103,13 @@
 	<!-- Mobile menu -->
 	{#if menuOpen}
 		<nav
-			class="border-t border-[var(--color-line)] bg-[var(--color-bg)] md:hidden"
+			class="border-t border-[var(--color-line)] bg-[var(--color-bg)]/96 backdrop-blur-md md:hidden"
 		>
 			<div class="container-page flex flex-col gap-1 py-4">
 				{#each navItems as item (item.key)}
 					<a
 						href={localizeHref(item.path, locale)}
-						class="py-2 text-lg text-[var(--color-ink)]"
+						class="rounded-lg px-3 py-3 text-lg font-semibold text-[var(--color-ink)]"
 					>
 						{$_(`nav.${item.key}`)}
 					</a>

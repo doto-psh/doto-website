@@ -24,7 +24,7 @@
 	}: Props = $props();
 
 	const base =
-		'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 ease-[var(--ease-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]';
+		'inline-flex items-center justify-center gap-2 rounded-lg border font-semibold transition-all duration-300 ease-[var(--ease-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg)]';
 
 	const sizes = {
 		md: 'px-5 py-2.5 text-sm',
@@ -33,10 +33,11 @@
 
 	const variants = {
 		primary:
-			'bg-[var(--color-accent)] text-[var(--color-bg)] hover:bg-[var(--color-accent-strong)] hover:-translate-y-0.5 shadow-sm',
+			'border-[var(--color-accent)] bg-[var(--color-accent)] text-white shadow-[0_10px_24px_rgba(19,93,255,0.18)] hover:border-[var(--color-accent-strong)] hover:bg-[var(--color-accent-strong)] hover:-translate-y-0.5',
 		outline:
-			'border border-[var(--color-ink)]/20 text-[var(--color-ink)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]',
-		ghost: 'text-[var(--color-ink)] hover:text-[var(--color-accent)]'
+			'border-[var(--color-line)] bg-[var(--color-surface)] text-[var(--color-ink)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-0.5',
+		ghost:
+			'border-transparent bg-transparent text-[var(--color-ink)] hover:border-[var(--color-line)] hover:bg-[var(--color-surface)] hover:text-[var(--color-accent)]'
 	};
 
 	let cls = $derived(`${base} ${sizes[size]} ${variants[variant]} ${extra}`);

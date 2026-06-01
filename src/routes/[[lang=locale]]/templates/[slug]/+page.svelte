@@ -29,7 +29,7 @@
 	<Container>
 		<a
 			href={localizeHref('/templates', data.locale)}
-			class="inline-flex items-center gap-2 text-sm text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]"
+			class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-2 text-sm font-semibold text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]"
 		>
 			<span aria-hidden="true">←</span> {$_('productPage.backToTemplates')}
 		</a>
@@ -42,18 +42,18 @@
 
 			<!-- Details -->
 			<div use:reveal={{ delay: 80 }} class="flex flex-col gap-6">
-				<span class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+				<span class="w-fit rounded-md border border-[var(--color-line)] bg-white px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
 					{$_(`templatesPage.categories.${product.category}`)}
 				</span>
-				<h1 class="font-serif text-4xl text-[var(--color-ink)] md:text-5xl">{title}</h1>
-				<p class="text-lg text-[var(--color-muted)]">{pick(product.tagline, data.locale)}</p>
+				<h1 class="text-4xl font-black text-[var(--color-ink)] md:text-5xl">{title}</h1>
+				<p class="text-lg font-medium text-[var(--color-muted)]">{pick(product.tagline, data.locale)}</p>
 
 				<p class="leading-relaxed text-[var(--color-ink)]">
 					{pick(product.description, data.locale)}
 				</p>
 
 				<div class="mt-2">
-					<h2 class="mb-3 text-sm font-medium uppercase tracking-[0.14em] text-[var(--color-muted)]">
+					<h2 class="mb-3 text-sm font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
 						{$_('productPage.features')}
 					</h2>
 					<ul class="flex flex-col gap-2">
@@ -69,7 +69,7 @@
 				<div
 					class="mt-4 flex items-center gap-5 border-t border-[var(--color-line)] pt-6"
 				>
-					<span class="font-serif text-3xl text-[var(--color-ink)]">{priceLabel}</span>
+					<span class="text-3xl font-black text-[var(--color-ink)]">{priceLabel}</span>
 					<Button href={product.buyUrl} external variant="primary" size="lg">
 						{$_('productPage.buy')} <span aria-hidden="true">→</span>
 					</Button>
@@ -79,7 +79,7 @@
 
 		{#if data.related.length}
 			<div class="mt-24 border-t border-[var(--color-line)] pt-16">
-				<h2 use:reveal class="mb-10 font-serif text-2xl text-[var(--color-ink)] md:text-3xl">
+				<h2 use:reveal class="mb-10 text-2xl font-black text-[var(--color-ink)] md:text-3xl">
 					{$_('productPage.related')}
 				</h2>
 				<ProductGrid products={data.related} locale={data.locale} />

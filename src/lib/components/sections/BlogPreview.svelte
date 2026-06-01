@@ -36,14 +36,14 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					data-cursor-hover
-					class="group grid gap-2 border-t border-[var(--color-line)] py-7 transition-colors last:border-b md:grid-cols-[160px_1fr_auto] md:items-baseline md:gap-8"
+					class="group grid gap-3 border-t border-[var(--color-line)] bg-transparent py-7 transition-colors last:border-b hover:bg-[var(--color-surface)] md:grid-cols-[160px_1fr_auto] md:items-baseline md:gap-8 md:px-3"
 				>
-					<time class="text-sm text-[var(--color-muted)]" datetime={post.date}>
+					<time class="text-sm font-semibold text-[var(--color-muted)]" datetime={post.date}>
 						{formatDate(post.date)}
 					</time>
 					<div class="flex flex-col gap-1">
 						<h3
-							class="font-serif text-xl text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-accent)] md:text-2xl"
+							class="text-xl font-extrabold text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-accent)] md:text-2xl"
 						>
 							{pick(post.title, locale)}
 						</h3>

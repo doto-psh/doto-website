@@ -23,7 +23,12 @@
 		"subtitle": "Notion templates that tidy the noise of everyday work — and notes on the thinking behind them.",
 		"ctaPrimary": "Browse templates",
 		"ctaSecondary": "Read the blog",
-		"scroll": "Scroll down"
+		"scroll": "Scroll down",
+		"signals": {
+			"capture": "Capture",
+			"organize": "Organize",
+			"share": "Share"
+		}
 	},
 	"pillars": {
 		"eyebrow": "What I do",

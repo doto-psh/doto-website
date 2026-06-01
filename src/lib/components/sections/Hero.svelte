@@ -10,113 +10,118 @@
 	}
 
 	let { locale }: Props = $props();
+
+	const signals = ['capture', 'organize', 'share'] as const;
 </script>
 
-<section class="relative overflow-hidden">
-	<!-- Soft editorial background motion -->
-	<div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-		<div
-			class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--color-accent)]/12 blur-3xl motion-safe:animate-[drift_18s_ease-in-out_infinite]"
-		></div>
-		<div
-			class="absolute right-0 top-40 h-80 w-80 rounded-full bg-[var(--color-teal)]/16 blur-3xl motion-safe:animate-[drift_22s_ease-in-out_infinite_reverse]"
-		></div>
-	</div>
+<section class="relative isolate overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg)]">
+	<div class="blueprint-grid pointer-events-none absolute inset-0 -z-20 opacity-80" aria-hidden="true"></div>
+	<div
+		class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-white to-transparent"
+		aria-hidden="true"
+	></div>
 
 	<Container>
-		<div class="flex min-h-[78vh] flex-col justify-center py-20 md:py-28">
-			<span
-				class="reveal is-visible mb-6 text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]"
-			>
-				{$_('hero.eyebrow')}
-			</span>
+		<div class="grid items-center gap-12 py-16 md:py-20 xl:min-h-[60vh] xl:grid-cols-[1.05fr_0.95fr]">
+			<!-- Copy -->
+			<div class="flex flex-col justify-center">
+				<span
+					class="reveal is-visible mb-5 w-fit rounded-md border border-[var(--color-line)] bg-white px-3 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]"
+				>
+					{$_('hero.eyebrow')}
+				</span>
 
-			<h1
-				class="max-w-4xl whitespace-pre-line text-5xl leading-[1.05] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.25rem]"
-			>
-				{$_('hero.title')}
-			</h1>
+				<h1
+					class="whitespace-pre-line text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]"
+				>
+					{$_('hero.title')}
+				</h1>
 
-			<p class="mt-7 max-w-xl text-lg text-[var(--color-muted)] md:text-xl">
-				{$_('hero.subtitle')}
-			</p>
+				<p class="mt-7 max-w-xl text-lg font-medium text-[var(--color-muted)] md:text-xl">
+					{$_('hero.subtitle')}
+				</p>
 
-			<div class="mt-10 flex flex-wrap items-center gap-4">
-				<Button href={localizeHref('/templates', locale)} variant="primary" size="lg">
-					{$_('hero.ctaPrimary')} <span aria-hidden="true">→</span>
-				</Button>
-				<Button href={localizeHref('/blog', locale)} variant="ghost" size="lg">
-					{$_('hero.ctaSecondary')}
-				</Button>
+				<div class="mt-10 flex flex-wrap items-center gap-3">
+					<Button href={localizeHref('/templates', locale)} variant="primary" size="lg">
+						{$_('hero.ctaPrimary')} <span aria-hidden="true">→</span>
+					</Button>
+					<Button href={localizeHref('/blog', locale)} variant="outline" size="lg">
+						{$_('hero.ctaSecondary')}
+					</Button>
+				</div>
+
+				<div class="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3 xl:hidden">
+					{#each signals as item, i}
+						<div
+							class="rounded-lg border border-[var(--color-line)] bg-white/80 p-3 text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-muted)] backdrop-blur"
+						>
+							<span class="mr-2 text-[var(--color-accent)]">0{i + 1}</span>
+							{$_(`hero.signals.${item}`)}
+						</div>
+					{/each}
+				</div>
+			</div>
+
+			<!-- System map board (wide screens only) -->
+			<div class="hero-board hidden xl:block" aria-hidden="true">
+				<div class="mb-3 flex items-center justify-between">
+					<span class="text-[10px] font-black uppercase tracking-[0.18em] text-[var(--color-accent)]">
+						doto system map
+					</span>
+					<span class="rounded-md border border-[var(--color-line)] bg-white px-2 py-1 text-[10px] font-bold text-[var(--color-muted)]">
+						live
+					</span>
+				</div>
+				<div class="grid grid-cols-[1fr_0.8fr] gap-3">
+					<div class="rounded-lg border border-[var(--color-line)] bg-white/88 p-4 shadow-[0_18px_50px_rgba(16,24,39,0.08)] backdrop-blur">
+						<div class="mb-4 flex items-center gap-2">
+							<span class="h-2.5 w-2.5 rounded-sm bg-[var(--color-accent)]"></span>
+							<span class="h-2.5 w-16 rounded-sm bg-[var(--color-line)]"></span>
+						</div>
+						<div class="space-y-2">
+							<span class="block h-3 w-full rounded-sm bg-[var(--color-surface-blue)]"></span>
+							<span class="block h-3 w-5/6 rounded-sm bg-[var(--color-surface-blue)]"></span>
+							<span class="block h-3 w-2/3 rounded-sm bg-[var(--color-surface-blue)]"></span>
+						</div>
+						<div class="mt-6 grid grid-cols-3 gap-2">
+							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
+							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
+							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
+						</div>
+					</div>
+
+					<div class="space-y-3">
+						<div class="rounded-lg border border-[var(--color-line)] bg-white/88 p-4 shadow-[0_18px_50px_rgba(16,24,39,0.06)] backdrop-blur">
+							<div class="mb-3 h-2 w-20 rounded-sm bg-[var(--color-cyan)]"></div>
+							<div class="grid grid-cols-4 items-end gap-2">
+								<span class="h-8 rounded-sm bg-[var(--color-surface-blue)]"></span>
+								<span class="h-14 rounded-sm bg-[var(--color-accent)]"></span>
+								<span class="h-10 rounded-sm bg-[var(--color-surface-blue)]"></span>
+								<span class="h-16 rounded-sm bg-[var(--color-lime)]"></span>
+							</div>
+						</div>
+						<div class="rounded-lg border border-[var(--color-line)] bg-white/88 p-4 shadow-[0_18px_50px_rgba(16,24,39,0.06)] backdrop-blur">
+							<div class="flex items-center gap-2">
+								<span class="h-8 w-8 rounded-lg bg-[var(--color-accent)]"></span>
+								<span class="h-2 w-24 rounded-sm bg-[var(--color-line)]"></span>
+							</div>
+							<div class="mt-4 space-y-2">
+								<span class="block h-2 w-full rounded-sm bg-[var(--color-surface-blue)]"></span>
+								<span class="block h-2 w-3/4 rounded-sm bg-[var(--color-surface-blue)]"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pipeline strip, aligned to the container -->
+		<div class="hidden border-t border-[var(--color-line)] pb-10 pt-4 md:block">
+			<div class="flex justify-between text-[10px] font-black uppercase tracking-[0.18em] text-[var(--color-muted)]">
+				<span>capture</span>
+				<span>sort</span>
+				<span>publish</span>
 			</div>
 		</div>
 	</Container>
-
-	<div
-		class="container-page relative z-10 hidden items-center gap-3 pb-10 text-xs uppercase tracking-[0.18em] text-[var(--color-muted)] md:flex"
-	>
-		<span class="h-px w-10 bg-[var(--color-line)]"></span>
-		{$_('hero.scroll')}
-	</div>
-
-	<!-- Tide: layered waves anchored to the foot of the hero -->
-	<div class="pointer-events-none absolute inset-x-0 bottom-0 -z-10 overflow-hidden" aria-hidden="true">
-		<svg
-			class="wave block h-24 w-[200%] text-[var(--color-teal)] md:h-32"
-			viewBox="0 0 1440 120"
-			preserveAspectRatio="none"
-			fill="currentColor"
-		>
-			<path
-				opacity="0.12"
-				d="M0 60c180-40 360-40 540 0s360 40 540 0 360-40 540 0v60H0z"
-			/>
-		</svg>
-		<svg
-			class="wave-slow absolute bottom-0 left-0 block h-20 w-[200%] text-[var(--color-accent)] md:h-28"
-			viewBox="0 0 1440 120"
-			preserveAspectRatio="none"
-			fill="currentColor"
-		>
-			<path
-				opacity="0.1"
-				d="M0 80c160-32 320-32 480 0s320 32 480 0 320-32 480 0v40H0z"
-			/>
-		</svg>
-	</div>
 </section>
-
-<style>
-	@keyframes drift {
-		0%,
-		100% {
-			transform: translate(0, 0) scale(1);
-		}
-		50% {
-			transform: translate(30px, -20px) scale(1.08);
-		}
-	}
-
-	@keyframes tide {
-		from {
-			transform: translateX(0);
-		}
-		to {
-			transform: translateX(-50%);
-		}
-	}
-
-	.wave {
-		animation: tide 24s linear infinite;
-	}
-	.wave-slow {
-		animation: tide 36s linear infinite reverse;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.wave,
-		.wave-slow {
-			animation: none;
-		}
-	}
-</style>

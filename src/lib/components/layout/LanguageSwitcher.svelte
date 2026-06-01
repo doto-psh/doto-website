@@ -26,10 +26,10 @@
 			href={localizeHref(barePath, code)}
 			hreflang={code}
 			aria-current={code === locale ? 'true' : undefined}
-			class="rounded-full px-2.5 py-1 text-xs font-medium uppercase tracking-wide transition-colors {code ===
+			class="rounded-lg px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors {code ===
 			locale
-				? 'text-[var(--color-accent)]'
-				: 'text-[var(--color-muted)] hover:text-[var(--color-ink)]'}"
+				? 'bg-[var(--color-surface-blue)] text-[var(--color-accent)]'
+				: 'text-[var(--color-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-ink)]'}"
 		>
 			{code}
 		</a>

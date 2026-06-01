@@ -3,7 +3,6 @@
 	import { fade } from 'svelte/transition';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import Cursor from '$lib/components/effects/Cursor.svelte';
 	import type { LayoutData } from './$types';
 
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
@@ -20,7 +19,6 @@
 	});
 </script>
 
-<Cursor />
 <Header locale={data.locale} />
 
 <main class="min-h-screen pt-16 md:pt-20">

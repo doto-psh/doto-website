@@ -14,15 +14,20 @@
 </script>
 
 <Section surface>
-	<div use:reveal class="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-		<span class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
-			{$_('aboutTeaser.eyebrow')}
-		</span>
-		<h2 class="font-serif text-3xl text-[var(--color-ink)] md:text-4xl lg:text-5xl">
-			{$_('aboutTeaser.title')}
-		</h2>
-		<p class="text-lg leading-relaxed text-[var(--color-muted)]">{$_('aboutTeaser.body')}</p>
-		<Button href={localizeHref('/about', locale)} variant="outline">
+	<div
+		use:reveal
+		class="blueprint-grid grid gap-8 rounded-lg border border-[var(--color-line)] bg-white/78 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8"
+	>
+		<div class="flex max-w-3xl flex-col gap-4">
+			<span class="w-fit rounded-md bg-[var(--color-accent)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
+				{$_('aboutTeaser.eyebrow')}
+			</span>
+			<h2 class="text-3xl font-black text-[var(--color-ink)] md:text-4xl lg:text-5xl">
+				{$_('aboutTeaser.title')}
+			</h2>
+			<p class="text-lg leading-relaxed text-[var(--color-muted)]">{$_('aboutTeaser.body')}</p>
+		</div>
+		<Button href={localizeHref('/about', locale)} variant="primary">
 			{$_('aboutTeaser.cta')} <span aria-hidden="true">→</span>
 		</Button>
 	</div>

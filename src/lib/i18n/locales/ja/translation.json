@@ -23,7 +23,12 @@
 		"subtitle": "日々の雑多さを整えるNotionテンプレートと、その過程で得た考えを文章で分かち合います。",
 		"ctaPrimary": "テンプレートを見る",
 		"ctaSecondary": "ブログを読む",
-		"scroll": "下へスクロール"
+		"scroll": "下へスクロール",
+		"signals": {
+			"capture": "集める",
+			"organize": "整える",
+			"share": "共有する"
+		}
 	},
 	"pillars": {
 		"eyebrow": "していること",

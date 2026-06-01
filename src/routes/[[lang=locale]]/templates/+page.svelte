@@ -24,23 +24,23 @@
 	locale={data.locale}
 />
 
-<header class="border-b border-[var(--color-line)] py-16 md:py-24">
+<header class="blueprint-grid border-b border-[var(--color-line)] bg-[var(--color-paper)] py-16 md:py-24">
 	<Container>
 		<div use:reveal class="flex max-w-2xl flex-col gap-4">
-			<span class="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-accent)]">
+			<span class="w-fit rounded-md border border-[var(--color-line)] bg-white px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
 				{$_('templatesPage.eyebrow')}
 			</span>
-			<h1 class="text-4xl text-[var(--color-ink)] md:text-5xl lg:text-6xl">
+			<h1 class="text-4xl font-black text-[var(--color-ink)] md:text-5xl lg:text-6xl">
 				{$_('templatesPage.title')}
 			</h1>
-			<p class="text-lg text-[var(--color-muted)]">{$_('templatesPage.subtitle')}</p>
+			<p class="text-lg font-medium text-[var(--color-muted)]">{$_('templatesPage.subtitle')}</p>
 		</div>
 	</Container>
 </header>
 
 <section class="py-12 md:py-16">
 	<Container>
-		<div class="mb-12 flex flex-wrap gap-2">
+		<div class="mb-12 flex flex-wrap gap-2 border-b border-[var(--color-line)] pb-6">
 			<Tag active={selected === 'all'} onclick={() => (selected = 'all')}>
 				{$_('templatesPage.all')}
 			</Tag>

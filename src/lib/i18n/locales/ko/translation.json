@@ -23,7 +23,12 @@
 		"subtitle": "복잡한 일상을 단정하게 다듬는 Notion 템플릿과, 그 과정에서 얻은 생각을 글로 나눕니다.",
 		"ctaPrimary": "템플릿 둘러보기",
 		"ctaSecondary": "블로그 읽기",
-		"scroll": "아래로 스크롤"
+		"scroll": "아래로 스크롤",
+		"signals": {
+			"capture": "수집",
+			"organize": "정리",
+			"share": "공유"
+		}
 	},
 	"pillars": {
 		"eyebrow": "무엇을 하나요",
