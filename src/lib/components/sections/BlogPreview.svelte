@@ -32,11 +32,9 @@
 		{#each posts as post, i (post.slug)}
 			<li use:reveal={{ delay: i * 80 }}>
 				<a
-					href={post.url}
-					target="_blank"
-					rel="noopener noreferrer"
+					href={localizeHref(`/blog/${post.slug}`, locale)}
 					data-cursor-hover
-					class="group grid gap-3 border-t border-[var(--color-line)] bg-transparent py-7 transition-colors last:border-b hover:bg-[var(--color-surface)] md:grid-cols-[160px_1fr_auto] md:items-baseline md:gap-8 md:px-3"
+					class="group grid gap-3 border-t border-[var(--color-line)] bg-transparent py-7 transition-colors last:border-b hover:bg-[var(--color-surface)] md:-mx-3 md:grid-cols-[160px_1fr_auto] md:items-baseline md:gap-8 md:px-3"
 				>
 					<time class="text-sm font-semibold text-[var(--color-muted)]" datetime={post.date}>
 						{formatDate(post.date)}
@@ -53,7 +51,7 @@
 						class="hidden text-sm text-[var(--color-muted)] transition-all group-hover:text-[var(--color-accent)] md:inline-flex"
 					>
 						{$_('blogPreview.readMore')}
-						<span class="ml-1 transition-transform group-hover:translate-x-1">↗</span>
+						<span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
 					</span>
 				</a>
 			</li>

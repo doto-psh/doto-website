@@ -22,8 +22,7 @@
 
 	const ogLocale: Record<Locale, string> = {
 		ko: 'ko_KR',
-		en: 'en_US',
-		ja: 'ja_JP'
+		en: 'en_US'
 	};
 </script>
 

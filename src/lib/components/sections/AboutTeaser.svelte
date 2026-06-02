@@ -16,7 +16,7 @@
 <Section surface>
 	<div
 		use:reveal
-		class="blueprint-grid grid gap-8 rounded-lg border border-[var(--color-line)] bg-white/78 p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8"
+		class="blueprint-grid grid gap-8 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-6 md:grid-cols-[1fr_auto] md:items-center md:p-8"
 	>
 		<div class="flex max-w-3xl flex-col gap-4">
 			<span class="w-fit rounded-md bg-[var(--color-accent)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">

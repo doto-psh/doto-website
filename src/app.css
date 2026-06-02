@@ -39,10 +39,34 @@
 		text-rendering: optimizeLegibility;
 	}
 
+	html.dark {
+		--color-bg: #08111f;
+		--color-surface: #0f1b2d;
+		--color-surface-blue: #0d2a58;
+		--color-ink: #edf4ff;
+		--color-muted: #9caec7;
+		--color-line: #233754;
+		--color-accent: #4f8cff;
+		--color-accent-strong: #8ab4ff;
+		--color-cyan: #2fd1ee;
+		--color-lime: #c3db4c;
+		--color-coral: #ff8a70;
+		--color-paper: #0b1626;
+	}
+
 	body {
 		font-family: var(--font-sans);
 		font-feature-settings: 'kern';
 		line-height: 1.65;
+		background-color: var(--color-bg);
+		overflow-x: clip;
+	}
+
+	input,
+	textarea,
+	select,
+	button {
+		min-width: 0;
 	}
 
 	h1,
@@ -82,15 +106,17 @@
 
 @layer utilities {
 	.container-page {
-		width: 100%;
+		box-sizing: border-box;
+		width: calc(100% - 3rem);
 		max-width: var(--container-page);
 		margin-inline: auto;
-		padding-inline: 1.5rem;
+		padding-inline: 0;
 	}
 
 	@media (min-width: 768px) {
 		.container-page {
-			padding-inline: 2.5rem;
+			width: calc(100% - 5rem);
+			padding-inline: 0;
 		}
 	}
 

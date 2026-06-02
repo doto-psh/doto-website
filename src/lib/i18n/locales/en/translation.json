@@ -1,84 +1,146 @@
 {
 	"meta": {
-		"title": "doto — tools for a clearer mind",
-		"description": "doto makes productivity Notion templates and writes about the systems behind them. Calm digital tools for work and life."
+		"title": "doto — Developer Portfolio",
+		"description": "Projects and engineering notes from doto, covering AI, backend, frontend, and infrastructure work."
 	},
 	"nav": {
 		"home": "Home",
-		"templates": "Templates",
+		"projects": "Projects",
 		"blog": "Blog",
 		"about": "About",
 		"menu": "Menu",
 		"close": "Close"
 	},
+	"theme": {
+		"toggle": "Toggle dark mode"
+	},
 	"language": {
 		"label": "Language",
 		"ko": "한국어",
-		"en": "English",
-		"ja": "日本語"
+		"en": "English"
 	},
 	"hero": {
-		"eyebrow": "Notion templates · Writing · Digital tools",
-		"title": "Tools for a\nclearer mind",
-		"subtitle": "Notion templates that tidy the noise of everyday work — and notes on the thinking behind them.",
-		"ctaPrimary": "Browse templates",
-		"ctaSecondary": "Read the blog",
+		"eyebrow": "Developer Portfolio · AI · Backend · Frontend",
+		"title": "I structure problems\nand ship working products",
+		"subtitle": "A personal portfolio of AI document workflows, backend data flows, frontend experience, and deployment operations.",
+		"ctaPrimary": "View projects",
+		"ctaSecondary": "Resume PDF",
 		"scroll": "Scroll down",
 		"signals": {
-			"capture": "Capture",
-			"organize": "Organize",
-			"share": "Share"
+			"capture": "Define",
+			"organize": "Design",
+			"share": "Verify"
 		}
 	},
 	"pillars": {
-		"eyebrow": "What I do",
-		"title": "Quiet systems, gentle flow",
+		"eyebrow": "How I Work",
+		"title": "From debugging to deployment, I show proof",
 		"items": {
 			"templates": {
-				"title": "Notion templates",
-				"body": "Ready-to-use systems for productivity and journaling. Install, fill in, and go."
+				"title": "Trace the problem",
+				"body": "I follow user flows and code paths to narrow causes, prioritizing observed behavior over guesses."
 			},
 			"writing": {
-				"title": "Writing & notes",
-				"body": "Ongoing thoughts on the ways, tools, and systems I use to work."
+				"title": "Structure the implementation",
+				"body": "I separate data models, state, and API boundaries so the system remains explainable during retries and operations."
 			},
 			"projects": {
-				"title": "Digital projects",
-				"body": "Small experiments toward better tools, growing into one brand."
+				"title": "Make results verifiable",
+				"body": "Project details, stacks, impact notes, and GitHub links make the depth of the work easier to inspect."
 			}
 		}
 	},
 	"featured": {
-		"eyebrow": "Featured templates",
-		"title": "Start today",
-		"subtitle": "A few of the most-loved templates.",
-		"cta": "View all templates"
+		"eyebrow": "Featured Work",
+		"title": "Recent projects I focused on",
+		"subtitle": "Work that follows problems across AI, backend, frontend, and infrastructure until the system is usable.",
+		"cta": "View all projects"
 	},
 	"blogPreview": {
-		"eyebrow": "Recent writing",
-		"title": "Notes & thinking",
-		"subtitle": "On tools, systems, and everyday life.",
-		"cta": "Go to the blog",
+		"eyebrow": "Engineering Notes",
+		"title": "Notes from solving problems",
+		"subtitle": "Short technical notes on debugging, design, deployment, and portfolio iteration.",
+		"cta": "Go to blog",
 		"readMore": "Read"
 	},
 	"aboutTeaser": {
-		"eyebrow": "About",
-		"title": "Hi, I'm doto",
-		"body": "I build by day and tidy by night. I like tools that remove friction — and I write down what I learn along the way.",
-		"cta": "Learn more"
+		"eyebrow": "Profile",
+		"title": "Experience and collaboration style",
+		"body": "I care more about root-cause analysis, implementation judgment, and operational structure than surface polish alone. Resume and contact paths are organized here.",
+		"cta": "View profile"
 	},
 	"footer": {
-		"tagline": "Building tools for a clearer mind.",
+		"tagline": "I structure problems and ship working products.",
 		"explore": "Explore",
 		"connect": "Connect",
-		"newsletterHint": "Get news on new templates and posts.",
+		"newsletterHint": "Get updates on new projects and posts.",
 		"rights": "All rights reserved.",
-		"madeWith": "Made with care"
+		"madeWith": "Built in Seoul"
+	},
+	"projectsPage": {
+		"eyebrow": "Projects",
+		"title": "Projects and problem-solving records",
+		"subtitle": "Browse projects quickly with category filters and search.",
+		"all": "All",
+		"searchLabel": "Search projects",
+		"searchPlaceholder": "Search by stack, role, problem, or outcome",
+		"viewDetail": "View case study",
+		"empty": "No projects match these filters.",
+		"categories": {
+			"ai": "AI",
+			"backend": "Backend",
+			"frontend": "Frontend",
+			"infra": "Infra"
+		}
+	},
+	"projectPage": {
+		"backToProjects": "Back to projects",
+		"role": "Role",
+		"stack": "Stack",
+		"impact": "Impact",
+		"caseStudy": "Case study",
+		"highlights": "Highlights",
+		"github": "View GitHub",
+		"live": "View live",
+		"related": "Related projects"
+	},
+	"blogPage": {
+		"eyebrow": "Blog",
+		"title": "Engineering Notes",
+		"subtitle": "Technical writing managed as Markdown.",
+		"readOn": "Read post",
+		"backToBlog": "Back to blog",
+		"searchLabel": "Search posts",
+		"searchPlaceholder": "Search by tag, title, or content",
+		"empty": "No posts match this search."
+	},
+	"aboutPage": {
+		"eyebrow": "About",
+		"title": "A developer who narrows problems to the end",
+		"intro": "I work across AI, backend, frontend, and infrastructure to build flows that actually work.",
+		"story": "Before writing code, I look at the user problem and where the system fails. In debugging, I value reproducible evidence. In implementation, I value clear state and boundaries. In deployment, I value an order that operators can follow.",
+		"valuesTitle": "Working principles",
+		"values": {
+			"clarity": { "title": "Clear causes", "body": "I do not only patch symptoms. I trace request flows and state changes to the end." },
+			"craft": { "title": "Operable implementation", "body": "I design for retries, failures, and deployed environments so the code can last." },
+			"sharing": { "title": "Written context", "body": "I write down problem-solving paths as notes and case studies to reduce collaboration cost." }
+		},
+		"contactTitle": "Contact",
+		"contactBody": "Send hiring, collaboration, or project inquiries by email."
+	},
+	"contact": {
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"namePlaceholder": "Your name",
+		"emailPlaceholder": "you@example.com",
+		"messagePlaceholder": "Write your message.",
+		"submit": "Compose email"
 	},
 	"templatesPage": {
-		"eyebrow": "Templates",
-		"title": "Tools to tidy work & life",
-		"subtitle": "Find the Notion template that fits the flow you need.",
+		"eyebrow": "Projects",
+		"title": "Projects",
+		"subtitle": "Browse portfolio projects.",
 		"all": "All",
 		"categories": {
 			"productivity": "Productivity",
@@ -86,36 +148,16 @@
 			"study": "Study",
 			"creator": "Creator"
 		},
-		"from": "Price",
-		"viewDetail": "View details",
-		"empty": "Templates in this category are coming soon."
+		"from": "From",
+		"viewDetail": "View detail",
+		"empty": "No items in this category yet."
 	},
 	"productPage": {
-		"buy": "Buy now",
-		"features": "What's included",
-		"backToTemplates": "Back to templates",
-		"related": "You might also like",
+		"buy": "Open",
+		"features": "Included features",
+		"backToTemplates": "Back to list",
+		"related": "Related items",
 		"gallery": "Preview"
-	},
-	"blogPage": {
-		"eyebrow": "Blog",
-		"title": "Notes & thinking",
-		"subtitle": "Writing on tools, systems, and the way I work.",
-		"readOn": "Read the full post"
-	},
-	"aboutPage": {
-		"eyebrow": "About",
-		"title": "The work of removing friction",
-		"intro": "doto is a small one-person brand. I make productivity tools and write down the thinking behind them.",
-		"story": "It began as templates to tidy my own days. The calm of a well-ordered system was worth sharing, so it grew into a brand. I keep making clean, long-lasting tools — slowly, with care.",
-		"valuesTitle": "What I value",
-		"values": {
-			"clarity": { "title": "Clarity", "body": "Subtract before adding. Keep only what matters." },
-			"craft": { "title": "Craft", "body": "Refined to last, down to the details." },
-			"sharing": { "title": "Sharing", "body": "What I learn comes back as writing and tools." }
-		},
-		"contactTitle": "Get in touch",
-		"contactBody": "Collaborations, questions, or just a hello are all welcome."
 	},
 	"common": {
 		"comingSoon": "Coming soon",

@@ -3,7 +3,6 @@ import { DEFAULT_LOCALE, type Locale } from '$lib/types';
 
 register('ko', () => import('./locales/ko/translation.json'));
 register('en', () => import('./locales/en/translation.json'));
-register('ja', () => import('./locales/ja/translation.json'));
 
 let initialized = false;
 

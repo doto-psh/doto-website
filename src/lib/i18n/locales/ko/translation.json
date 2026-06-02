@@ -1,84 +1,146 @@
 {
 	"meta": {
-		"title": "doto — 생각을 정리하는 도구",
-		"description": "생산성 Notion 템플릿과 글을 만드는 doto. 일과 삶을 정돈하는 디지털 도구를 소개합니다."
+		"title": "doto — 개발자 포트폴리오",
+		"description": "AI, 백엔드, 프론트엔드, 인프라 문제를 다루는 개발자 doto의 프로젝트와 기술 기록."
 	},
 	"nav": {
 		"home": "홈",
-		"templates": "템플릿",
+		"projects": "프로젝트",
 		"blog": "블로그",
 		"about": "소개",
 		"menu": "메뉴",
 		"close": "닫기"
 	},
+	"theme": {
+		"toggle": "다크모드 전환"
+	},
 	"language": {
 		"label": "언어",
 		"ko": "한국어",
-		"en": "English",
-		"ja": "日本語"
+		"en": "English"
 	},
 	"hero": {
-		"eyebrow": "Notion 템플릿 · 글 · 디지털 도구",
-		"title": "생각을 정리하는\n도구를 만듭니다",
-		"subtitle": "복잡한 일상을 단정하게 다듬는 Notion 템플릿과, 그 과정에서 얻은 생각을 글로 나눕니다.",
-		"ctaPrimary": "템플릿 둘러보기",
-		"ctaSecondary": "블로그 읽기",
+		"eyebrow": "Developer Portfolio · AI · Backend · Frontend",
+		"title": "문제를 구조화하고\n작동하는 제품으로 만듭니다",
+		"subtitle": "AI 문서 처리, 백엔드 데이터 흐름, 프론트엔드 경험, 배포 운영을 실제 프로젝트로 정리한 개인 포트폴리오입니다.",
+		"ctaPrimary": "프로젝트 보기",
+		"ctaSecondary": "이력서 PDF",
 		"scroll": "아래로 스크롤",
 		"signals": {
-			"capture": "수집",
-			"organize": "정리",
-			"share": "공유"
+			"capture": "문제 정의",
+			"organize": "구조 설계",
+			"share": "구현과 검증"
 		}
 	},
 	"pillars": {
-		"eyebrow": "무엇을 하나요",
-		"title": "정돈된 시스템, 부드러운 흐름",
+		"eyebrow": "작업 방식",
+		"title": "디버깅부터 배포까지, 증거로 말합니다",
 		"items": {
 			"templates": {
-				"title": "Notion 템플릿",
-				"body": "바로 쓸 수 있도록 다듬은 생산성·기록 템플릿. 설치하고 채우기만 하면 됩니다."
+				"title": "문제 추적",
+				"body": "사용자 흐름과 코드 경로를 따라 원인을 좁히고, 추측보다 관찰된 동작을 우선합니다."
 			},
 			"writing": {
-				"title": "생각의 기록",
-				"body": "일하는 방식, 도구, 시스템에 대한 생각을 꾸준히 글로 남깁니다."
+				"title": "구조화된 구현",
+				"body": "데이터 모델, 상태, API 경계를 분리해 재시도와 운영 상황에서도 설명 가능한 코드를 만듭니다."
 			},
 			"projects": {
-				"title": "디지털 프로젝트",
-				"body": "더 나은 도구를 향한 실험. 작은 제품들이 하나의 브랜드로 이어집니다."
+				"title": "검증 가능한 결과",
+				"body": "프로젝트 상세, 기술 스택, 임팩트, GitHub 링크로 작업의 깊이를 확인할 수 있게 정리합니다."
 			}
 		}
 	},
 	"featured": {
-		"eyebrow": "추천 템플릿",
-		"title": "오늘 바로 시작하세요",
-		"subtitle": "가장 사랑받는 템플릿을 골랐습니다.",
-		"cta": "전체 템플릿 보기"
+		"eyebrow": "Featured Work",
+		"title": "최근에 집중한 프로젝트",
+		"subtitle": "AI, 백엔드, 프론트엔드, 인프라를 넘나들며 문제를 끝까지 추적한 작업들입니다.",
+		"cta": "전체 프로젝트 보기"
 	},
 	"blogPreview": {
-		"eyebrow": "최근 글",
-		"title": "기록과 생각",
-		"subtitle": "도구와 시스템, 그리고 일상에 대하여.",
+		"eyebrow": "Engineering Notes",
+		"title": "문제를 풀며 남긴 기록",
+		"subtitle": "디버깅, 설계, 배포, 포트폴리오 개선에 대한 짧은 기술 노트.",
 		"cta": "블로그로 이동",
 		"readMore": "읽기"
 	},
 	"aboutTeaser": {
-		"eyebrow": "소개",
-		"title": "안녕하세요, doto입니다",
-		"body": "낮에는 만들고, 밤에는 정리합니다. 복잡함을 덜어내는 도구를 좋아하고, 그 과정을 기록으로 남깁니다.",
-		"cta": "더 알아보기"
+		"eyebrow": "Profile",
+		"title": "경력과 협업 방식",
+		"body": "프로젝트의 겉모습보다 원인 분석, 구현 판단, 운영 가능한 구조를 중요하게 봅니다. 이력서와 연락 경로를 한 곳에 정리했습니다.",
+		"cta": "프로필 보기"
 	},
 	"footer": {
-		"tagline": "생각을 정리하는 도구를 만듭니다.",
+		"tagline": "문제를 구조화하고 작동하는 제품으로 만듭니다.",
 		"explore": "둘러보기",
 		"connect": "연결",
-		"newsletterHint": "새 템플릿과 글 소식을 받아보세요.",
+		"newsletterHint": "새 프로젝트와 글 소식을 받아보세요.",
 		"rights": "All rights reserved.",
-		"madeWith": "정성껏 만들었습니다"
+		"madeWith": "Built in Seoul"
+	},
+	"projectsPage": {
+		"eyebrow": "Projects",
+		"title": "프로젝트와 문제 해결 기록",
+		"subtitle": "카테고리와 검색으로 프로젝트를 빠르게 훑어보세요.",
+		"all": "전체",
+		"searchLabel": "프로젝트 검색",
+		"searchPlaceholder": "스택, 역할, 문제, 결과로 검색",
+		"viewDetail": "케이스 스터디 보기",
+		"empty": "조건에 맞는 프로젝트가 없습니다.",
+		"categories": {
+			"ai": "AI",
+			"backend": "Backend",
+			"frontend": "Frontend",
+			"infra": "Infra"
+		}
+	},
+	"projectPage": {
+		"backToProjects": "프로젝트 목록으로",
+		"role": "역할",
+		"stack": "스택",
+		"impact": "임팩트",
+		"caseStudy": "케이스 스터디",
+		"highlights": "핵심 포인트",
+		"github": "GitHub 확인",
+		"live": "라이브 보기",
+		"related": "관련 프로젝트"
+	},
+	"blogPage": {
+		"eyebrow": "Blog",
+		"title": "Engineering Notes",
+		"subtitle": "Markdown으로 관리되는 기술 기록입니다.",
+		"readOn": "글 읽기",
+		"backToBlog": "블로그 목록으로",
+		"searchLabel": "글 검색",
+		"searchPlaceholder": "태그, 제목, 내용으로 검색",
+		"empty": "조건에 맞는 글이 없습니다."
+	},
+	"aboutPage": {
+		"eyebrow": "About",
+		"title": "문제를 끝까지 좁히는 개발자",
+		"intro": "AI, 백엔드, 프론트엔드, 인프라 사이의 경계를 오가며 실제로 동작하는 흐름을 만드는 데 집중합니다.",
+		"story": "코드를 쓰기 전에 사용자가 겪는 문제와 시스템이 실패하는 지점을 먼저 봅니다. 디버깅에서는 재현 가능한 증거를, 구현에서는 명확한 상태와 경계를, 배포에서는 운영자가 따라갈 수 있는 순서를 중요하게 생각합니다.",
+		"valuesTitle": "일하는 기준",
+		"values": {
+			"clarity": { "title": "명확한 원인", "body": "현상만 고치지 않고 요청 흐름과 상태 변화를 끝까지 추적합니다." },
+			"craft": { "title": "운영 가능한 구현", "body": "재시도, 실패, 배포 환경까지 고려해 오래 유지되는 코드를 지향합니다." },
+			"sharing": { "title": "기록하는 습관", "body": "문제 해결 과정을 글과 케이스 스터디로 남겨 협업 비용을 줄입니다." }
+		},
+		"contactTitle": "연락하기",
+		"contactBody": "채용, 협업, 프로젝트 문의를 이메일로 보낼 수 있습니다."
+	},
+	"contact": {
+		"name": "이름",
+		"email": "이메일",
+		"message": "메시지",
+		"namePlaceholder": "홍길동",
+		"emailPlaceholder": "you@example.com",
+		"messagePlaceholder": "문의 내용을 적어주세요.",
+		"submit": "이메일 작성하기"
 	},
 	"templatesPage": {
-		"eyebrow": "템플릿",
-		"title": "일과 삶을 정돈하는 도구",
-		"subtitle": "필요한 흐름에 맞는 Notion 템플릿을 찾아보세요.",
+		"eyebrow": "프로젝트",
+		"title": "프로젝트",
+		"subtitle": "포트폴리오 프로젝트를 확인해보세요.",
 		"all": "전체",
 		"categories": {
 			"productivity": "생산성",
@@ -88,34 +150,14 @@
 		},
 		"from": "가격",
 		"viewDetail": "자세히 보기",
-		"empty": "해당 카테고리의 템플릿이 곧 추가됩니다."
+		"empty": "해당 카테고리의 항목이 없습니다."
 	},
 	"productPage": {
-		"buy": "구매하기",
+		"buy": "열기",
 		"features": "포함된 기능",
-		"backToTemplates": "템플릿 목록으로",
-		"related": "이런 템플릿도 있어요",
+		"backToTemplates": "목록으로",
+		"related": "관련 항목",
 		"gallery": "미리보기"
-	},
-	"blogPage": {
-		"eyebrow": "블로그",
-		"title": "기록과 생각",
-		"subtitle": "도구, 시스템, 그리고 일하는 방식에 대한 글.",
-		"readOn": "원문 읽기"
-	},
-	"aboutPage": {
-		"eyebrow": "소개",
-		"title": "복잡함을 덜어내는 일",
-		"intro": "doto는 한 사람이 운영하는 작은 브랜드입니다. 생산성 도구를 만들고, 그 생각을 글로 남깁니다.",
-		"story": "처음에는 제 일상을 정리하려고 만든 템플릿이었습니다. 정돈된 시스템이 주는 여유를 다른 사람과 나누고 싶어 브랜드로 이어졌습니다. 앞으로도 단정하고 오래 쓰는 도구를 천천히 만들어 갑니다.",
-		"valuesTitle": "지향하는 것",
-		"values": {
-			"clarity": { "title": "단정함", "body": "더하기보다 덜어내기. 꼭 필요한 것만 남깁니다." },
-			"craft": { "title": "정성", "body": "오래 쓸 수 있도록 끝까지 다듬습니다." },
-			"sharing": { "title": "나눔", "body": "배운 것은 글과 도구로 돌려드립니다." }
-		},
-		"contactTitle": "연결하기",
-		"contactBody": "협업, 문의, 또는 그냥 인사도 환영합니다."
 	},
 	"common": {
 		"comingSoon": "곧 공개됩니다",

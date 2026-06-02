@@ -1,8 +1,8 @@
-import { getFeaturedProducts } from '$lib/data/products';
+import { getFeaturedProjects } from '$lib/data/projects';
 import { getRecentPosts } from '$lib/data/posts';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = () => ({
-	products: getFeaturedProducts(3),
+	projects: getFeaturedProjects(3),
 	posts: getRecentPosts(3)
 });

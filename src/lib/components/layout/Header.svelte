@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { _ } from 'svelte-i18n';
-	import type { Locale } from '$lib/types';
+	import { LOCALES, type Locale } from '$lib/types';
 	import { localizeHref } from '$lib/i18n/routing';
 	import { site, navItems } from '$lib/data/site';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	interface Props {
 		locale: Locale;
@@ -29,7 +30,9 @@
 	});
 
 	function isActive(path: string): boolean {
-		const bare = $page.url.pathname.replace(/^\/(en|ja)/, '') || '/';
+		const segments = $page.url.pathname.split('/').filter(Boolean);
+		if (segments.length && (LOCALES as readonly string[]).includes(segments[0])) segments.shift();
+		const bare = '/' + segments.join('/');
 		return path === '/' ? bare === '/' : bare.startsWith(path);
 	}
 </script>
@@ -70,6 +73,7 @@
 			{/each}
 			<span class="h-4 w-px bg-[var(--color-line)]"></span>
 			<LanguageSwitcher {locale} />
+			<ThemeToggle />
 		</nav>
 
 		<!-- Mobile toggle -->
@@ -114,8 +118,9 @@
 						{$_(`nav.${item.key}`)}
 					</a>
 				{/each}
-				<div class="mt-3 border-t border-[var(--color-line)] pt-4">
+				<div class="mt-3 flex items-center justify-between border-t border-[var(--color-line)] pt-4">
 					<LanguageSwitcher {locale} />
+					<ThemeToggle />
 				</div>
 			</div>
 		</nav>

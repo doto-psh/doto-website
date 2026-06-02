@@ -1,10 +1,29 @@
 /** Supported UI locales. Keep in sync with src/lib/i18n. */
-export const LOCALES = ['ko', 'en', 'ja'] as const;
+export const LOCALES = ['ko', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'ko';
 
 /** A value that is translated inline within content data (products, posts). */
-export type Localized<T = string> = Record<Locale, T>;
+export type Localized<T = string> = Record<Locale, T> & Partial<Record<string, T>>;
+
+export type ProjectCategory = 'ai' | 'backend' | 'frontend' | 'infra';
+
+export interface Project {
+	slug: string;
+	title: Localized;
+	tagline: Localized;
+	description: Localized;
+	category: ProjectCategory;
+	role: Localized;
+	period: string;
+	stack: string[];
+	impact: Localized<string[]>;
+	highlights: Localized<string[]>;
+	caseStudy: Localized<string>;
+	githubUrl?: string;
+	liveUrl?: string;
+	featured: boolean;
+}
 
 export interface Product {
 	/** URL slug, e.g. "second-brain-os" */
@@ -32,10 +51,9 @@ export interface Post {
 	slug: string;
 	title: Localized;
 	excerpt: Localized;
+	content: Localized;
 	/** ISO date string */
 	date: string;
-	/** External canonical URL (blog lives elsewhere for now) */
-	url: string;
 	tags: string[];
 }
 

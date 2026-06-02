@@ -11,7 +11,7 @@
 	let { active = false, href, onclick, children }: Props = $props();
 
 	const cls = $derived(
-		`inline-flex min-h-10 items-center rounded-lg border px-4 py-2 text-sm font-semibold transition-colors duration-200 ${
+		`inline-flex min-h-10 w-full items-center justify-center rounded-lg border px-4 py-2 text-sm font-semibold transition-colors duration-200 sm:w-auto ${
 			active
 				? 'border-[var(--color-accent)] bg-[var(--color-accent)] text-white'
 				: 'border-[var(--color-line)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
