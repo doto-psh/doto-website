@@ -17,6 +17,8 @@
 	--color-lime: #9bbf24;
 	--color-coral: #ff6b4a;
 	--color-paper: #fbfdff;
+	--color-footer-bg: #08111f;
+	--color-footer-line: rgba(255, 255, 255, 0.14);
 
 	/* Typography */
 	--font-sans:
@@ -52,6 +54,8 @@
 		--color-lime: #c3db4c;
 		--color-coral: #ff8a70;
 		--color-paper: #0b1626;
+		--color-footer-bg: #020817;
+		--color-footer-line: rgba(255, 255, 255, 0.16);
 	}
 
 	body {
