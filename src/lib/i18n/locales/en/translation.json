@@ -128,6 +128,32 @@
 		"contactTitle": "Contact",
 		"contactBody": "Send hiring, collaboration, or project inquiries by email."
 	},
+	"portfolio": {
+		"profileEyebrow": "Profile",
+		"summaryEyebrow": "Portfolio System",
+		"summaryTitle": "Experience, skills, and activities in one editable structure",
+		"summarySubtitle": "Profile, skills, and timeline content now come from a single data file. Project and blog filtering/search remain intact.",
+		"viewFullProfile": "View full profile",
+		"skillsEyebrow": "Skills",
+		"skillsTitle": "Technical stack",
+		"skillsSubtitle": "Frontend, backend, database, DevOps, infrastructure, and tools are organized by category.",
+		"timelineEyebrow": "Timeline",
+		"timelineTitle": "Education, certifications, career, and activities",
+		"timelineSubtitle": "Frequently updated profile history is managed as a structured timeline.",
+		"contactTitle": "Tell me about the problem you want to solve",
+		"openLink": "Open link",
+		"skillLevels": {
+			"core": "Core",
+			"working": "Working",
+			"learning": "Learning"
+		},
+		"timelineCategories": {
+			"career": "Career",
+			"education": "Education",
+			"certification": "Certification",
+			"activity": "Activity"
+		}
+	},
 	"contact": {
 		"name": "Name",
 		"email": "Email",

@@ -7,6 +7,51 @@ export const DEFAULT_LOCALE: Locale = 'ko';
 export type Localized<T = string> = Record<Locale, T> & Partial<Record<string, T>>;
 
 export type ProjectCategory = 'ai' | 'backend' | 'frontend' | 'infra';
+export type TimelineCategory = 'education' | 'certification' | 'career' | 'activity';
+export type SkillCategory = 'frontend' | 'backend' | 'database' | 'devops' | 'infra' | 'tools';
+
+export interface Profile {
+	name: Localized;
+	role: Localized;
+	tagline: Localized;
+	bio: Localized;
+	location: Localized;
+	photoUrl: string;
+	email: string;
+	github: string;
+	resumeUrl: string;
+}
+
+export interface SkillItem {
+	name: string;
+	level: 'core' | 'working' | 'learning';
+	description?: Localized;
+}
+
+export interface SkillGroup {
+	category: SkillCategory;
+	title: Localized;
+	description: Localized;
+	items: SkillItem[];
+}
+
+export interface TimelineItem {
+	id: string;
+	category: TimelineCategory;
+	title: Localized;
+	organization: Localized;
+	period: Localized;
+	description: Localized;
+	highlights?: Localized<string[]>;
+	stack?: string[];
+	link?: string;
+}
+
+export interface PortfolioData {
+	profile: Profile;
+	skills: SkillGroup[];
+	timeline: TimelineItem[];
+}
 
 export interface Project {
 	slug: string;
