@@ -3,6 +3,7 @@
 	import type { Locale } from '$lib/types';
 	import { localizeHref } from '$lib/i18n/routing';
 	import { site } from '$lib/data/site';
+	import { mascotImages } from '$lib/data/portfolio';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
@@ -88,7 +89,9 @@
 							<span class="block h-3 w-2/3 rounded-sm bg-[var(--color-surface-blue)]"></span>
 						</div>
 						<div class="mt-6 grid grid-cols-3 gap-2">
-							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
+							<span class="grid h-16 place-items-center overflow-hidden rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]">
+								<img src={mascotImages.profile} alt="" class="h-full w-full object-cover" />
+							</span>
 							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
 							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
 						</div>

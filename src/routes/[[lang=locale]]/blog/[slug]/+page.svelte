@@ -2,6 +2,7 @@
 	import { _ } from 'svelte-i18n';
 	import Seo from '$lib/components/layout/Seo.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
+	import BlogAuthorCard from '$lib/components/portfolio/BlogAuthorCard.svelte';
 	import { localizeHref, pick } from '$lib/i18n/routing';
 	import { renderMarkdown } from '$lib/utils/markdown';
 	import type { PageData } from './$types';
@@ -50,6 +51,10 @@
 
 		<div class="markdown-body mt-10 max-w-3xl">
 			{@html html}
+		</div>
+
+		<div class="max-w-3xl">
+			<BlogAuthorCard profile={data.portfolio.profile} locale={data.locale} />
 		</div>
 	</Container>
 </article>

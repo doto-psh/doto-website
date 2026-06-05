@@ -7,6 +7,7 @@
 	import ProfileHero from '$lib/components/portfolio/ProfileHero.svelte';
 	import SkillMatrix from '$lib/components/portfolio/SkillMatrix.svelte';
 	import Timeline from '$lib/components/portfolio/Timeline.svelte';
+	import PersonalNote from '$lib/components/portfolio/PersonalNote.svelte';
 	import { pick } from '$lib/i18n/routing';
 	import { reveal } from '$lib/actions/reveal';
 	import type { PageData } from './$types';
@@ -56,6 +57,8 @@
 	</div>
 	<Timeline items={data.portfolio.timeline} locale={data.locale} />
 </Section>
+
+<PersonalNote />
 
 <Section>
 	<div use:reveal class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">

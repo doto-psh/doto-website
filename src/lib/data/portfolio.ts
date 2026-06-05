@@ -16,6 +16,12 @@ export const timelineCategories: TimelineCategory[] = [
 	'activity'
 ];
 
+export const mascotImages = {
+	profile: '/images/doto-charactor-only.png',
+	characterSheet: '/images/doto-character.png',
+	beach: '/images/doto-charactor-beach.png'
+} as const;
+
 export const portfolio: PortfolioData = {
 	profile: {
 		name: { ko: 'doto', en: 'doto' },
@@ -32,7 +38,7 @@ export const portfolio: PortfolioData = {
 			en: 'I focus on building usable systems by connecting AI document workflows, backend data flows, frontend experience, and deployment operations. I prefer reproducible debugging, explicit state, and flows that operators can follow.'
 		},
 		location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
-		photoUrl: '/profile.svg',
+		photoUrl: mascotImages.profile,
 		email: 'hello@doto.example',
 		github: 'https://github.com/doto-psh',
 		resumeUrl: '/resume.pdf'

@@ -154,6 +154,24 @@
 			"activity": "활동"
 		}
 	},
+	"mascot": {
+		"emptyAlt": "doto 캐릭터",
+		"emptyEyebrow": "No Results",
+		"emptyHint": "검색어나 필터를 조금 바꾸면 다른 기록을 찾을 수 있습니다.",
+		"authorEyebrow": "Written by doto",
+		"authorTitle": "기록하고 검증하는 개발자 doto",
+		"authorBody": "문제를 재현하고, 흐름을 정리하고, 배운 내용을 다시 쓸 수 있는 형태로 남깁니다.",
+		"authorContact": "이메일 문의",
+		"noteImageAlt": "해변에서 기록하는 doto 캐릭터",
+		"noteEyebrow": "Personal Note",
+		"noteTitle": "호기심을 기록하고, 문제를 끝까지 따라갑니다",
+		"noteBody": "doto 캐릭터는 자유롭게 탐색하고 꼼꼼하게 기록하는 제 작업 방식을 보여주는 마스코트입니다. 기술적인 판단은 차분하게, 배운 것은 다시 꺼내 쓸 수 있게 정리합니다.",
+		"noteItems": {
+			"curiosity": "탐색",
+			"recording": "기록",
+			"craft": "구현"
+		}
+	},
 	"contact": {
 		"name": "이름",
 		"email": "이메일",

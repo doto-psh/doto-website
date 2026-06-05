@@ -154,6 +154,24 @@
 			"activity": "Activity"
 		}
 	},
+	"mascot": {
+		"emptyAlt": "doto character",
+		"emptyEyebrow": "No Results",
+		"emptyHint": "Try changing the search term or filter to find another record.",
+		"authorEyebrow": "Written by doto",
+		"authorTitle": "doto, a developer who records and verifies",
+		"authorBody": "I reproduce problems, organize system flows, and turn lessons into notes that can be reused.",
+		"authorContact": "Email me",
+		"noteImageAlt": "doto character writing by the beach",
+		"noteEyebrow": "Personal Note",
+		"noteTitle": "I record curiosity and follow problems to the end",
+		"noteBody": "The doto character is a mascot for how I work: exploring freely, documenting carefully, and keeping technical judgment calm and reusable.",
+		"noteItems": {
+			"curiosity": "Explore",
+			"recording": "Record",
+			"craft": "Build"
+		}
+	},
 	"contact": {
 		"name": "Name",
 		"email": "Email",

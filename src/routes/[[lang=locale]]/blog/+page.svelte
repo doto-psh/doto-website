@@ -2,6 +2,7 @@
 	import { _ } from 'svelte-i18n';
 	import Seo from '$lib/components/layout/Seo.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
+	import MascotEmptyState from '$lib/components/portfolio/MascotEmptyState.svelte';
 	import { localizeHref, pick } from '$lib/i18n/routing';
 	import { reveal } from '$lib/actions/reveal';
 	import type { PageData } from './$types';
@@ -107,9 +108,7 @@
 			{/each}
 		</ul>
 		{:else}
-			<div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-10 text-center text-[var(--color-muted)]">
-				{$_('blogPage.empty')}
-			</div>
+			<MascotEmptyState message={$_('blogPage.empty')} />
 		{/if}
 	</Container>
 </section>

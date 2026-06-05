@@ -6,6 +6,7 @@
 	import Container from '$lib/components/ui/Container.svelte';
 	import Tag from '$lib/components/ui/Tag.svelte';
 	import ProjectGrid from '$lib/components/project/ProjectGrid.svelte';
+	import MascotEmptyState from '$lib/components/portfolio/MascotEmptyState.svelte';
 	import { pick } from '$lib/i18n/routing';
 	import { reveal } from '$lib/actions/reveal';
 	import type { PageData } from './$types';
@@ -85,9 +86,7 @@
 		{#if filtered.length}
 			<ProjectGrid projects={filtered} locale={data.locale} />
 		{:else}
-			<div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-10 text-center text-[var(--color-muted)]">
-				{$_('projectsPage.empty')}
-			</div>
+			<MascotEmptyState message={$_('projectsPage.empty')} />
 		{/if}
 	</Container>
 </section>
