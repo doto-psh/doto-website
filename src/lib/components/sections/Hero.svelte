@@ -1,17 +1,16 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import type { Locale } from '$lib/types';
-	import { localizeHref } from '$lib/i18n/routing';
-	import { site } from '$lib/data/site';
-	import { mascotImages } from '$lib/data/portfolio';
+	import type { Locale, Profile } from '$lib/types';
+	import { localizeHref, pick } from '$lib/i18n/routing';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
 	interface Props {
+		profile: Profile;
 		locale: Locale;
 	}
 
-	let { locale }: Props = $props();
+	let { profile, locale }: Props = $props();
 
 	const signals = ['capture', 'organize', 'share'] as const;
 </script>
@@ -33,24 +32,25 @@
 					{$_('hero.eyebrow')}
 				</span>
 
-				<h1
-					class="whitespace-pre-line text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]"
-				>
-					{$_('hero.title')}
+				<h1 class="text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]">
+					<span class="block">{pick(profile.name, locale)}</span>
+					<span class="mt-3 block max-w-3xl text-3xl leading-tight text-[var(--color-accent)] sm:text-4xl md:text-5xl xl:text-[3.75rem]">
+						{pick(profile.role, locale)}
+					</span>
 				</h1>
 
 				<p class="mt-7 max-w-xl text-lg font-medium text-[var(--color-muted)] md:text-xl">
-					{$_('hero.subtitle')}
+					{pick(profile.tagline, locale)}
 				</p>
 
 				<div class="mt-10 flex flex-wrap items-center gap-3">
 					<Button href={localizeHref('/projects', locale)} variant="primary" size="lg">
 						{$_('hero.ctaPrimary')} <span aria-hidden="true">→</span>
 					</Button>
-					<Button href={site.resumeUrl} variant="outline" size="lg">
+					<Button href={profile.resumeUrl} variant="outline" size="lg">
 						{$_('hero.ctaSecondary')}
 					</Button>
-					<Button href={site.github} external variant="ghost" size="lg">
+					<Button href={profile.github} external variant="ghost" size="lg">
 						GitHub <span aria-hidden="true">↗</span>
 					</Button>
 				</div>
@@ -90,7 +90,7 @@
 						</div>
 						<div class="mt-6 grid grid-cols-3 gap-2">
 							<span class="grid h-16 place-items-center overflow-hidden rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]">
-								<img src={mascotImages.profile} alt="" class="h-full w-full object-cover" />
+								<img src={profile.photoUrl} alt="" class="h-full w-full object-cover" />
 							</span>
 							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>
 							<span class="h-16 rounded-md border border-[var(--color-line)] bg-[var(--color-paper)]"></span>

@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import type { Locale } from '$lib/types';
-	import { localizeHref } from '$lib/i18n/routing';
+	import type { Locale, Profile } from '$lib/types';
+	import { localizeHref, pick } from '$lib/i18n/routing';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	interface Props {
+		profile: Profile;
 		locale: Locale;
 	}
 
-	let { locale }: Props = $props();
+	let { profile, locale }: Props = $props();
 </script>
 
 <Section surface>
@@ -23,9 +24,9 @@
 				{$_('aboutTeaser.eyebrow')}
 			</span>
 			<h2 class="text-3xl font-black text-[var(--color-ink)] md:text-4xl lg:text-5xl">
-				{$_('aboutTeaser.title')}
+				{pick(profile.role, locale)}
 			</h2>
-			<p class="text-lg leading-relaxed text-[var(--color-muted)]">{$_('aboutTeaser.body')}</p>
+			<p class="text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
 		</div>
 		<Button href={localizeHref('/about', locale)} variant="primary">
 			{$_('aboutTeaser.cta')} <span aria-hidden="true">→</span>
