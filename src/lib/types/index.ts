@@ -8,10 +8,12 @@ export type Localized<T = string> = Record<Locale, T> & Partial<Record<string, T
 
 export type ProjectCategory = 'ai' | 'backend' | 'frontend' | 'infra';
 export type TimelineCategory = 'education' | 'certification' | 'career' | 'activity';
-export type SkillCategory = 'frontend' | 'backend' | 'database' | 'devops' | 'infra' | 'tools';
+export type SkillCategory = 'frontend' | 'backend' | 'AI/LLM' | 'database' | 'devops-infra';
 
 export interface Profile {
 	name: Localized;
+	/** Optional real name shown alongside the brand handle (e.g. on the About profile). */
+	realName?: Localized;
 	role: Localized;
 	tagline: Localized;
 	bio: Localized;
@@ -39,9 +41,12 @@ export interface TimelineItem {
 	id: string;
 	category: TimelineCategory;
 	title: Localized;
-	organization: Localized;
-	period: Localized;
-	description: Localized;
+	/** Optional: omit for entries where the org is redundant (e.g. a certifications list). */
+	organization?: Localized;
+	/** Optional: omit when a date range adds no value. */
+	period?: Localized;
+	/** Optional: omit when title + highlights already say enough. */
+	description?: Localized;
 	highlights?: Localized<string[]>;
 	stack?: string[];
 	link?: string;

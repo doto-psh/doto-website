@@ -33,20 +33,20 @@
 		}
 	},
 	"pillars": {
-		"eyebrow": "How I Work",
-		"title": "From debugging to deployment, I show proof",
+		"eyebrow": "What drives me",
+		"title": "Aiming for the best, moving without fear",
 		"items": {
 			"templates": {
-				"title": "Trace the problem",
-				"body": "I follow user flows and code paths to narrow causes, prioritizing observed behavior over guesses."
+				"title": "Depth that never settles",
+				"body": "I keep learning instead of settling for the familiar answer, digging into a problem until I reach real depth in my field."
 			},
 			"writing": {
-				"title": "Structure the implementation",
-				"body": "I separate data models, state, and API boundaries so the system remains explainable during retries and operations."
+				"title": "Fearless experimentation",
+				"body": "I treat failure as part of learning and, with a positive mindset, try new approaches first to drive change."
 			},
 			"projects": {
-				"title": "Make results verifiable",
-				"body": "Project details, stacks, impact notes, and GitHub links make the depth of the work easier to inspect."
+				"title": "Notes worth reusing",
+				"body": "I calmly organize what I explore and learn so it can be pulled back out for the team and the next problem."
 			}
 		}
 	},
@@ -136,7 +136,7 @@
 		"viewFullProfile": "View full profile",
 		"skillsEyebrow": "Skills",
 		"skillsTitle": "Technical stack",
-		"skillsSubtitle": "Frontend, backend, database, DevOps, infrastructure, and tools are organized by category.",
+		"skillsSubtitle": "Frontend, backend, AI/LLM, database, and DevOps/Infra are organized by category.",
 		"timelineEyebrow": "Timeline",
 		"timelineTitle": "Education, certifications, career, and activities",
 		"timelineSubtitle": "Frequently updated profile history is managed as a structured timeline.",
@@ -165,7 +165,7 @@
 		"noteImageAlt": "doto character writing by the beach",
 		"noteEyebrow": "Personal Note",
 		"noteTitle": "I record curiosity and follow problems to the end",
-		"noteBody": "The doto character is a mascot for how I work: exploring freely, documenting carefully, and keeping technical judgment calm and reusable.",
+		"noteBody": "doto — a seal exploring the emerald coast while journaling everything — is a mascot that mirrors how I work. I explore new problems freely, carefully sort and record what I run into and learn, keep technical decisions calm, and leave my notes organized so they can always be pulled back out and reused.",
 		"noteItems": {
 			"curiosity": "Explore",
 			"recording": "Record",

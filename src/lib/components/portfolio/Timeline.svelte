@@ -37,10 +37,14 @@
 							<span class="rounded-md border border-[var(--color-line)] bg-[var(--color-surface-blue)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--color-accent)]">
 								{$_(`portfolio.timelineCategories.${item.category}`)}
 							</span>
-							<span class="text-xs font-bold text-[var(--color-muted)]">{pick(item.period, locale)}</span>
+							{#if item.period}
+								<span class="text-xs font-bold text-[var(--color-muted)]">{pick(item.period, locale)}</span>
+							{/if}
 						</div>
 						<h3 class="mt-3 text-xl font-black text-[var(--color-ink)]">{pick(item.title, locale)}</h3>
-						<p class="mt-1 text-sm font-bold text-[var(--color-muted)]">{pick(item.organization, locale)}</p>
+						{#if item.organization}
+							<p class="mt-1 text-sm font-bold text-[var(--color-muted)]">{pick(item.organization, locale)}</p>
+						{/if}
 					</div>
 					{#if item.link}
 						<a
@@ -54,7 +58,9 @@
 					{/if}
 				</div>
 
-				<p class="mt-4 leading-relaxed text-[var(--color-muted)]">{pick(item.description, locale)}</p>
+				{#if item.description}
+					<p class="mt-4 leading-relaxed text-[var(--color-muted)]">{pick(item.description, locale)}</p>
+				{/if}
 
 				{#if item.highlights?.[locale]?.length}
 					<ul class="mt-4 grid gap-2">

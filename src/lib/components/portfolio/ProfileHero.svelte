@@ -33,6 +33,9 @@
 			<h1 class="text-4xl font-black leading-tight text-[var(--color-ink)] md:text-5xl">
 				{pick(profile.name, locale)}
 			</h1>
+			{#if profile.realName}
+				<p class="mt-2 text-base font-bold text-[var(--color-muted)]">{pick(profile.realName, locale)}</p>
+			{/if}
 			<p class="mt-3 text-balance text-xl font-bold text-[var(--color-muted)]">{pick(profile.role, locale)}</p>
 		</div>
 		<p class="max-w-full break-words text-[1.45rem] font-black leading-tight text-[var(--color-ink)] md:text-3xl">
