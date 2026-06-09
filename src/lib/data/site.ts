@@ -18,6 +18,7 @@ export const site = {
 /** Top-level navigation. `key` maps to the i18n `nav.*` namespace. */
 export const navItems = [
 	{ key: 'projects', path: '/projects' },
-	{ key: 'blog', path: '/blog' },
+	// Temporarily hidden from the public navigation.
+	// { key: 'blog', path: '/blog' },
 	{ key: 'about', path: '/about' }
 ] as const;

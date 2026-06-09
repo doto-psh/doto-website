@@ -5,7 +5,7 @@
 	import ValuePillars from '$lib/components/sections/ValuePillars.svelte';
 	import PortfolioSummary from '$lib/components/sections/PortfolioSummary.svelte';
 	import FeaturedProjects from '$lib/components/sections/FeaturedProjects.svelte';
-	import BlogPreview from '$lib/components/sections/BlogPreview.svelte';
+	// import BlogPreview from '$lib/components/sections/BlogPreview.svelte';
 	import AboutTeaser from '$lib/components/sections/AboutTeaser.svelte';
 	import type { PageData } from './$types';
 
@@ -18,5 +18,5 @@
 <ValuePillars />
 <PortfolioSummary portfolio={data.portfolio} locale={data.locale} />
 <FeaturedProjects projects={data.projects} locale={data.locale} />
-<BlogPreview posts={data.posts} locale={data.locale} />
+<!-- <BlogPreview posts={data.posts} locale={data.locale} /> -->
 <AboutTeaser locale={data.locale} />
