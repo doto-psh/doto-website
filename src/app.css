@@ -66,6 +66,11 @@
 		overflow-x: clip;
 	}
 
+	html[lang='ko'] :where(h1, h2, h3, h4, p, li, a, button, span) {
+		word-break: keep-all;
+		overflow-wrap: break-word;
+	}
+
 	input,
 	textarea,
 	select,

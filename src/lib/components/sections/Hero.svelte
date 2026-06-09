@@ -25,21 +25,21 @@
 	<Container>
 		<div class="grid items-center gap-12 py-16 md:py-20 xl:min-h-[60vh] xl:grid-cols-[1.05fr_0.95fr]">
 			<!-- Copy -->
-			<div class="flex flex-col justify-center">
+			<div class="flex min-w-0 flex-col justify-center">
 				<span
-					class="reveal is-visible mb-5 w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]"
+					class="reveal is-visible mb-5 w-fit max-w-full rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]"
 				>
 					{$_('hero.eyebrow')}
 				</span>
 
-				<h1 class="text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]">
+				<h1 class="w-full max-w-full text-balance text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]">
 					<span class="block">{pick(profile.name, locale)}</span>
-					<span class="mt-3 block max-w-3xl text-3xl leading-tight text-[var(--color-accent)] sm:text-4xl md:text-5xl xl:text-[3.75rem]">
+					<span class="mt-3 block w-full max-w-full text-balance text-[1.75rem] leading-snug text-[var(--color-accent)] sm:text-4xl md:text-5xl xl:max-w-3xl xl:text-[3.75rem]">
 						{pick(profile.role, locale)}
 					</span>
 				</h1>
 
-				<p class="mt-7 max-w-xl text-lg font-medium text-[var(--color-muted)] md:text-xl">
+				<p class="mt-7 max-w-xl text-pretty text-lg font-medium text-[var(--color-muted)] md:text-xl">
 					{pick(profile.tagline, locale)}
 				</p>
 
