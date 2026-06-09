@@ -21,9 +21,11 @@
 
 	<div class="flex grow flex-col gap-4 p-5 md:p-6">
 		<div class="flex flex-wrap items-center gap-2">
-			<span class="rounded-md border border-[var(--color-line)] bg-[var(--color-surface-blue)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--color-accent)]">
-				{$_(`projectsPage.categories.${project.category}`)}
-			</span>
+			{#each project.category as cat (cat)}
+				<span class="rounded-md border border-[var(--color-line)] bg-[var(--color-surface-blue)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--color-accent)]">
+					{$_(`projectsPage.categories.${cat}`)}
+				</span>
+			{/each}
 			<span class="text-xs font-bold text-[var(--color-muted)]">{project.period}</span>
 		</div>
 

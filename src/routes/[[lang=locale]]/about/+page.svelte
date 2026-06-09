@@ -69,13 +69,19 @@
 			<h2 class="text-3xl font-black text-[var(--color-ink)] md:text-4xl">
 				{$_('portfolio.contactTitle')}
 			</h2>
-			<p class="text-lg text-[var(--color-muted)]">{$_('aboutPage.contactBody')}</p>
 			<div class="flex flex-wrap gap-3">
+				<!-- Resume PDF temporarily disabled
 				<Button href={profile.resumeUrl} variant="primary" size="lg">
 					{$_('hero.ctaSecondary')}
 				</Button>
+				-->
+				<!-- GitHub link temporarily disabled
 				<Button href={profile.github} variant="outline" size="lg" external>
 					GitHub <span aria-hidden="true">↗</span>
+				</Button>
+				-->
+				<Button href={`mailto:${profile.email}`} variant="primary" size="lg" external>
+					{profile.email}
 				</Button>
 			</div>
 		</div>

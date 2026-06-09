@@ -63,7 +63,8 @@ export interface Project {
 	title: Localized;
 	tagline: Localized;
 	description: Localized;
-	category: ProjectCategory;
+	/** One or more categories; the first is treated as the primary for cover visuals. */
+	category: ProjectCategory[];
 	role: Localized;
 	period: string;
 	stack: string[];

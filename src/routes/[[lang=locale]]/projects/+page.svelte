@@ -19,7 +19,7 @@
 	let filtered = $derived.by(() => {
 		const normalized = query.trim().toLowerCase();
 		return data.projects.filter((project) => {
-			const categoryMatch = selected === 'all' || project.category === selected;
+			const categoryMatch = selected === 'all' || project.category.includes(selected);
 			const haystack = [
 				pick(project.title, data.locale),
 				pick(project.tagline, data.locale),

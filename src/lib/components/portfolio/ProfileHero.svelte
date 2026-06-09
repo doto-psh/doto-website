@@ -43,12 +43,16 @@
 		</p>
 		<p class="max-w-full break-words text-pretty text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
 		<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+			<!-- Resume PDF temporarily disabled
 			<Button href={profile.resumeUrl} variant="primary" size="lg">
 				{$_('hero.ctaSecondary')}
 			</Button>
+			-->
+			<!-- GitHub link temporarily disabled
 			<Button href={profile.github} variant="outline" external size="lg">
 				GitHub <span aria-hidden="true">↗</span>
 			</Button>
+			-->
 			<Button href={`mailto:${profile.email}`} variant="ghost" external size="lg">
 				{profile.email}
 			</Button>

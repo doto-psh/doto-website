@@ -29,9 +29,11 @@
 		<h2 class="mt-2 text-2xl font-black text-[var(--color-ink)]">{$_('mascot.authorTitle')}</h2>
 		<p class="mt-2 max-w-2xl leading-relaxed text-[var(--color-muted)]">{$_('mascot.authorBody')}</p>
 		<div class="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+			<!-- GitHub link temporarily disabled
 			<Button href={profile.github} variant="outline" external>
 				GitHub <span aria-hidden="true">↗</span>
 			</Button>
+			-->
 			<Button href={`mailto:${profile.email}`} variant="ghost" external>
 				{$_('mascot.authorContact')}
 			</Button>

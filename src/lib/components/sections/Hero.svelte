@@ -47,12 +47,16 @@
 					<Button href={localizeHref('/projects', locale)} variant="primary" size="lg">
 						{$_('hero.ctaPrimary')} <span aria-hidden="true">→</span>
 					</Button>
+					<!-- Resume PDF temporarily disabled
 					<Button href={profile.resumeUrl} variant="outline" size="lg">
 						{$_('hero.ctaSecondary')}
 					</Button>
+					-->
+					<!-- GitHub link temporarily disabled
 					<Button href={profile.github} external variant="ghost" size="lg">
 						GitHub <span aria-hidden="true">↗</span>
 					</Button>
+					-->
 				</div>
 
 				<div class="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3 xl:hidden">

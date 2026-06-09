@@ -3,7 +3,7 @@
 
 	interface Props {
 		title: string;
-		category: ProjectCategory;
+		category: ProjectCategory[];
 		stack: string[];
 	}
 
@@ -23,7 +23,7 @@
 	<div class="flex h-full min-w-0 flex-col justify-between rounded-md border border-[var(--color-line)] bg-[var(--color-paper)] p-4">
 		<div class="flex items-center justify-between">
 			<span class="rounded-md bg-[var(--color-accent)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-white">
-				{labels[category]}
+				{labels[category[0]]}
 			</span>
 			<span class="text-[10px] font-black uppercase tracking-[0.16em] text-[var(--color-muted)]">case</span>
 		</div>

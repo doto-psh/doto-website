@@ -21,7 +21,7 @@
 	},
 	"hero": {
 		"eyebrow": "Developer Portfolio · AI · Backend · Frontend",
-		"title": "I structure problems\nand ship working products",
+		"title": "I build RAG systems\nthat real users rely on",
 		"subtitle": "A personal portfolio of AI document workflows, backend data flows, frontend experience, and deployment operations.",
 		"ctaPrimary": "View projects",
 		"ctaSecondary": "Resume PDF",
@@ -70,7 +70,7 @@
 		"cta": "View profile"
 	},
 	"footer": {
-		"tagline": "I structure problems and ship working products.",
+		"tagline": "AI backend engineer building production RAG systems.",
 		"explore": "Explore",
 		"connect": "Connect",
 		"newsletterHint": "Get updates on new projects and posts.",
@@ -125,14 +125,13 @@
 			"craft": { "title": "Operable implementation", "body": "I design for retries, failures, and deployed environments so the code can last." },
 			"sharing": { "title": "Written context", "body": "I write down problem-solving paths as notes and case studies to reduce collaboration cost." }
 		},
-		"contactTitle": "Contact",
-		"contactBody": "Send hiring, collaboration, or project inquiries by email."
+		"contactTitle": "Contact"
 	},
 	"portfolio": {
 		"profileEyebrow": "Profile",
-		"summaryEyebrow": "Portfolio System",
-		"summaryTitle": "Experience, skills, and activities in one editable structure",
-		"summarySubtitle": "Profile, skills, and timeline content now come from a single data file. Project and blog filtering/search remain intact.",
+		"summaryEyebrow": "Experience & Skills",
+		"summaryTitle": "Experience and skills I've built so far",
+		"summarySubtitle": "A quick overview of my core stack, career, and education.",
 		"viewFullProfile": "View full profile",
 		"skillsEyebrow": "Skills",
 		"skillsTitle": "Technical stack",
@@ -140,7 +139,7 @@
 		"timelineEyebrow": "Timeline",
 		"timelineTitle": "Education, certifications, career, and activities",
 		"timelineSubtitle": "Frequently updated profile history is managed as a structured timeline.",
-		"contactTitle": "Tell me about the problem you want to solve",
+		"contactTitle": "Open to new opportunities",
 		"openLink": "Open link",
 		"skillLevels": {
 			"core": "Core",

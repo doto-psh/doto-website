@@ -35,9 +35,11 @@
 
 			<div use:reveal={{ delay: 80 }} class="flex flex-col gap-6">
 				<div class="flex flex-wrap items-center gap-2">
-					<span class="w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
-						{$_(`projectsPage.categories.${project.category}`)}
-					</span>
+					{#each project.category as cat (cat)}
+						<span class="w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
+							{$_(`projectsPage.categories.${cat}`)}
+						</span>
+					{/each}
 					<span class="text-sm font-bold text-[var(--color-muted)]">{project.period}</span>
 				</div>
 

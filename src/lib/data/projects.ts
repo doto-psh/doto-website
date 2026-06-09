@@ -20,8 +20,9 @@ export function getProject(slug: string): Project | undefined {
 export function getRelatedProjects(slug: string, limit = 3): Project[] {
 	const current = getProject(slug);
 	if (!current) return [];
+	const shares = (p: Project) => p.category.some((c) => current.category.includes(c));
 	return projects
-		.filter((p) => p.slug !== slug && p.category === current.category)
-		.concat(projects.filter((p) => p.slug !== slug && p.category !== current.category))
+		.filter((p) => p.slug !== slug && shares(p))
+		.concat(projects.filter((p) => p.slug !== slug && !shares(p)))
 		.slice(0, limit);
 }

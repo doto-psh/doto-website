@@ -21,7 +21,7 @@ const mascotImages = {
 } as const;
 
 const contactLinks = {
-	email: 'shaprk5612@naver.com',
+	email: 'parkdoto@gmail.com',
 	github: 'https://github.com/doto-psh',
 	resumeUrl: '/resume.pdf'
 } as const;
@@ -33,7 +33,8 @@ export const content = {
 		url: 'https://dotorowoo.com',
 		...contactLinks,
 		social: [
-			{ label: 'GitHub', href: contactLinks.github },
+			// GitHub link temporarily disabled
+			// { label: 'GitHub', href: contactLinks.github },
 			{ label: 'Email', href: `mailto:${contactLinks.email}` }
 		] satisfies SocialLink[]
 	},
@@ -61,8 +62,8 @@ export const content = {
 				en: 'AI backend engineer building RAG·LLM products from preprocessing to serving'
 			},
 			tagline: {
-				ko: '문제를 구조화하고 운영 가능한 제품으로 만듭니다.',
-				en: 'I structure problems and turn them into operable products.'
+				ko: '실제 사용자가 쓰는 RAG 시스템을 설계하고 운영합니다.',
+				en: 'I design and operate RAG systems that real users rely on.'
 			},
 			bio: {
 				ko: '문서 전처리, 임베딩과 Vector DB 운영, RAG 검색 품질, 출처 검증 UX, LLM 서빙·배포까지 RAG 프로덕트의 전 구간을 end-to-end로 다룹니다. 실제로 운영 중인 K-Bot에서 문서 유형별 전처리 전략을 설계해 연말정산 시즌 단순 반복 문의를 약 15% 줄이는 데 기여했고, 서비스를 멈추지 않고 임베딩 모델을 교체하는 마이그레이션 체계를 구축했습니다. 문제를 재현하고, 상태를 명확히 나누고, 운영자가 따라갈 수 있는 흐름으로 정리하는 방식을 선호합니다.',
@@ -243,7 +244,7 @@ export const content = {
 				ko: 'K-Bot은 영림원소프트랩 AI ERP에 탑재된 업무용 AI 챗봇입니다. 모든 문서를 동일하게 처리하던 구조에서 벗어나, PDF·DOCX·PPT/PPTX·Excel·텍스트를 각 구조에 맞는 경로로 처리하도록 재설계했습니다. 표·이미지 문서는 Upstage Document Parse로 레이아웃을 분석하고, 페이지·슬라이드·시트 단위 출처를 보존해 검색 가능한 지식 단위로 변환합니다.',
 				en: 'K-Bot is the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP. I rebuilt a one-size-fits-all document flow into per-type routing for PDF, DOCX, PPT/PPTX, Excel, and text. Table- and image-heavy documents go through Upstage Document Parse for layout analysis, and page/slide/sheet-level sources are preserved as searchable knowledge units.'
 			},
-			category: 'ai',
+			category: ['ai', 'backend'],
 			role: { ko: 'Backend · AI/RAG', en: 'Backend · AI/RAG' },
 			period: '2026',
 			stack: ['Python', 'RAG', 'Upstage Document AI', 'Embeddings', 'Milvus/Zilliz'],
@@ -283,7 +284,7 @@ export const content = {
 				ko: '영림원소프트랩 AI ERP의 업무용 챗봇 K-Bot에서, Milvus/Zilliz 컬렉션·파티션 개수 한계를 partition key 기반 멀티테넌트 구조로 해결하고, 임베딩 모델 변경을 "준비→실행→검증→적용" 단계로 나눠 운영 중에도 안전하게 전환하는 마이그레이션 체계를 구현했습니다.',
 				en: 'For K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, I solved Milvus/Zilliz collection/partition limits with a partition-key multi-tenant structure, and built an embedding-model migration split into prepare → run → verify → apply so models can be swapped safely while the service is live.'
 			},
-			category: 'backend',
+			category: ['backend', 'ai'],
 			role: { ko: 'Backend · Database', en: 'Backend · Database' },
 			period: '2026',
 			stack: ['Python', 'Milvus/Zilliz', 'Embeddings', 'Background Jobs', 'WebSocket'],
@@ -323,7 +324,7 @@ export const content = {
 				ko: '영림원소프트랩 AI ERP의 업무용 챗봇 K-Bot에서, 문서 업로드부터 Vector DB 저장, RAG 검색, LLM 응답, 프론트엔드 렌더링, 문서 뷰어까지 이어지는 출처 추적 구조를 구현했습니다. LLM 답변의 인라인 citation을 백엔드 source metadata와 매칭해 클릭 가능한 번호 버튼으로 만들고, 클릭 시 해당 페이지·슬라이드·행으로 이동하는 뷰어를 연결했습니다.',
 				en: 'For K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, I built source tracking that spans upload, Vector DB storage, RAG retrieval, LLM response, frontend rendering, and the document viewer. Inline LLM citations are matched to backend source metadata, rendered as clickable numbered buttons that open a viewer at the exact page, slide, or row.'
 			},
-			category: 'frontend',
+			category: ['frontend', 'ai'],
 			role: { ko: 'Frontend · RAG UX', en: 'Frontend · RAG UX' },
 			period: '2026',
 			stack: ['Svelte', 'SSE/Streaming', 'PDF Viewer', 'SheetJS', 'Metadata'],
@@ -363,7 +364,7 @@ export const content = {
 				ko: 'Azure Logic Apps → Blob Storage → Storage Queue → worker로 이어지는 비동기 인제스트 파이프라인을 구성했습니다. 문서 변경 이벤트를 받아 유형별 파싱·청킹·임베딩을 거쳐 Milvus/Zilliz에 반영하며, 기존 색인은 신규 처리 성공 이후에만 교체하는 safe replace 방식으로 데이터 유실을 막았습니다.',
 				en: 'Built an async ingest pipeline: Azure Logic Apps → Blob Storage → Storage Queue → worker. It ingests change events, runs per-type parsing/chunking/embedding into Milvus/Zilliz, and uses safe-replace indexing — swapping the old index only after the new one succeeds — to prevent data loss.'
 			},
-			category: 'infra',
+			category: ['infra', 'backend'],
 			role: { ko: 'Backend · Cloud Infra', en: 'Backend · Cloud Infra' },
 			period: '2026',
 			stack: ['Azure Logic Apps', 'Blob Storage', 'Azure Queue', 'OpenAI', 'Milvus/Zilliz'],
@@ -403,7 +404,7 @@ export const content = {
 				ko: 'Gemma4 계열 모델을 GPU 서버에서 운영하기 위해 추론(vLLM)·API 프록시(LiteLLM)·설정 저장소(Postgres)·헬스체크를 분리한 Docker Compose 기반 배포 구조를 구성했습니다. 클라이언트는 LiteLLM의 일관된 OpenAI 호환 API로 접근하고, 내부에서는 vLLM이 GPU 추론을 담당합니다.',
 				en: 'Built a Docker Compose deployment for serving Gemma4-family models on GPU servers, separating inference (vLLM), API proxy (LiteLLM), config store (Postgres), and health checks. Clients hit a consistent OpenAI-compatible API via LiteLLM while vLLM handles GPU inference internally.'
 			},
-			category: 'infra',
+			category: ['infra', 'ai'],
 			role: { ko: 'Infra · LLM Ops', en: 'Infra · LLM Ops' },
 			period: '2026',
 			stack: ['vLLM', 'LiteLLM', 'Docker Compose', 'PostgreSQL', 'GPU'],

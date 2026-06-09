@@ -21,7 +21,7 @@
 	},
 	"hero": {
 		"eyebrow": "Developer Portfolio · AI · Backend · Frontend",
-		"title": "문제를 구조화하고\n작동하는 제품으로 만듭니다",
+		"title": "실제 사용자가 쓰는\nRAG 시스템을 만듭니다",
 		"subtitle": "AI 문서 처리, 백엔드 데이터 흐름, 프론트엔드 경험, 배포 운영을 실제 프로젝트로 정리한 개인 포트폴리오입니다.",
 		"ctaPrimary": "프로젝트 보기",
 		"ctaSecondary": "이력서 PDF",
@@ -70,7 +70,7 @@
 		"cta": "프로필 보기"
 	},
 	"footer": {
-		"tagline": "문제를 구조화하고 작동하는 제품으로 만듭니다.",
+		"tagline": "실제 운영되는 RAG 시스템을 만드는 AI 백엔드 개발자.",
 		"explore": "둘러보기",
 		"connect": "연결",
 		"newsletterHint": "새 프로젝트와 글 소식을 받아보세요.",
@@ -125,14 +125,13 @@
 			"craft": { "title": "운영 가능한 구현", "body": "재시도, 실패, 배포 환경까지 고려해 오래 유지되는 코드를 지향합니다." },
 			"sharing": { "title": "기록하는 습관", "body": "문제 해결 과정을 글과 케이스 스터디로 남겨 협업 비용을 줄입니다." }
 		},
-		"contactTitle": "연락하기",
-		"contactBody": "채용, 협업, 프로젝트 문의를 이메일로 보낼 수 있습니다."
+		"contactTitle": "연락하기"
 	},
 	"portfolio": {
 		"profileEyebrow": "Profile",
-		"summaryEyebrow": "Portfolio System",
-		"summaryTitle": "경력, 기술, 활동을 한 곳에서 관리합니다",
-		"summarySubtitle": "소개/스킬/타임라인은 하나의 데이터 파일에서 관리되도록 구성했습니다. 프로젝트와 블로그는 기존 필터와 검색 흐름을 유지합니다.",
+		"summaryEyebrow": "Experience & Skills",
+		"summaryTitle": "지금까지 쌓아온 경험과 기술",
+		"summarySubtitle": "핵심 기술 스택과 경력·학력을 한눈에 정리했습니다.",
 		"viewFullProfile": "전체 프로필 보기",
 		"skillsEyebrow": "Skills",
 		"skillsTitle": "기술 스택",
@@ -140,7 +139,7 @@
 		"timelineEyebrow": "Timeline",
 		"timelineTitle": "학력, 경력",
 		"timelineSubtitle": "포트폴리오에 자주 업데이트되는 이력 정보를 타임라인 형태로 관리합니다.",
-		"contactTitle": "같이 일할 문제를 이야기해 주세요",
+		"contactTitle": "함께할 기회를 기다립니다",
 		"openLink": "링크 열기",
 		"skillLevels": {
 			"core": "주력",
