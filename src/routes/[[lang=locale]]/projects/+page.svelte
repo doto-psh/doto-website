@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
-	import type { ProjectCategory } from '$lib/types';
-	import { projectCategories } from '$lib/data/projects';
+	import type { ProjectCategory, ProjectCompany } from '$lib/types';
+	import { projectCategories, projectCompanies } from '$lib/data/projects';
 	import Seo from '$lib/components/layout/Seo.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Tag from '$lib/components/ui/Tag.svelte';
@@ -14,12 +14,14 @@
 	let { data }: { data: PageData } = $props();
 
 	let selected = $state<ProjectCategory | 'all'>('all');
+	let selectedCompany = $state<ProjectCompany | 'all'>('all');
 	let query = $state('');
 
 	let filtered = $derived.by(() => {
 		const normalized = query.trim().toLowerCase();
 		return data.projects.filter((project) => {
 			const categoryMatch = selected === 'all' || project.category.includes(selected);
+			const companyMatch = selectedCompany === 'all' || project.company === selectedCompany;
 			const haystack = [
 				pick(project.title, data.locale),
 				pick(project.tagline, data.locale),
@@ -30,7 +32,7 @@
 			]
 				.join(' ')
 				.toLowerCase();
-			return categoryMatch && (!normalized || haystack.includes(normalized));
+			return categoryMatch && companyMatch && (!normalized || haystack.includes(normalized));
 		});
 	});
 </script>
@@ -72,15 +74,38 @@
 
 <section class="py-12 md:py-16">
 	<Container>
-		<div class="mb-10 grid max-w-full grid-cols-2 gap-2 border-b border-[var(--color-line)] pb-6 sm:flex sm:flex-wrap">
-			<Tag active={selected === 'all'} onclick={() => (selected = 'all')}>
-				{$_('projectsPage.all')}
-			</Tag>
-			{#each projectCategories as cat (cat)}
-				<Tag active={selected === cat} onclick={() => (selected = cat)}>
-					{$_(`projectsPage.categories.${cat}`)}
-				</Tag>
-			{/each}
+		<div class="mb-10 flex flex-col gap-4 border-b border-[var(--color-line)] pb-6">
+			<div class="flex flex-col gap-2">
+				<span class="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
+					{$_('projectsPage.categoryLabel')}
+				</span>
+				<div class="grid max-w-full grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+					<Tag active={selected === 'all'} onclick={() => (selected = 'all')}>
+						{$_('projectsPage.all')}
+					</Tag>
+					{#each projectCategories as cat (cat)}
+						<Tag active={selected === cat} onclick={() => (selected = cat)}>
+							{$_(`projectsPage.categories.${cat}`)}
+						</Tag>
+					{/each}
+				</div>
+			</div>
+
+			<div class="flex flex-col gap-2">
+				<span class="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
+					{$_('projectsPage.companyLabel')}
+				</span>
+				<div class="grid max-w-full grid-cols-2 gap-2 sm:flex sm:flex-wrap">
+					<Tag active={selectedCompany === 'all'} onclick={() => (selectedCompany = 'all')}>
+						{$_('projectsPage.all')}
+					</Tag>
+					{#each projectCompanies as company (company)}
+						<Tag active={selectedCompany === company} onclick={() => (selectedCompany = company)}>
+							{$_(`projectsPage.companies.${company}`)}
+						</Tag>
+					{/each}
+				</div>
+			</div>
 		</div>
 
 		{#if filtered.length}

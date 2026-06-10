@@ -2,6 +2,7 @@ import type {
 	PortfolioData,
 	Project,
 	ProjectCategory,
+	ProjectCompany,
 	SkillCategory,
 	SocialLink,
 	TimelineCategory
@@ -220,6 +221,8 @@ export const content = {
 
 	projectCategories: ['ai', 'backend', 'frontend', 'infra'] satisfies ProjectCategory[],
 
+	projectCompanies: ['younglimwon', 'ls-itc'] satisfies ProjectCompany[],
+
 	projects: [
 		{
 			slug: 'kbot-document-analysis',
@@ -236,6 +239,7 @@ export const content = {
 				en: 'I rebuilt a one-size-fits-all document flow into per-type routing for PDF, DOCX, PPT/PPTX, Excel, and text. Table- and image-heavy documents go through Upstage Document Parse for layout analysis, and page/slide/sheet-level sources are preserved as searchable knowledge units.'
 			},
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
+			company: 'younglimwon',
 			category: ['ai', 'backend'],
 			role: { ko: 'Backend · AI/RAG', en: 'Backend · AI/RAG' },
 			period: '2025.11 ~ 2026.02',
@@ -273,6 +277,7 @@ export const content = {
 				en: 'I built source tracking that spans upload, Vector DB storage, RAG retrieval and reranking, and the LLM response. Each chunk carries file/page/sheet/row metadata, and inline LLM citations are normalized and matched to that metadata so every answer is grounded to its exact source location.'
 			},
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
+			company: 'younglimwon',
 			category: ['ai', 'frontend'],
 			role: { ko: 'AI/RAG · Backend', en: 'AI/RAG · Backend' },
 			period: '2025.12 ~ 2026.01',
@@ -312,6 +317,7 @@ export const content = {
 				en: 'I solved Milvus/Zilliz collection/partition limits with a partition-key multi-tenant structure, and built an embedding-model migration split into prepare → run → verify → apply so models can be swapped safely while the service is live.'
 			},
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
+			company: 'younglimwon',
 			category: ['backend', 'ai'],
 			role: { ko: 'Backend · Database', en: 'Backend · Database' },
 			period: '2025.06 ~ 2026.06',
@@ -351,6 +357,7 @@ export const content = {
 				en: 'To consolidate documents scattered across internal service portals and SharePoint into RAG knowledge, I built an event-driven ingest pipeline: Azure Logic Apps → Blob Storage → an App Service API. Logic Apps catches change events from each source and calls the embedding/ingest API deployed on Azure App Service, which runs per-type parsing/chunking/embedding into Milvus/Zilliz and uses safe-replace indexing — swapping the old index only after the new one succeeds — to prevent data loss.'
 			},
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
+			company: 'younglimwon',
 			category: ['infra', 'backend'],
 			role: { ko: 'Backend · Cloud Infra', en: 'Backend · Cloud Infra' },
 			period: '2026.04 ~',
@@ -372,6 +379,46 @@ export const content = {
 			caseStudy: {
 				ko: '사내 서비스 포탈과 SharePoint에 흩어진 문서를 RAG에 쓰려면 매번 사람이 내려받고 추출·청킹·임베딩해야 했고, 문서가 수정될 때 기존 벡터를 안전하게 교체하지 않으면 옛 내용과 새 내용이 섞였습니다. 그래서 무거운 파싱·임베딩·저장 처리를 Azure App Service에 API로 배포하고, 각 소스의 변경을 감지한 Logic Apps가 Blob을 거쳐 이 API를 호출하도록 구성해 수집을 자동화했습니다. 문서 유형별 라우팅, token 한도 재검증, 외부 의존성(Upstage/OpenAI/Milvus) 오류의 도메인 분류, 기존 색인을 신규 처리 성공 후에만 교체하는 전략으로 운영 중에도 안전하게 지식을 확장할 수 있게 했습니다.',
 				en: 'Using documents scattered across internal service portals and SharePoint in RAG previously meant manually downloading, extracting, chunking, and embedding each time, and edits mixed old and new content unless vectors were safely replaced. So I deployed the heavy parsing, embedding, and storage work as an API on Azure App Service, and had Logic Apps — triggered by changes from each source — call it through Blob to automate ingestion. With per-type routing, token-limit re-validation, domain classification of external-dependency errors (Upstage/OpenAI/Milvus), and replacing the index only after new processing succeeds, knowledge expands safely while the service runs.'
+			},
+			featured: false
+		},
+		{
+			slug: 'ls-scr-crack-prediction',
+			title: {
+				ko: 'LS전선 SCR 공정 단선 크랙 원인 분석 및 예측 모델',
+				en: 'LS Cable SCR Process Crack-Cause Analysis & Prediction Model'
+			},
+			tagline: {
+				ko: '주조속도 이상 구간을 걸러내고 공정 데이터를 분석해 단선 크랙의 원인과 제어 조건을 도출한 데이터 분석 프로젝트',
+				en: 'A data analysis project that filtered out abnormal casting-speed segments and analyzed process data to find the causes and control conditions behind wire-breakage cracks'
+			},
+			description: {
+				ko: 'LS전선 SCR(연속 주조·압연) 공정에서 발생하는 단선 크랙의 영향인자와 공정조건 데이터 레디니스를 진단하는 프로젝트에 데이터 처리·분석 담당으로 참여했습니다(기여도 30%). 공정 데이터를 정제·분석해 크랙 발생 원인과 패턴을 규명하고, baseline 예측 모델로 제조 시스템 개선안을 제안했습니다.',
+				en: 'I joined an LS Cable project diagnosing data readiness for SCR (continuous casting & rolling) wire-breakage factors and process conditions, owning data processing and analysis (30% contribution). I cleaned and analyzed process data to identify the causes and patterns behind cracks, and proposed manufacturing improvements with a baseline prediction model.'
+			},
+			org: { ko: 'SCR 공정 진단 · LS ITC', en: 'SCR Diagnosis · LS ITC' },
+			company: 'ls-itc',
+			category: ['ai'],
+			role: { ko: '데이터 분석 인턴', en: 'Data Analysis Intern' },
+			period: '2023.11 ~ 2024.02',
+			stack: ['Python', 'Pandas', 'Data Analysis', 'ML Modeling'],
+			impact: {
+				ko: [
+					'주조속도 이상 구간 필터링 알고리즘으로 분석 데이터의 신뢰도 확보',
+					'크랙 발생 확률 baseline 모델로 제조 공정 개선 방향 제시'
+				],
+				en: [
+					'Improved analysis data reliability with a casting-speed anomaly filtering algorithm',
+					'Proposed manufacturing process improvements with a crack-probability baseline model'
+				]
+			},
+			highlights: {
+				ko: ['주조속도 이상 공정 필터링 알고리즘 개발', '크랙 발생 원인·공정 패턴 분석 → 최적 제어 조건 도출', '크랙 발생 확률 baseline 모델 구축'],
+				en: ['Built a casting-speed anomaly process-filtering algorithm', 'Analyzed crack causes/process patterns to derive optimal control conditions', 'Built a crack-probability baseline model']
+			},
+			caseStudy: {
+				ko: 'SCR 공정에서 발생하는 단선 크랙은 여러 공정 변수가 얽혀 있어 원인을 특정하기 어려웠고, 원본 공정 데이터에는 주조속도 이상 등 정상 조업 범위를 벗어난 구간이 섞여 있어 그대로 분석하면 원인 규명 결과가 왜곡될 위험이 있었습니다. 그래서 먼저 주조속도 이상 구간을 걸러내는 필터링 알고리즘을 만들어 분석 대상 데이터의 신뢰도를 확보하고, 이후 정제된 데이터로 공정 변수와 크랙 발생 이력을 교차 분석해 크랙과 상관관계가 높은 패턴과 제어 조건을 도출했습니다. 도출한 패턴을 바탕으로 크랙 발생 확률을 추정하는 baseline 예측 모델을 구축해, 제조팀이 검토할 수 있는 공정 개선 방향을 제안했습니다.',
+				en: 'Wire-breakage cracks in the SCR process were hard to attribute to a single cause because multiple process variables were entangled, and the raw process data contained segments where casting speed deviated from normal operation — analyzing it as-is risked distorting the root-cause findings. I first built a filtering algorithm to remove casting-speed anomaly segments, securing the reliability of the analysis dataset, then cross-analyzed process variables against crack occurrence history on the cleaned data to identify patterns and control conditions strongly correlated with cracks. Based on these patterns, I built a baseline model estimating crack probability, proposing process-improvement directions for the manufacturing team to review.'
 			},
 			featured: false
 		}

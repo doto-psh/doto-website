@@ -92,6 +92,12 @@
 			"backend": "Backend",
 			"frontend": "Frontend",
 			"infra": "Infra"
+		},
+		"categoryLabel": "분야",
+		"companyLabel": "소속",
+		"companies": {
+			"younglimwon": "영림원소프트랩",
+			"ls-itc": "LS ITC"
 		}
 	},
 	"projectPage": {
