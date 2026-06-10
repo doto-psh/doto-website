@@ -41,7 +41,7 @@
 		<p class="max-w-full break-words text-[1.45rem] font-black leading-tight text-[var(--color-ink)] md:text-3xl">
 			{pick(profile.tagline, locale)}
 		</p>
-		<p class="max-w-full break-words text-pretty text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
+		<p class="max-w-full whitespace-pre-line break-words text-pretty text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
 		<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 			<!-- Resume PDF temporarily disabled
 			<Button href={profile.resumeUrl} variant="primary" size="lg">

@@ -58,16 +58,16 @@ export const content = {
 			name: { ko: 'doto', en: 'doto' },
 			realName: { ko: '박수현', en: 'Suhyun Park' },
 			role: {
-				ko: '문서 전처리부터 검색 품질·답변 그라운딩까지 다루는 RAG·LLM AI 개발자',
-				en: 'AI engineer building RAG·LLM products from preprocessing to retrieval quality and grounding'
+				ko: '데이터에서 AI 프로덕트까지 만드는 개발자',
+				en: 'Engineer building from data to AI products'
 			},
 			tagline: {
-				ko: '실제 사용자가 쓰는 RAG 시스템을 설계하고, 검색 품질과 답변 근거를 책임집니다.',
-				en: 'I design RAG systems real users rely on, owning retrieval quality and answer grounding.'
+				ko: '실제 서비스되는 AI 프로덕트를 만들며, 데이터와 백엔드, AI를 잇는 개발자입니다.',
+				en: 'I build AI products that ship, connecting data, backend, and AI.'
 			},
 			bio: {
-				ko: '문서 전처리, 임베딩과 Vector DB 운영, RAG 검색 품질, 답변 출처 추적·그라운딩까지 RAG 프로덕트의 핵심 구간을 end-to-end로 다룹니다. 실제로 운영 중인 K-Bot에서 문서 유형별 전처리 전략을 설계해 연말정산 시즌 단순 반복 문의를 약 15% 줄이는 데 기여했고, 서비스를 멈추지 않고 임베딩 모델을 교체하는 마이그레이션 체계를 구축했습니다. 문제를 재현하고, 상태를 명확히 나누고, 운영자가 따라갈 수 있는 흐름으로 정리하는 방식을 선호합니다.',
-				en: 'I work end-to-end across the core of a RAG product: document preprocessing, embeddings and Vector DB operations, RAG retrieval quality, and answer source tracking and grounding. On K-Bot in production, I designed document-type-specific preprocessing that helped cut about 15% of repetitive year-end tax inquiries, and I built a migration system that swaps embedding models without service downtime. I prefer reproducible debugging, explicit state, and flows that operators can follow.'
+				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 AI 프로덕트 K-Bot을 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Milvus/Zilliz·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분명히 나누고, 작업 과정을 기록으로 남겨 다음에 다시 꺼내 쓸 수 있게 정리합니다. 이런 방식으로 K-Bot에서 연말정산 시즌 단순 반복 문의를 약 15% 줄이고, 서비스를 멈추지 않고 임베딩 모델을 교체하는 마이그레이션 체계를 만들기도 했습니다.\n\n아직 배워야 할 것이 많은 주니어 개발자로서, 특정 기술에 머무르지 않고 데이터·백엔드·AI로 역량을 넓혀가고 있습니다. 좋은 제품은 결국 동료, 그리고 비즈니스와의 긴밀한 소통 위에서 완성된다고 믿기에, 적극적으로 묻고 공유하며 팀과 함께 성장하는 개발자가 되고자 합니다.',
+				en: 'I started out in data analysis and now build K-Bot, a production AI product, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Milvus/Zilliz and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I own a feature, I like to see it through end to end: reproducing the problem, designing, implementing, and shipping. I reproduce issues clearly, keep state and boundaries explicit, and write things down so they can be reused later. Working this way, I helped cut about 15% of repetitive year-end tax inquiries on K-Bot and built a migration system that swaps embedding models with no downtime.\n\nAs a junior engineer with a lot still to learn, I am widening my range across data, backend, and AI rather than staying in one niche. I believe good products are built on close communication with teammates and the business, so I aim to ask, share, and grow together with my team.'
 			},
 			location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
 			photoUrl: mascotImages.profile,

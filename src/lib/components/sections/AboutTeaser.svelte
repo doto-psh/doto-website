@@ -26,7 +26,7 @@
 			<h2 class="text-3xl font-black text-[var(--color-ink)] md:text-4xl lg:text-5xl">
 				{pick(profile.role, locale)}
 			</h2>
-			<p class="text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
+			<p class="whitespace-pre-line text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
 		</div>
 		<Button href={localizeHref('/about', locale)} variant="primary">
 			{$_('aboutTeaser.cta')} <span aria-hidden="true">→</span>
