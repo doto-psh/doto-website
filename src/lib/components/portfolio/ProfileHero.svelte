@@ -2,7 +2,6 @@
 	import { _ } from 'svelte-i18n';
 	import type { Locale, Profile } from '$lib/types';
 	import { pick } from '$lib/i18n/routing';
-	import Button from '$lib/components/ui/Button.svelte';
 	import { reveal } from '$lib/actions/reveal';
 
 	interface Props {
@@ -34,7 +33,19 @@
 				{pick(profile.name, locale)}
 			</h1>
 			{#if profile.realName}
-				<p class="mt-2 text-base font-bold text-[var(--color-muted)]">{pick(profile.realName, locale)}</p>
+				<div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+					<p class="text-base font-bold text-[var(--color-muted)]">{pick(profile.realName, locale)}</p>
+					<a
+						href={`mailto:${profile.email}`}
+						class="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
+							<rect x="3" y="5" width="18" height="14" rx="2" />
+							<path d="m3 7 9 6 9-6" />
+						</svg>
+						{profile.email}
+					</a>
+				</div>
 			{/if}
 			<p class="mt-3 text-balance text-xl font-bold text-[var(--color-muted)]">{pick(profile.role, locale)}</p>
 		</div>
@@ -42,20 +53,5 @@
 			{pick(profile.tagline, locale)}
 		</p>
 		<p class="max-w-full whitespace-pre-line break-words text-pretty text-lg leading-relaxed text-[var(--color-muted)]">{pick(profile.bio, locale)}</p>
-		<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-			<!-- Resume PDF temporarily disabled
-			<Button href={profile.resumeUrl} variant="primary" size="lg">
-				{$_('hero.ctaSecondary')}
-			</Button>
-			-->
-			<!-- GitHub link temporarily disabled
-			<Button href={profile.github} variant="outline" external size="lg">
-				GitHub <span aria-hidden="true">↗</span>
-			</Button>
-			-->
-			<Button href={`mailto:${profile.email}`} variant="ghost" external size="lg">
-				{profile.email}
-			</Button>
-		</div>
 	</div>
 </div>
