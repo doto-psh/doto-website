@@ -44,6 +44,9 @@
 				</p>
 
 				<div class="mt-10 flex flex-wrap items-center gap-3">
+					<Button href={localizeHref('/about', locale)} variant="outline" size="lg">
+						{$_('hero.ctaAbout')}
+					</Button>
 					<Button href={localizeHref('/projects', locale)} variant="primary" size="lg">
 						{$_('hero.ctaPrimary')} <span aria-hidden="true">→</span>
 					</Button>

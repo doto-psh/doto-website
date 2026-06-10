@@ -24,6 +24,7 @@
 		"title": "실제 사용자가 쓰는\nRAG 시스템을 만듭니다",
 		"subtitle": "AI 문서 처리, 백엔드 데이터 흐름, 프론트엔드 경험, 배포 운영을 실제 프로젝트로 정리한 개인 포트폴리오입니다.",
 		"ctaPrimary": "프로젝트 보기",
+		"ctaAbout": "소개 보기",
 		"ctaSecondary": "이력서 PDF",
 		"scroll": "아래로 스크롤",
 		"signals": {
