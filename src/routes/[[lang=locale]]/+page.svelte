@@ -11,9 +11,14 @@
 
 	let { data }: { data: PageData } = $props();
 	let profile = $derived(data.portfolio.profile);
+	let realName = $derived(profile.realName ? pick(profile.realName, data.locale) : pick(profile.name, data.locale));
 </script>
 
-<Seo title={`${pick(profile.name, data.locale)} — doto`} description={pick(profile.tagline, data.locale)} locale={data.locale} />
+<Seo
+	title={`${realName} (doto) — ${pick(profile.role, data.locale)}`}
+	description={`${realName} · ${pick(profile.tagline, data.locale)}`}
+	locale={data.locale}
+/>
 
 <Hero {profile} locale={data.locale} />
 <ValuePillars />

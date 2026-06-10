@@ -152,12 +152,12 @@ export const content = {
 				organization: { ko: '영림원소프트랩 · AIWG', en: 'Younglimwon Soft Lab · AIWG' },
 				period: { ko: '2024.08 ~ 재직중 (사원)', en: 'Aug 2024 ~ Present (Employee)' },
 				description: {
-					ko: '영림원소프트랩 AI ERP에 탑재된 업무용 AI 챗봇 K-Bot의 백엔드를 개발하며, 문서 전처리부터 Vector DB 운영과 임베딩 모델 마이그레이션, 답변 출처 추적·그라운딩까지 RAG 파이프라인 전반을 구현했습니다.',
-					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB operations, embedding-model migration, and answer source tracking and grounding.'
+					ko: '영림원소프트랩 AI ERP에 탑재된 업무용 AI 챗봇 K-Bot의 백엔드를 개발하며, 문서 전처리부터 Vector DB 구조 및 메타데이터 설계, RAG 답변 출처 추적까지 RAG 파이프라인 전반을 구현했습니다.',
+					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking.'
 				},
 				highlights: {
-					ko: ['문서 유형별 전처리 전략', 'Vector DB 마이그레이션', 'RAG 출처 추적·그라운딩', 'SharePoint 자동 인제스트'],
-					en: ['Document-type preprocessing', 'Vector DB migration', 'RAG source tracking & grounding', 'SharePoint auto-ingestion']
+					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 MS SharePoint 문서 자동 수집 파이프라인 구축'],
+					en: ['Per-type parsing & chunking strategy', 'Vector DB structure & metadata design', 'Metadata-based source tracking after RAG', 'Azure-based SharePoint auto-ingestion pipeline']
 				},
 				stack: ['Python', 'FastAPI', 'Milvus/Zilliz', 'Azure', 'RAG']
 			},
@@ -222,8 +222,8 @@ export const content = {
 		{
 			slug: 'kbot-document-analysis',
 			title: {
-				ko: 'K-Bot 문서 정밀 분석 파이프라인',
-				en: 'K-Bot Document Analysis Pipeline'
+				ko: 'K-Bot 문서 유형별 파싱·청킹 파이프라인',
+				en: 'K-Bot Per-Type Parsing & Chunking Pipeline'
 			},
 			tagline: {
 				ko: '문서 유형별로 파싱·청킹·임베딩 전략을 분리해 RAG 검색 품질을 끌어올린 전처리 시스템',
@@ -261,8 +261,8 @@ export const content = {
 		{
 			slug: 'kbot-citation-viewer',
 			title: {
-				ko: 'K-Bot RAG 답변 출처 추적·그라운딩 시스템',
-				en: 'K-Bot RAG Citation & Source Grounding System'
+				ko: 'K-Bot RAG 메타데이터 기반 문서 출처 추적',
+				en: 'K-Bot Metadata-Based Document Source Tracking'
 			},
 			tagline: {
 				ko: 'LLM 답변의 인라인 citation을 청크 metadata와 매칭해 실제 문서 근거까지 추적하는 end-to-end 그라운딩 시스템',
@@ -300,8 +300,8 @@ export const content = {
 		{
 			slug: 'kbot-vector-db-migration',
 			title: {
-				ko: 'K-Bot Vector DB 구조 개선 및 임베딩 마이그레이션',
-				en: 'K-Bot Vector DB Restructuring & Zero-Downtime Embedding Migration'
+				ko: 'K-Bot Vector DB 구조 설계 및 임베딩 마이그레이션',
+				en: 'K-Bot Vector DB Structure Design & Embedding Migration'
 			},
 			tagline: {
 				ko: 'partition key 멀티테넌트 구조와, 서비스를 멈추지 않는 임베딩 모델 교체 체계',
@@ -314,7 +314,7 @@ export const content = {
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
 			category: ['backend', 'ai'],
 			role: { ko: 'Backend · Database', en: 'Backend · Database' },
-			period: '2026.03 ~ 2026.06',
+			period: '2025.06 ~ 2026.06',
 			stack: ['Python', 'Vector DB', 'Embeddings', 'WebSocket'],
 			impact: {
 				ko: [
@@ -339,8 +339,8 @@ export const content = {
 		{
 			slug: 'sharepoint-knowledge-ingestion',
 			title: {
-				ko: 'SharePoint 지식 확장 파이프라인',
-				en: 'SharePoint Knowledge Ingestion Pipeline'
+				ko: 'Azure 기반 MS SharePoint 문서 자동 수집 파이프라인',
+				en: 'Azure-Based SharePoint Document Auto-Ingestion Pipeline'
 			},
 			tagline: {
 				ko: 'SharePoint 문서 변경을 사람 개입 없이 RAG 지식베이스에 반영하는 이벤트 기반 백엔드',

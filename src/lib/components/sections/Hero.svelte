@@ -34,6 +34,11 @@
 
 				<h1 class="w-full max-w-full text-balance text-5xl font-black leading-[1.02] text-[var(--color-ink)] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[4.75rem]">
 					<span class="block">{pick(profile.name, locale)}</span>
+					{#if profile.realName}
+						<span class="mt-3 block text-lg font-bold text-[var(--color-muted)] sm:text-xl md:text-2xl">
+							{profile.realName.ko} · {profile.realName.en}
+						</span>
+					{/if}
 					<span class="mt-3 block w-full max-w-full text-balance text-[1.75rem] leading-snug text-[var(--color-accent)] sm:text-4xl md:text-5xl xl:max-w-3xl xl:text-[3.75rem]">
 						{pick(profile.role, locale)}
 					</span>
