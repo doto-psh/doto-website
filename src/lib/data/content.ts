@@ -66,8 +66,8 @@ export const content = {
 				en: 'I build AI products that ship, connecting data, backend, and AI.'
 			},
 			bio: {
-				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 AI 프로덕트 K-Bot을 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Milvus/Zilliz·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분명히 나누고, 작업 과정을 기록으로 남겨 다음에 다시 꺼내 쓸 수 있게 정리합니다. 이런 방식으로 K-Bot에서 연말정산 시즌 단순 반복 문의를 약 15% 줄이고, 서비스를 멈추지 않고 임베딩 모델을 교체하는 마이그레이션 체계를 만들기도 했습니다.\n\n아직 배워야 할 것이 많은 주니어 개발자로서, 특정 기술에 머무르지 않고 데이터·백엔드·AI로 역량을 넓혀가고 있습니다. 좋은 제품은 결국 동료, 그리고 비즈니스와의 긴밀한 소통 위에서 완성된다고 믿기에, 적극적으로 묻고 공유하며 팀과 함께 성장하는 개발자가 되고자 합니다.',
-				en: 'I started out in data analysis and now build K-Bot, a production AI product, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Milvus/Zilliz and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I own a feature, I like to see it through end to end: reproducing the problem, designing, implementing, and shipping. I reproduce issues clearly, keep state and boundaries explicit, and write things down so they can be reused later. Working this way, I helped cut about 15% of repetitive year-end tax inquiries on K-Bot and built a migration system that swaps embedding models with no downtime.\n\nAs a junior engineer with a lot still to learn, I am widening my range across data, backend, and AI rather than staying in one niche. I believe good products are built on close communication with teammates and the business, so I aim to ask, share, and grow together with my team.'
+				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 AI 프로덕트 K-Bot을 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Milvus/Zilliz·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분리하며, 작업 과정을 기록으로 남겨 다시 활용 가능한 형태로 정리합니다.\n\n특정 기술에 머무르기보다 데이터, 백엔드, AI를 연결해 실제 문제를 해결하는 개발자로 성장하고 있습니다. 기술을 단순한 구현 수단이 아니라, 동료와 비즈니스가 겪는 문제를 더 명확하게 해결하기 위한 도구로 다루고자 합니다.',
+				en: 'I started out in data analysis and now build K-Bot, a production AI product, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Milvus/Zilliz and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I take on a feature, I see it through end to end — reproducing the problem, designing, implementing, and shipping. I reproduce issues precisely, separate state from boundaries, and document the process so it can be reused.\n\nRather than staying within a single technology, I am growing into an engineer who connects data, backend, and AI to solve real problems. I want to treat technology not as a mere means of implementation, but as a tool to resolve the problems my teammates and the business face more clearly.'
 			},
 			location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
 			photoUrl: mascotImages.profile,
@@ -123,12 +123,12 @@ export const content = {
 				category: 'devops-infra',
 				title: { ko: 'DevOps / Infra', en: 'DevOps / Infra' },
 				description: {
-					ko: '문서 인제스트 파이프라인과 RAG 서비스를 운영 환경에서 안정적으로 배포·관리합니다.',
-					en: 'Deploys and operates document-ingestion pipelines and RAG services reliably in production.'
+					ko: '임베딩 API를 Azure App Service로 배포하고 Logic Apps·Blob으로 문서 인제스트 파이프라인을 구성해, RAG 서비스를 운영 환경에 안정적으로 연결합니다.',
+					en: 'I deploy the embedding API on Azure App Service and orchestrate document-ingestion pipelines with Logic Apps and Blob, connecting RAG services reliably to production.'
 				},
 				items: [
 					{ name: 'Docker', level: 'core' },
-					{ name: 'Azure (Logic Apps / Blob / Queue)', level: 'core' },
+					{ name: 'Azure (Logic Apps / Blob / App Service)', level: 'core' },
 				]
 			},
 			{
@@ -158,8 +158,8 @@ export const content = {
 					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking.'
 				},
 				highlights: {
-					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 MS SharePoint 문서 자동 수집 파이프라인 구축'],
-					en: ['Per-type parsing & chunking strategy', 'Vector DB structure & metadata design', 'Metadata-based source tracking after RAG', 'Azure-based SharePoint auto-ingestion pipeline']
+					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 외부 지식 자동 수집 파이프라인 구축'],
+					en: ['Per-type parsing & chunking strategy', 'Vector DB structure & metadata design', 'Metadata-based source tracking after RAG', 'Azure-based external knowledge ingestion pipeline']
 				},
 				stack: ['Python', 'FastAPI', 'Milvus/Zilliz', 'Azure', 'RAG']
 			},
@@ -242,11 +242,9 @@ export const content = {
 			stack: ['LangChain', 'Document parser', 'Embeddings', 'Milvus/Zilliz'],
 			impact: {
 				ko: [
-					'연말정산 시즌 단순 반복 문의를 약 15% 감소시키는 데 기여',
 					'PDF·DOCX·PPT·Excel·텍스트 5종 이상 문서 포맷을 단일 검색 단위로 통합 처리'
 				],
 				en: [
-					'Contributed to roughly a 15% drop in repetitive year-end tax inquiries',
 					'Unified 5+ document formats (PDF, DOCX, PPT, Excel, text) into a single retrieval unit'
 				]
 			},
@@ -339,41 +337,41 @@ export const content = {
 			featured: true
 		},
 		{
-			slug: 'sharepoint-knowledge-ingestion',
+			slug: 'external-knowledge-ingestion',
 			title: {
-				ko: 'Azure 기반 MS SharePoint 문서 자동 수집 파이프라인',
-				en: 'Azure-Based SharePoint Document Auto-Ingestion Pipeline'
+				ko: 'Azure 기반 외부 지식 자동 수집 파이프라인',
+				en: 'Azure-Based External Knowledge Ingestion Pipeline'
 			},
 			tagline: {
-				ko: 'SharePoint 문서 변경을 사람 개입 없이 RAG 지식베이스에 반영하는 이벤트 기반 백엔드',
-				en: 'An event-driven backend that reflects SharePoint changes into the RAG knowledge base with no manual work'
+				ko: '사내 서비스 포탈과 SharePoint의 문서를 사람 개입 없이 RAG 지식베이스로 자동 지식화하는 이벤트 기반 백엔드',
+				en: 'An event-driven backend that turns documents from internal service portals and SharePoint into RAG knowledge with no manual work'
 			},
 			description: {
-				ko: 'Azure Logic Apps → Blob Storage → Storage Queue → worker로 이어지는 비동기 인제스트 파이프라인을 구성했습니다. 문서 변경 이벤트를 받아 유형별 파싱·청킹·임베딩을 거쳐 Milvus/Zilliz에 반영하며, 기존 색인은 신규 처리 성공 이후에만 교체하는 safe replace 방식으로 데이터 유실을 막았습니다.',
-				en: 'Built an async ingest pipeline: Azure Logic Apps → Blob Storage → Storage Queue → worker. It ingests change events, runs per-type parsing/chunking/embedding into Milvus/Zilliz, and uses safe-replace indexing — swapping the old index only after the new one succeeds — to prevent data loss.'
+				ko: '사내 서비스 포탈과 SharePoint에 흩어진 문서를 RAG 지식으로 모으기 위해, Azure Logic Apps → Blob Storage → App Service API로 이어지는 이벤트 기반 인제스트 파이프라인을 구성했습니다. 각 소스의 문서 변경 이벤트를 Logic Apps가 받아 Azure App Service에 배포한 임베딩·인제스트 API를 호출하고, 유형별 파싱·청킹·임베딩을 거쳐 Milvus/Zilliz에 반영하며, 기존 색인은 신규 처리 성공 이후에만 교체하는 safe replace 방식으로 데이터 유실을 막았습니다.',
+				en: 'To consolidate documents scattered across internal service portals and SharePoint into RAG knowledge, I built an event-driven ingest pipeline: Azure Logic Apps → Blob Storage → an App Service API. Logic Apps catches change events from each source and calls the embedding/ingest API deployed on Azure App Service, which runs per-type parsing/chunking/embedding into Milvus/Zilliz and uses safe-replace indexing — swapping the old index only after the new one succeeds — to prevent data loss.'
 			},
 			org: { ko: 'K-Bot · 영림원', en: 'K-Bot · Younglimwon' },
 			category: ['infra', 'backend'],
 			role: { ko: 'Backend · Cloud Infra', en: 'Backend · Cloud Infra' },
 			period: '2026.04 ~',
-			stack: ['Azure Logic Apps', 'Blob Storage', 'Azure Queue', 'OpenAI', 'Milvus/Zilliz'],
+			stack: ['Azure Logic Apps', 'Blob Storage', 'Azure App Service', 'OpenAI', 'Milvus/Zilliz'],
 			impact: {
 				ko: [
-					'SharePoint 문서 변경을 사람 개입 없이 RAG 지식베이스에 자동 반영',
-					'safe replace indexing과 retry/poison queue로 재색인 중 데이터 유실·장애 전파를 차단'
+					'사내 서비스 포탈·SharePoint의 문서 변경을 사람 개입 없이 RAG 지식베이스에 자동 반영',
+					'safe replace indexing과 재시도·오류 처리로 재색인 중 데이터 유실·장애 전파를 차단'
 				],
 				en: [
-					'Auto-reflects SharePoint document changes into the RAG knowledge base with no manual work',
-					'Prevented data loss and failure propagation during reindexing with safe-replace indexing and retry/poison queue'
+					'Auto-reflects document changes from internal service portals and SharePoint into the RAG knowledge base with no manual work',
+					'Prevented data loss and failure propagation during reindexing with safe-replace indexing and retry/error handling'
 				]
 			},
 			highlights: {
-				ko: ['Blob 이벤트 기반 ingest API', 'Queue worker 비동기 처리', 'safe replace indexing'],
-				en: ['Blob-event ingest API', 'Async queue worker', 'Safe-replace indexing']
+				ko: ['Logic Apps 이벤트 기반 자동 수집', 'App Service 배포 임베딩 API', 'safe replace indexing'],
+				en: ['Logic Apps event-driven ingestion', 'App Service-hosted embedding API', 'Safe-replace indexing']
 			},
 			caseStudy: {
-				ko: 'SharePoint 문서를 RAG에 쓰려면 매번 사람이 내려받고 추출·청킹·임베딩해야 했고, 문서가 수정될 때 기존 벡터를 안전하게 교체하지 않으면 옛 내용과 새 내용이 섞였습니다. 그래서 HTTP 요청은 Queue에 적재하고 즉시 반환한 뒤, worker가 무거운 파싱·임베딩·저장을 담당하도록 분리했습니다. 문서 유형별 라우팅, token 한도 재검증, 외부 의존성(Upstage/OpenAI/Milvus) 오류의 도메인 분류, 기존 색인을 신규 처리 성공 후에만 교체하는 전략으로 운영 중에도 안전하게 지식을 확장할 수 있게 했습니다.',
-				en: 'Using SharePoint docs in RAG previously meant manually downloading, extracting, chunking, and embedding each time, and edits mixed old and new content unless vectors were safely replaced. I queued HTTP requests and returned immediately, letting a worker handle heavy parsing, embedding, and storage. With per-type routing, token-limit re-validation, domain classification of external-dependency errors (Upstage/OpenAI/Milvus), and replacing the index only after new processing succeeds, knowledge expands safely while the service runs.'
+				ko: '사내 서비스 포탈과 SharePoint에 흩어진 문서를 RAG에 쓰려면 매번 사람이 내려받고 추출·청킹·임베딩해야 했고, 문서가 수정될 때 기존 벡터를 안전하게 교체하지 않으면 옛 내용과 새 내용이 섞였습니다. 그래서 무거운 파싱·임베딩·저장 처리를 Azure App Service에 API로 배포하고, 각 소스의 변경을 감지한 Logic Apps가 Blob을 거쳐 이 API를 호출하도록 구성해 수집을 자동화했습니다. 문서 유형별 라우팅, token 한도 재검증, 외부 의존성(Upstage/OpenAI/Milvus) 오류의 도메인 분류, 기존 색인을 신규 처리 성공 후에만 교체하는 전략으로 운영 중에도 안전하게 지식을 확장할 수 있게 했습니다.',
+				en: 'Using documents scattered across internal service portals and SharePoint in RAG previously meant manually downloading, extracting, chunking, and embedding each time, and edits mixed old and new content unless vectors were safely replaced. So I deployed the heavy parsing, embedding, and storage work as an API on Azure App Service, and had Logic Apps — triggered by changes from each source — call it through Blob to automate ingestion. With per-type routing, token-limit re-validation, domain classification of external-dependency errors (Upstage/OpenAI/Milvus), and replacing the index only after new processing succeeds, knowledge expands safely while the service runs.'
 			},
 			featured: false
 		}
