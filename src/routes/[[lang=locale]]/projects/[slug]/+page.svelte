@@ -30,11 +30,16 @@
 
 		<div class="mt-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
 			<div use:reveal class="lg:sticky lg:top-28 lg:self-start">
-				<ProjectCover {title} category={project.category} stack={project.stack} />
+				<ProjectCover category={project.category} stack={project.stack} />
 			</div>
 
 			<div use:reveal={{ delay: 80 }} class="flex flex-col gap-6">
 				<div class="flex flex-wrap items-center gap-2">
+					{#if project.org}
+						<span class="w-fit rounded-md bg-[var(--color-accent)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
+							{pick(project.org, data.locale)}
+						</span>
+					{/if}
 					{#each project.category as cat (cat)}
 						<span class="w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
 							{$_(`projectsPage.categories.${cat}`)}

@@ -2,7 +2,6 @@
 	import { _ } from 'svelte-i18n';
 	import type { Locale, Project } from '$lib/types';
 	import { localizeHref, pick } from '$lib/i18n/routing';
-	import ProjectCover from './ProjectCover.svelte';
 
 	interface Props {
 		project: Project;
@@ -17,9 +16,13 @@
 	class="group flex h-full min-w-0 flex-col overflow-hidden rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-[0_22px_55px_rgba(16,24,39,0.1)]"
 	data-cursor-hover
 >
-	<ProjectCover title={pick(project.title, locale)} category={project.category} stack={project.stack} />
-
 	<div class="flex grow flex-col gap-4 p-5 md:p-6">
+		{#if project.org}
+			<span class="w-fit rounded-md bg-[var(--color-accent)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-white">
+				{pick(project.org, locale)}
+			</span>
+		{/if}
+
 		<div class="flex flex-wrap items-center gap-2">
 			{#each project.category as cat (cat)}
 				<span class="rounded-md border border-[var(--color-line)] bg-[var(--color-surface-blue)] px-2 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-[var(--color-accent)]">

@@ -2,12 +2,11 @@
 	import type { ProjectCategory } from '$lib/types';
 
 	interface Props {
-		title: string;
 		category: ProjectCategory[];
 		stack: string[];
 	}
 
-	let { title, category, stack }: Props = $props();
+	let { category, stack }: Props = $props();
 
 	const labels: Record<ProjectCategory, string> = {
 		ai: 'AI',
@@ -30,7 +29,10 @@
 
 		<div class="space-y-3">
 			<div class="h-2 w-20 rounded-sm bg-[var(--color-accent)]"></div>
-			<h3 class="max-w-full text-xl font-black leading-tight text-[var(--color-ink)] md:text-2xl">{title}</h3>
+			<div class="space-y-2">
+				<span class="block h-3 w-full rounded-sm bg-[var(--color-surface-blue)]"></span>
+				<span class="block h-3 w-4/5 rounded-sm bg-[var(--color-surface-blue)]"></span>
+			</div>
 			<div class="grid grid-cols-3 gap-2">
 				<span class="h-12 rounded-md border border-[var(--color-line)] bg-[var(--color-surface)]"></span>
 				<span class="h-12 rounded-md border border-[var(--color-line)] bg-[var(--color-surface-blue)]"></span>
