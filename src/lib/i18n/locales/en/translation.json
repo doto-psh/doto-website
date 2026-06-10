@@ -142,6 +142,7 @@
 		"timelineSubtitle": "Frequently updated profile history is managed as a structured timeline.",
 		"contactTitle": "Open to new opportunities",
 		"openLink": "Open link",
+		"flipHint": "Click to flip",
 		"skillLevels": {
 			"core": "Core",
 			"working": "Working",

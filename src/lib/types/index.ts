@@ -19,6 +19,8 @@ export interface Profile {
 	bio: Localized;
 	location: Localized;
 	photoUrl: string;
+	/** Optional real photo revealed when the character image is clicked (flip interaction). */
+	realPhotoUrl?: string;
 	email: string;
 	github: string;
 	resumeUrl: string;

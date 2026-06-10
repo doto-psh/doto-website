@@ -71,6 +71,8 @@ export const content = {
 			},
 			location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
 			photoUrl: mascotImages.profile,
+				// TODO: replace with a real photo; using a placeholder avatar for now.
+				realPhotoUrl: '/profile.svg',
 			...contactLinks
 		},
 		skills: [
