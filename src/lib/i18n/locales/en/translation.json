@@ -92,6 +92,12 @@
 			"backend": "Backend",
 			"frontend": "Frontend",
 			"infra": "Infra"
+		},
+		"categoryLabel": "Category",
+		"companyLabel": "Company",
+		"companies": {
+			"younglimwon": "Younglimwon Soft Lab",
+			"ls-itc": "LS ITC"
 		}
 	},
 	"projectPage": {

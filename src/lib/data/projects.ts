@@ -1,9 +1,10 @@
 import { content } from '$lib/data/content';
-import type { Project, ProjectCategory } from '$lib/types';
+import type { Project, ProjectCategory, ProjectCompany } from '$lib/types';
 
 const projects: Project[] = content.projects;
 
 export const projectCategories: ProjectCategory[] = [...content.projectCategories];
+export const projectCompanies: ProjectCompany[] = [...content.projectCompanies];
 
 export function getProjects(): Project[] {
 	return projects;

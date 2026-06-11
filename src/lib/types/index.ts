@@ -7,6 +7,7 @@ export const DEFAULT_LOCALE: Locale = 'ko';
 export type Localized<T = string> = Record<Locale, T> & Partial<Record<string, T>>;
 
 export type ProjectCategory = 'ai' | 'backend' | 'frontend' | 'infra';
+export type ProjectCompany = 'younglimwon' | 'ls-itc';
 export type TimelineCategory = 'education' | 'certification' | 'career' | 'activity';
 export type SkillCategory = 'frontend' | 'backend' | 'AI/LLM' | 'database' | 'devops-infra';
 
@@ -69,6 +70,8 @@ export interface Project {
 	org?: Localized;
 	/** One or more categories; the first is treated as the primary for cover visuals. */
 	category: ProjectCategory[];
+	/** Company the work was done for; used for company-based filtering. */
+	company: ProjectCompany;
 	role: Localized;
 	period: string;
 	stack: string[];
