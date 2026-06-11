@@ -105,7 +105,8 @@ export const content = {
 					{ name: 'Python', level: 'core' },
 					{ name: 'FastAPI', level: 'core' },
 					{ name: 'REST API', level: 'core' },
-					{ name: 'OAuth 2.0 / 2.1', level: 'working' }
+					{ name: 'OAuth 2.0 / 2.1', level: 'working' },
+					{ name: 'Google Workspace / Microsoft Graph API', level: 'working' }
 				]
 			},
 			{
@@ -161,10 +162,10 @@ export const content = {
 					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking.'
 				},
 				highlights: {
-					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 외부 지식 자동 수집 파이프라인 구축'],
-					en: ['Per-type parsing & chunking strategy', 'Vector DB structure & metadata design', 'Metadata-based source tracking after RAG', 'Azure-based external knowledge ingestion pipeline']
+					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 외부 지식 자동 수집 파이프라인 구축', 'AI 에이전트용 MCP 서버 개발(Google Workspace·Microsoft 365)'],
+					en: ['Per-type parsing & chunking strategy', 'Vector DB structure & metadata design', 'Metadata-based source tracking after RAG', 'Azure-based external knowledge ingestion pipeline', 'MCP servers for AI agents (Google Workspace · Microsoft 365)']
 				},
-				stack: ['Python', 'FastAPI', 'Milvus/Zilliz', 'Azure', 'RAG']
+				stack: ['Python', 'FastAPI', 'Milvus/Zilliz', 'Azure', 'RAG', 'MCP']
 			},
 			{
 				id: 'career-ls-itc',
@@ -322,7 +323,7 @@ export const content = {
 			company: 'younglimwon',
 			category: ['backend', 'ai'],
 			role: { ko: 'Backend · Database', en: 'Backend · Database' },
-			period: '2025.06 ~ 2026.06',
+			period: '2025.11 ~ 2026.04',
 			stack: ['Python', 'Vector DB', 'Embeddings', 'WebSocket'],
 			impact: {
 				ko: [
@@ -398,7 +399,8 @@ export const content = {
 				ko: 'AI 에이전트가 별도의 API 지식 없이 자연어 명령만으로 Google Workspace와 Microsoft 365 업무를 수행하도록 하는 MCP(Model Context Protocol) 서버를 개발했습니다. Gmail·Drive·Calendar·Teams·Outlook·OneDrive·SharePoint 등 두 생태계 13개 서비스를 약 100개의 AI 도구로 통합하고, 사용자 식별부터 토큰 조회·갱신, 권한 검증, 실제 API 호출까지의 복잡성을 서버가 흡수하도록 설계했습니다. 인증·세션·토큰 갱신 같은 횡단 관심사는 데코레이터로 분리해, 새 도구는 비즈니스 로직만 작성하면 추가되도록 표준화했습니다.',
 				en: 'I built an MCP (Model Context Protocol) server that lets an AI agent perform Google Workspace and Microsoft 365 tasks from natural-language commands alone, without any API knowledge. It integrates 13 services across both ecosystems — Gmail, Drive, Calendar, Teams, Outlook, OneDrive, SharePoint, and more — into ~100 AI tools, with the server absorbing everything from user identification to token lookup/refresh, permission checks, and the actual API calls. Cross-cutting concerns such as auth, session, and token refresh are separated via decorators, so a new tool only needs its business logic.'
 			},
-			org: { ko: '영림원', en: 'Younglimwon' },
+			org: { ko: 'MCP · 영림원', en: 'Younglimwon' },
+			company: 'younglimwon',
 			category: ['ai', 'backend'],
 			role: { ko: 'Backend · AI/Agent', en: 'Backend · AI/Agent' },
 			period: '2025.03 ~ 2025.07',
