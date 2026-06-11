@@ -85,7 +85,7 @@
 		"all": "전체",
 		"searchLabel": "프로젝트 검색",
 		"searchPlaceholder": "스택, 역할, 문제, 결과로 검색",
-		"viewDetail": "케이스 스터디 보기",
+		"viewDetail": "자세히 보기",
 		"empty": "조건에 맞는 프로젝트가 없습니다.",
 		"categories": {
 			"ai": "AI",
@@ -105,7 +105,7 @@
 		"role": "역할",
 		"stack": "스택",
 		"impact": "임팩트",
-		"caseStudy": "케이스 스터디",
+		"caseStudy": "문제 해결 과정",
 		"highlights": "핵심 포인트",
 		"github": "GitHub 확인",
 		"live": "라이브 보기",
@@ -130,7 +130,7 @@
 		"values": {
 			"clarity": { "title": "명확한 원인", "body": "현상만 고치지 않고 요청 흐름과 상태 변화를 끝까지 추적합니다." },
 			"craft": { "title": "운영 가능한 구현", "body": "재시도, 실패, 배포 환경까지 고려해 오래 유지되는 코드를 지향합니다." },
-			"sharing": { "title": "기록하는 습관", "body": "문제 해결 과정을 글과 케이스 스터디로 남겨 협업 비용을 줄입니다." }
+			"sharing": { "title": "기록하는 습관", "body": "문제 해결 과정을 글로 남겨 협업 비용을 줄입니다." }
 		},
 		"contactTitle": "연락하기"
 	},

@@ -85,7 +85,7 @@
 		"all": "All",
 		"searchLabel": "Search projects",
 		"searchPlaceholder": "Search by stack, role, problem, or outcome",
-		"viewDetail": "View case study",
+		"viewDetail": "View details",
 		"empty": "No projects match these filters.",
 		"categories": {
 			"ai": "AI",
@@ -105,7 +105,7 @@
 		"role": "Role",
 		"stack": "Stack",
 		"impact": "Impact",
-		"caseStudy": "Case study",
+		"caseStudy": "Problem-solving process",
 		"highlights": "Highlights",
 		"github": "View GitHub",
 		"live": "View live",

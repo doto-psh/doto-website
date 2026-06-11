@@ -249,10 +249,10 @@ export const content = {
 			stack: ['LangChain', 'Document parser', 'Embeddings', 'Milvus/Zilliz'],
 			impact: {
 				ko: [
-					'PDF·DOCX·PPT·Excel·텍스트 5종 이상 문서 포맷을 단일 검색 단위로 통합 처리'
+					'문서 유형과 사용 목적에 따라 전처리 경로를 분리하는 RAG 문서 처리 구조 설계',
 				],
 				en: [
-					'Unified 5+ document formats (PDF, DOCX, PPT, Excel, text) into a single retrieval unit'
+					'Designed a RAG document-processing structure that separates preprocessing paths by document type and usage context',
 				]
 			},
 			highlights: {
