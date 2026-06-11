@@ -59,12 +59,12 @@ export const content = {
 			name: { ko: 'doto', en: 'doto' },
 			realName: { ko: '박수현', en: 'Suhyun Park' },
 			role: {
-				ko: '데이터에서 AI 프로덕트까지 만드는 개발자',
-				en: 'Engineer building from data to AI products'
+				ko: 'AI 개발자',
+				en: 'AI Engineer'
 			},
 			tagline: {
-				ko: '실제 서비스되는 AI 프로덕트를 만들며, 데이터와 백엔드, AI를 잇는 개발자입니다.',
-				en: 'I build AI products that ship, connecting data, backend, and AI.'
+				ko: 'LLM과 데이터로 실제 서비스에서 동작하는 AI 기능을 개발합니다.',
+				en: 'I build AI features that work in real services, using LLMs and data.'
 			},
 			bio: {
 				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 AI 프로덕트 K-Bot을 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Milvus/Zilliz·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분리하며, 작업 과정을 기록으로 남겨 다시 활용 가능한 형태로 정리합니다.\n\n특정 기술에 머무르기보다 데이터, 백엔드, AI를 연결해 실제 문제를 해결하는 개발자로 성장하고 있습니다. 기술을 단순한 구현 수단이 아니라, 동료와 비즈니스가 겪는 문제를 더 명확하게 해결하기 위한 도구로 다루고자 합니다.',
