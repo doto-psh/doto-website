@@ -158,8 +158,8 @@ export const content = {
 				organization: { ko: '영림원소프트랩 · AIWG', en: 'Younglimwon Soft Lab · AIWG' },
 				period: { ko: '2024.08 ~ 재직중 (사원)', en: 'Aug 2024 ~ Present (Employee)' },
 				description: {
-					ko: '영림원소프트랩 AI ERP에 탑재된 업무용 AI 챗봇 K-Bot의 백엔드를 개발하며, 문서 전처리부터 Vector DB 구조 및 메타데이터 설계, RAG 답변 출처 추적까지 RAG 파이프라인 전반을 구현했습니다.',
-					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking.'
+					ko: '영림원소프트랩 AI ERP에 탑재된 업무용 AI 챗봇 K-Bot의 백엔드를 개발하며, 문서 전처리부터 Vector DB 구조 및 메타데이터 설계, RAG 답변 출처 추적까지 RAG 파이프라인 전반을 구현했습니다. 이와 함께 AI 에이전트가 자연어만으로 Google Workspace·Microsoft 365 업무를 수행하도록 하는 MCP 서버도 개발했습니다.',
+					en: 'Developed the backend of K-Bot, the in-product AI assistant in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking. I also built MCP servers that let AI agents perform Google Workspace and Microsoft 365 tasks from natural language alone.'
 				},
 				highlights: {
 					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 외부 지식 자동 수집 파이프라인 구축', 'AI 에이전트용 MCP 서버 개발(Google Workspace·Microsoft 365)'],
@@ -399,7 +399,7 @@ export const content = {
 				ko: 'AI 에이전트가 별도의 API 지식 없이 자연어 명령만으로 Google Workspace와 Microsoft 365 업무를 수행하도록 하는 MCP(Model Context Protocol) 서버를 개발했습니다. Gmail·Drive·Calendar·Teams·Outlook·OneDrive·SharePoint 등 두 생태계 13개 서비스를 약 100개의 AI 도구로 통합하고, 사용자 식별부터 토큰 조회·갱신, 권한 검증, 실제 API 호출까지의 복잡성을 서버가 흡수하도록 설계했습니다. 인증·세션·토큰 갱신 같은 횡단 관심사는 데코레이터로 분리해, 새 도구는 비즈니스 로직만 작성하면 추가되도록 표준화했습니다.',
 				en: 'I built an MCP (Model Context Protocol) server that lets an AI agent perform Google Workspace and Microsoft 365 tasks from natural-language commands alone, without any API knowledge. It integrates 13 services across both ecosystems — Gmail, Drive, Calendar, Teams, Outlook, OneDrive, SharePoint, and more — into ~100 AI tools, with the server absorbing everything from user identification to token lookup/refresh, permission checks, and the actual API calls. Cross-cutting concerns such as auth, session, and token refresh are separated via decorators, so a new tool only needs its business logic.'
 			},
-			org: { ko: 'MCP · 영림원', en: 'Younglimwon' },
+			org: { ko: 'MCP · 영림원', en: 'MCP · Younglimwon' },
 			company: 'younglimwon',
 			category: ['ai', 'backend'],
 			role: { ko: 'Backend · AI/Agent', en: 'Backend · AI/Agent' },
@@ -425,7 +425,7 @@ export const content = {
 				ko: 'AI 에이전트가 실제 업무를 수행하려면 서비스마다 다른 API, OAuth 인증, 토큰 갱신, 다중 사용자 권한을 모두 다뤄야 하는데, 이 복잡성을 에이전트에 그대로 노출하면 도구가 늘수록 유지보수가 어려워집니다. 그래서 인증·세션·토큰 갱신·캐싱 같은 횡단 관심사를 데코레이터 계층으로 분리해, 기능 도구는 인증을 전혀 모른 채 주입받은 인증 클라이언트만 사용하도록 설계했습니다. 미인증 시에는 단순 에러 대신 인증 URL을 반환해 에이전트가 스스로 복구하도록 만들고, mcp_session_id–사용자 immutable 바인딩과 활성 도구 기준 동적 스코프 산출로 다중 사용자 환경의 교차 계정 접근과 과도한 권한 요청을 차단했습니다. 그 결과 두 생태계 13개 서비스를 약 100개 도구로 통합하면서도, 새 도구는 비즈니스 로직만 작성하면 동일한 인증·보안 보장을 그대로 적용받는 확장 구조를 갖췄습니다.',
 				en: 'For an AI agent to do real work, every service brings a different API, OAuth flow, token refresh, and multi-user permissions — and exposing that complexity to the agent makes maintenance harder as tools grow. So I separated cross-cutting concerns (auth, session, token refresh, caching) into a decorator layer, letting feature tools stay unaware of auth and use only an injected, authenticated client. On failure, the server returns an auth URL instead of a plain error so the agent can self-recover, and immutable mcp_session_id–user binding plus dynamic per-active-tool scopes block cross-account access and over-broad permissions in multi-user settings. The result integrates 13 services into ~100 tools while keeping an extensible structure where new tools inherit the same auth and security guarantees by writing business logic alone.'
 			},
-			featured: true
+			featured: false
 		},
 		{
 			slug: 'ls-scr-crack-prediction',
