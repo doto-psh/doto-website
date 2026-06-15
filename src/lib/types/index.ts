@@ -66,7 +66,7 @@ export interface Project {
 	title: Localized;
 	tagline: Localized;
 	description: Localized;
-	/** Optional product/company the work belongs to, shown as a badge (e.g. "K-Bot · Younglimwon"). */
+	/** Optional product/company the work belongs to, shown as a badge (e.g. "AI Agent in ERP · Younglimwon"). */
 	org?: Localized;
 	/** One or more categories; the first is treated as the primary for cover visuals. */
 	category: ProjectCategory[];
