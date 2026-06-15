@@ -137,8 +137,19 @@ drifting wave layers as a signature motif. All colours and type are defined as t
 ## ☁️ Deployment
 
 The site is configured for **Vercel** via `@sveltejs/adapter-vercel` and is fully prerendered, so it
-deploys as static output. Connect the repo to Vercel (or run `vercel`) — no environment variables are
-required. The serverless runtime is pinned to `nodejs22.x` in `svelte.config.js`.
+deploys as static output. Connect the repo to Vercel (or run `vercel`). The serverless runtime is
+pinned to `nodejs22.x` in `svelte.config.js`.
+
+### Chatbot environment variables
+
+The "Ask doto" chatbot (`/api/chat`, served as a Vercel serverless function) needs an OpenAI key.
+The key is read server-side via `$env/dynamic/private` and is never exposed to the browser.
+
+- **Local:** copy `.env.example` to `.env` and set `OPENAI_API_KEY` (already gitignored).
+- **Production:** add `OPENAI_API_KEY` (and optionally `OPENAI_MODEL`, default `gpt-4o-mini`) in
+  **Vercel → Settings → Environment Variables**, then redeploy.
+
+Without the key the rest of the site still builds and runs; only the chatbot returns an error.
 
 ## 🛣️ Roadmap / extending to a backend
 

@@ -213,5 +213,20 @@
 	"common": {
 		"comingSoon": "곧 공개됩니다",
 		"backHome": "홈으로"
+	},
+	"chat": {
+		"launcherLabel": "doto에게 물어보기",
+		"title": "doto에게 물어보세요",
+		"subtitle": "경력·기술·프로젝트 무엇이든",
+		"greeting": "안녕하세요, doto예요! 👋 제 경력, 기술, 프로젝트에 대해 궁금한 걸 편하게 물어보세요.",
+		"placeholder": "메시지를 입력하세요…",
+		"send": "보내기",
+		"close": "닫기",
+		"error": "앗, 지금은 답변을 가져오지 못했어요. 잠시 후 다시 시도해 주세요.",
+		"suggestionsTitle": "이런 걸 물어보세요",
+		"suggest1": "가장 잘하는 게 뭐야? 🧠",
+		"suggest2": "어떤 프로젝트를 했어? 🚀",
+		"suggest3": "경력이 어떻게 돼? 🧭",
+		"suggest4": "어떻게 연락하면 돼? 📫"
 	}
 }

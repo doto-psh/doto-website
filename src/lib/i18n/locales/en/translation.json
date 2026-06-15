@@ -213,5 +213,20 @@
 	"common": {
 		"comingSoon": "Coming soon",
 		"backHome": "Back home"
+	},
+	"chat": {
+		"launcherLabel": "Ask doto",
+		"title": "Ask doto",
+		"subtitle": "Career, skills, projects — anything",
+		"greeting": "Hi, I'm doto! 👋 Ask me anything about my career, skills, and projects.",
+		"placeholder": "Type a message…",
+		"send": "Send",
+		"close": "Close",
+		"error": "Sorry, I couldn't fetch a reply just now. Please try again in a moment.",
+		"suggestionsTitle": "Try asking",
+		"suggest1": "What are you best at? 🧠",
+		"suggest2": "What projects have you built? 🚀",
+		"suggest3": "Tell me about your career 🧭",
+		"suggest4": "How can I reach you? 📫"
 	}
 }

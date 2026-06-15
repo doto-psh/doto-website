@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import ChatWidget from '$lib/components/chat/ChatWidget.svelte';
 	import type { LayoutData } from './$types';
 
 	let { data, children }: { data: LayoutData; children: import('svelte').Snippet } = $props();
@@ -30,3 +31,5 @@
 </main>
 
 <Footer locale={data.locale} />
+
+<ChatWidget locale={data.locale} />

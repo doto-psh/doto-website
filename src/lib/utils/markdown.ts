@@ -8,7 +8,13 @@ function escapeHtml(value: string): string {
 }
 
 function renderInline(value: string): string {
+	// Input is escaped first, so attribute/tag injection is not possible here.
+	// Links only allow http(s)/mailto schemes (no spaces) to stay safe.
 	return escapeHtml(value)
+		.replaceAll(
+			/\[([^\]]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+)\)/g,
+			'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+		)
 		.replaceAll(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
 		.replaceAll(/`([^`]+)`/g, '<code>$1</code>');
 }
@@ -50,6 +56,18 @@ export function renderMarkdown(markdown: string): string {
 			continue;
 		}
 
+		if (line.startsWith('#### ')) {
+			closeList();
+			html.push(`<h4>${renderInline(line.slice(5))}</h4>`);
+			continue;
+		}
+
+		if (line.startsWith('### ')) {
+			closeList();
+			html.push(`<h3>${renderInline(line.slice(4))}</h3>`);
+			continue;
+		}
+
 		if (line.startsWith('## ')) {
 			closeList();
 			html.push(`<h2>${renderInline(line.slice(3))}</h2>`);
@@ -62,12 +80,14 @@ export function renderMarkdown(markdown: string): string {
 			continue;
 		}
 
-		if (line.startsWith('- ')) {
+		// Bullet list items, including indented sub-bullets ("  - ", "* ").
+		const bulletMatch = line.match(/^\s*[-*]\s+(.*)$/);
+		if (bulletMatch) {
 			if (!inList) {
 				html.push('<ul>');
 				inList = true;
 			}
-			html.push(`<li>${renderInline(line.slice(2))}</li>`);
+			html.push(`<li>${renderInline(bulletMatch[1])}</li>`);
 			continue;
 		}
 
