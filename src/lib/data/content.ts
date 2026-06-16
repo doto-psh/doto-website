@@ -67,8 +67,8 @@ export const content = {
 				en: 'I build AI features that work in real services, using LLMs and data.'
 			},
 			bio: {
-				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 ERP 내 AI 에이전트를 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Vector DB·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분리하며, 작업 과정을 기록으로 남겨 다시 활용 가능한 형태로 정리합니다.\n\n특정 기술에 머무르기보다 데이터, 백엔드, AI를 연결해 실제 문제를 해결하는 개발자로 성장하고 있습니다. 기술을 단순한 구현 수단이 아니라, 동료와 비즈니스가 겪는 문제를 더 명확하게 해결하기 위한 도구로 다루고자 합니다.',
-				en: 'I started out in data analysis and now build an AI agent in ERP, a production AI product, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Vector DBs and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I take on a feature, I see it through end to end — reproducing the problem, designing, implementing, and shipping. I reproduce issues precisely, separate state from boundaries, and document the process so it can be reused.\n\nRather than staying within a single technology, I am growing into an engineer who connects data, backend, and AI to solve real problems. I want to treat technology not as a mere means of implementation, but as a tool to resolve the problems my teammates and the business face more clearly.'
+				ko: '데이터 분석으로 개발을 시작해, 지금은 영림원소프트랩에서 실제 서비스되는 생성형 AI(K-Bot)를 개발하고 있습니다. Python·FastAPI 기반의 백엔드와 Vector DB·임베딩을 활용한 RAG 검색, Azure 기반 데이터 파이프라인을 주로 다루며, 필요할 때는 Svelte·TypeScript로 프론트엔드까지 직접 구현합니다.\n\n기능 하나를 맡으면 문제 재현부터 설계, 구현, 배포까지 끝까지 책임지는 방식을 선호합니다. 문제를 명확히 재현하고, 상태와 경계를 분리하며, 작업 과정을 기록으로 남겨 다시 활용 가능한 형태로 정리합니다.\n\n특정 기술에 머무르기보다 데이터, 백엔드, AI를 연결해 실제 문제를 해결하는 개발자로 성장하고 있습니다. 기술을 단순한 구현 수단이 아니라, 동료와 비즈니스가 겪는 문제를 더 명확하게 해결하기 위한 도구로 다루고자 합니다.',
+				en: 'I started out in data analysis and now build Generative AI (K-Bot), a production AI feature in K-System AI, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Vector DBs and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I take on a feature, I see it through end to end — reproducing the problem, designing, implementing, and shipping. I reproduce issues precisely, separate state from boundaries, and document the process so it can be reused.\n\nRather than staying within a single technology, I am growing into an engineer who connects data, backend, and AI to solve real problems. I want to treat technology not as a mere means of implementation, but as a tool to resolve the problems my teammates and the business face more clearly.'
 			},
 			location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
 			photoUrl: mascotImages.profile,
@@ -154,12 +154,12 @@ export const content = {
 			{
 				id: 'career-younglimwon',
 				category: 'career',
-				title: { ko: 'AI 개발 · ERP 내 AI 에이전트', en: 'AI Engineer · AI Agent in ERP' },
+				title: { ko: 'AI 개발 · 생성형 AI(K-Bot)', en: 'AI Engineer · Generative AI (K-Bot)' },
 				organization: { ko: '영림원소프트랩 · AIWG', en: 'Younglimwon Soft Lab · AIWG' },
 				period: { ko: '2024.08 ~ 재직중 (사원)', en: 'Aug 2024 ~ Present (Employee)' },
 				description: {
-					ko: '영림원소프트랩 AI ERP에 탑재된 ERP 내 AI 에이전트의 백엔드를 개발하며, 문서 전처리부터 Vector DB 구조 및 메타데이터 설계, RAG 답변 출처 추적까지 RAG 파이프라인 전반을 구현했습니다. 이와 함께 AI 에이전트가 자연어만으로 Google Workspace·Microsoft 365 업무를 수행하도록 하는 MCP 서버도 개발했습니다.',
-					en: 'Developed the backend of the AI agent in Younglimwon Soft Lab\'s AI ERP, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking. I also built MCP servers that let AI agents perform Google Workspace and Microsoft 365 tasks from natural language alone.'
+					ko: '영림원소프트랩 AI ERP에 탑재된 생성형 AI(K-Bot)의 백엔드를 개발하며, 문서 전처리부터 Vector DB 구조 및 메타데이터 설계, RAG 답변 출처 추적까지 RAG 파이프라인 전반을 구현했습니다. 이와 함께 AI 에이전트가 자연어만으로 Google Workspace·Microsoft 365 업무를 수행하도록 하는 MCP 서버도 개발했습니다.',
+					en: 'Developed the backend of Generative AI (K-Bot) in Younglimwon Soft Lab\'s K-System AI, building the full RAG pipeline from document preprocessing to Vector DB structure and metadata design and RAG answer source tracking. I also built MCP servers that let AI agents perform Google Workspace and Microsoft 365 tasks from natural language alone.'
 				},
 				highlights: {
 					ko: ['문서 유형별 파싱 및 청킹 전략 설계/구현', 'Vector DB 구조 및 메타데이터 설계', 'RAG 후 메타데이터 활용한 문서 출처 추적', 'Azure 활용한 외부 지식 자동 수집 파이프라인 구축', 'AI 에이전트용 MCP 서버 개발(Google Workspace·Microsoft 365)'],
@@ -230,8 +230,8 @@ export const content = {
 		{
 			slug: 'kbot-document-analysis',
 			title: {
-				ko: 'ERP 내 AI 에이전트 문서 유형별 파싱·청킹 파이프라인',
-				en: 'AI Agent in ERP Per-Type Parsing & Chunking Pipeline'
+				ko: '생성형 AI(K-Bot) 문서 유형별 파싱·청킹 파이프라인',
+				en: 'Generative AI (K-Bot) Per-Type Parsing & Chunking Pipeline'
 			},
 			tagline: {
 				ko: '문서 유형별로 파싱·청킹·임베딩 전략을 분리해 RAG 검색 품질을 끌어올린 전처리 시스템',
@@ -241,7 +241,7 @@ export const content = {
 				ko: '모든 문서를 동일하게 처리하던 구조에서 벗어나, PDF·DOCX·PPT/PPTX·Excel·텍스트를 각 구조에 맞는 경로로 처리하도록 재설계했습니다. 표·이미지 문서는 document parser로 레이아웃을 분석하고, 페이지·슬라이드·시트 단위 출처를 보존해 검색 가능한 지식 단위로 변환합니다.',
 				en: 'I rebuilt a one-size-fits-all document flow into per-type routing for PDF, DOCX, PPT/PPTX, Excel, and text. Table- and image-heavy documents go through a document parser for layout analysis, and page/slide/sheet-level sources are preserved as searchable knowledge units.'
 			},
-			org: { ko: 'ERP 내 AI 에이전트 · 영림원', en: 'AI Agent in ERP · Younglimwon' },
+			org: { ko: '생성형 AI(K-Bot) · 영림원', en: 'Generative AI (K-Bot) · Younglimwon' },
 			company: 'younglimwon',
 			category: ['ai', 'backend'],
 			role: { ko: 'Backend · AI/RAG', en: 'Backend · AI/RAG' },
@@ -268,8 +268,8 @@ export const content = {
 		{
 			slug: 'kbot-citation-viewer',
 			title: {
-				ko: 'ERP 내 AI 에이전트 RAG 메타데이터 기반 문서 출처 추적',
-				en: 'AI Agent in ERP Metadata-Based Document Source Tracking'
+				ko: '생성형 AI(K-Bot) RAG 메타데이터 기반 문서 출처 추적',
+				en: 'Generative AI (K-Bot) Metadata-Based Document Source Tracking'
 			},
 			tagline: {
 				ko: 'LLM 답변의 인라인 출처 표기를 청크 메타데이터와 매칭해 실제 문서 근거까지 추적하는 end-to-end 그라운딩 시스템',
@@ -279,7 +279,7 @@ export const content = {
 				ko: '문서 업로드부터 Vector DB 저장, RAG 검색·리랭킹, LLM 응답까지 이어지는 출처 추적 구조를 구현했습니다. 청크마다 파일·페이지·시트·행 메타데이터를 부여하고, LLM이 생성한 인라인 출처 표기를 출처 메타데이터와 정규화 매칭해 답변의 근거를 실제 문서 위치까지 연결했습니다.',
 				en: 'I built source tracking that spans upload, Vector DB storage, RAG retrieval and reranking, and the LLM response. Each chunk carries file/page/sheet/row metadata, and inline LLM citations are normalized and matched to that metadata so every answer is grounded to its exact source location.'
 			},
-			org: { ko: 'ERP 내 AI 에이전트 · 영림원', en: 'AI Agent in ERP · Younglimwon' },
+			org: { ko: '생성형 AI(K-Bot) · 영림원', en: 'Generative AI (K-Bot) · Younglimwon' },
 			company: 'younglimwon',
 			category: ['backend', 'frontend'],
 			role: { ko: 'AI/RAG · Backend', en: 'AI/RAG · Backend' },
@@ -300,16 +300,16 @@ export const content = {
 				en: ['Per-chunk source metadata design', 'Normalized + fallback citation↔metadata matching', 'Extracting only cited sources']
 			},
 			caseStudy: {
-				ko: 'ERP 내 AI 에이전트에서는 답변 내용보다 근거 검증이 더 중요한 경우가 많은데, 기존에는 실제 답변에 안 쓰인 문서까지 출처로 섞이고 정확한 위치를 확인하기 어려웠습니다. 그래서 백엔드에서 청크마다 파일·페이지·시트·행 메타데이터를 부여하고 검색·리랭킹 이후에도 본문·점수·출처가 분리되지 않게 유지했습니다. 프론트엔드에서는 LLM이 다소 다른 형식으로 출처 표기를 생성해도 정규화·보완 매칭으로 실제 출처와 안정적으로 연결하고, 답변에 인용된 출처만 추려 PDF 페이지 이동·Excel 행 하이라이트·텍스트 대체 표시로 확인하도록 했습니다.',
-				en: 'For an AI agent in ERP, verifying evidence often matters more than the answer text, yet uncited documents leaked into the source list and exact locations were hard to find. On the backend I attached file/page/sheet/row metadata to each chunk and kept text, score, and source together through retrieval and reranking. On the frontend, normalization and fallback matching reliably link slightly varied LLM citations to real sources, showing only cited evidence via PDF page jumps, Excel row highlighting, and text fallback.'
+				ko: '생성형 AI(K-Bot)에서는 답변 내용보다 근거 검증이 더 중요한 경우가 많은데, 기존에는 실제 답변에 안 쓰인 문서까지 출처로 섞이고 정확한 위치를 확인하기 어려웠습니다. 그래서 백엔드에서 청크마다 파일·페이지·시트·행 메타데이터를 부여하고 검색·리랭킹 이후에도 본문·점수·출처가 분리되지 않게 유지했습니다. 프론트엔드에서는 LLM이 다소 다른 형식으로 출처 표기를 생성해도 정규화·보완 매칭으로 실제 출처와 안정적으로 연결하고, 답변에 인용된 출처만 추려 PDF 페이지 이동·Excel 행 하이라이트·텍스트 대체 표시로 확인하도록 했습니다.',
+				en: 'For Generative AI (K-Bot), verifying evidence often matters more than the answer text, yet uncited documents leaked into the source list and exact locations were hard to find. On the backend I attached file/page/sheet/row metadata to each chunk and kept text, score, and source together through retrieval and reranking. On the frontend, normalization and fallback matching reliably link slightly varied LLM citations to real sources, showing only cited evidence via PDF page jumps, Excel row highlighting, and text fallback.'
 			},
 			featured: true
 		},
 		{
 			slug: 'kbot-vector-db-migration',
 			title: {
-				ko: 'ERP 내 AI 에이전트 Vector DB 구조 설계 및 임베딩 마이그레이션',
-				en: 'AI Agent in ERP Vector DB Structure Design & Embedding Migration'
+				ko: '생성형 AI(K-Bot) Vector DB 구조 설계 및 임베딩 마이그레이션',
+				en: 'Generative AI (K-Bot) Vector DB Structure Design & Embedding Migration'
 			},
 			tagline: {
 				ko: 'partition key 멀티테넌트 구조와, 서비스를 멈추지 않는 임베딩 모델 교체 체계',
@@ -319,7 +319,7 @@ export const content = {
 				ko: 'Vector DB 컬렉션·파티션 개수 한계를 partition key 기반 멀티테넌트 구조로 해결하고, 임베딩 모델 변경을 "준비→실행→검증→적용" 단계로 나눠 운영 중에도 안전하게 전환하는 마이그레이션 체계를 구현했습니다.',
 				en: 'I solved Vector DB collection/partition limits with a partition-key multi-tenant structure, and built an embedding-model migration split into prepare → run → verify → apply so models can be swapped safely while the service is live.'
 			},
-			org: { ko: 'ERP 내 AI 에이전트 · 영림원', en: 'AI Agent in ERP · Younglimwon' },
+			org: { ko: '생성형 AI(K-Bot) · 영림원', en: 'Generative AI (K-Bot) · Younglimwon' },
 			company: 'younglimwon',
 			category: ['backend', 'ai'],
 			role: { ko: 'Backend · Database', en: 'Backend · Database' },
@@ -359,7 +359,7 @@ export const content = {
 				ko: '사내 서비스 포탈과 SharePoint에 흩어진 문서를 RAG 지식으로 모으기 위해, Azure Logic Apps → Blob Storage → App Service API로 이어지는 이벤트 기반 인제스트 파이프라인을 구성했습니다. 각 소스의 문서 변경 이벤트를 Logic Apps가 받아 Azure App Service에 배포한 임베딩·인제스트 API를 호출하고, 유형별 파싱·청킹·임베딩을 거쳐 Vector DB에 반영하며, 기존 인덱스는 신규 처리 성공 이후에만 교체하는 안전 교체 인덱싱으로 데이터 유실을 막았습니다.',
 				en: 'To consolidate documents scattered across internal service portals and SharePoint into RAG knowledge, I built an event-driven ingest pipeline: Azure Logic Apps → Blob Storage → an App Service API. Logic Apps catches change events from each source and calls the embedding/ingest API deployed on Azure App Service, which runs per-type parsing/chunking/embedding into a Vector DB and uses safe-replace indexing — swapping the old index only after the new one succeeds — to prevent data loss.'
 			},
-			org: { ko: 'ERP 내 AI 에이전트 · 영림원', en: 'AI Agent in ERP · Younglimwon' },
+			org: { ko: '생성형 AI(K-Bot) · 영림원', en: 'Generative AI (K-Bot) · Younglimwon' },
 			company: 'younglimwon',
 			category: ['infra', 'backend'],
 			role: { ko: 'Backend · Cloud Infra', en: 'Backend · Cloud Infra' },
