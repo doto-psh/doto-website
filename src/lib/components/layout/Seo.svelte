@@ -29,6 +29,7 @@
 <svelte:head>
 	<title>{fullTitle}</title>
 	<meta name="description" content={description} />
+	<meta name="robots" content="noindex, nofollow" />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content={site.brand} />
