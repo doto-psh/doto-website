@@ -1,81 +1,63 @@
 @import 'tailwindcss';
 
-@import '@fontsource-variable/inter';
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
 
-/* doto design tokens: cobalt desk, precise grids, quiet contrast */
 @theme {
-	/* Palette */
-	--color-bg: #f7f9fd;
-	--color-surface: #ffffff;
-	--color-surface-blue: #edf4ff;
-	--color-ink: #101827;
-	--color-muted: #637085;
-	--color-line: #d9e2ee;
-	--color-accent: #135dff;
-	--color-accent-strong: #003fc7;
-	--color-cyan: #16a7c8;
-	--color-lime: #9bbf24;
-	--color-coral: #ff6b4a;
-	--color-paper: #fbfdff;
-	--color-footer-bg: #08111f;
-	--color-footer-line: rgba(255, 255, 255, 0.14);
+	--color-bg: #070a0f;
+	--color-surface: #0d121a;
+	--color-panel: #111823;
+	--color-ink: #f3f6fa;
+	--color-muted: #98a4b5;
+	--color-faint: #667386;
+	--color-line: rgba(255, 255, 255, 0.12);
+	--color-line-strong: rgba(255, 255, 255, 0.23);
+	--color-accent: #5689ff;
+	--color-accent-strong: #79a1ff;
+	--color-secondary: #94b5ff;
+	--color-visited: #b49acb;
+	--color-success: #4dcd82;
+	--color-error: #ff746c;
 
-	/* Typography */
 	--font-sans:
-		'Inter Variable', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard',
-		'Hiragino Kaku Gothic ProN', 'Noto Sans KR', 'Noto Sans JP', system-ui, sans-serif;
+		'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+	--font-serif:
+		'Pretendard Variable', Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+	--font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
-	/* Layout */
-	--container-page: 72rem; /* ~1152px wide editorial container */
-
-	/* Motion */
-	--ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+	--container-page: 90rem;
+	--container-reading: 48rem;
+	--ease-cinematic: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @layer base {
+	:root {
+		font-synthesis: none;
+		color-scheme: dark;
+	}
+
 	html {
 		scroll-behavior: smooth;
-		background-color: var(--color-bg);
+		background: var(--color-bg);
 		color: var(--color-ink);
 		-webkit-font-smoothing: antialiased;
 		text-rendering: optimizeLegibility;
 	}
 
-	html.dark {
-		--color-bg: #08111f;
-		--color-surface: #0f1b2d;
-		--color-surface-blue: #0d2a58;
-		--color-ink: #edf4ff;
-		--color-muted: #9caec7;
-		--color-line: #233754;
-		--color-accent: #4f8cff;
-		--color-accent-strong: #8ab4ff;
-		--color-cyan: #2fd1ee;
-		--color-lime: #c3db4c;
-		--color-coral: #ff8a70;
-		--color-paper: #0b1626;
-		--color-footer-bg: #020817;
-		--color-footer-line: rgba(255, 255, 255, 0.16);
-	}
-
 	body {
+		margin: 0;
+		background:
+			radial-gradient(circle at 86% 2%, rgba(86, 137, 255, 0.09), transparent 30rem),
+			var(--color-bg);
 		font-family: var(--font-sans);
-		font-feature-settings: 'kern';
+		font-size: 1rem;
 		line-height: 1.65;
-		background-color: var(--color-bg);
 		overflow-x: clip;
 	}
 
-	html[lang='ko'] :where(h1, h2, h3, h4, p, li, a, button, span) {
-		word-break: keep-all;
-		overflow-wrap: break-word;
-	}
-
-	input,
-	textarea,
-	select,
-	button {
-		min-width: 0;
+	body[data-menu-open='true'] {
+		overflow: hidden;
 	}
 
 	h1,
@@ -83,31 +65,64 @@
 	h3,
 	h4 {
 		font-family: var(--font-sans);
-		font-weight: 720;
-		line-height: 1.1;
-		letter-spacing: 0;
+		font-weight: 650;
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	a {
+		text-underline-offset: 0.25em;
+	}
+
+	a:visited:not([data-no-visited]) {
+		color: var(--color-visited);
+	}
+
+	button,
+	a,
+	input,
+	textarea,
+	select {
+		min-width: 0;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		font: inherit;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 4px;
 	}
 
 	::selection {
-		background-color: var(--color-accent);
-		color: var(--color-bg);
+		background: var(--color-accent);
+		color: #ffffff;
 	}
 
-	/* Hide the native cursor when the custom cursor is active (pointer devices only) */
-	@media (hover: hover) and (pointer: fine) {
-		body[data-cursor='on'] * {
-			cursor: none !important;
-		}
+	html[lang='ko'] :where(h1, h2, h3, h4, p, li, a, button, span) {
+		word-break: keep-all;
+		overflow-wrap: break-word;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		html {
 			scroll-behavior: auto;
 		}
+
 		*,
 		*::before,
 		*::after {
 			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			scroll-behavior: auto !important;
 			transition-duration: 0.001ms !important;
 		}
 	}
@@ -116,78 +131,99 @@
 @layer utilities {
 	.container-page {
 		box-sizing: border-box;
-		width: calc(100% - 3rem);
-		max-width: var(--container-page);
+		width: min(calc(100% - 2rem), var(--container-page));
 		margin-inline: auto;
-		padding-inline: 0;
 	}
 
-	@media (min-width: 768px) {
-		.container-page {
-			width: calc(100% - 5rem);
-			padding-inline: 0;
-		}
+	.container-reading {
+		box-sizing: border-box;
+		width: min(calc(100% - 2rem), var(--container-reading));
+		margin-inline: auto;
 	}
 
-	/* Reveal-on-scroll (driven by the `reveal` action) */
+	.section-shell {
+		position: relative;
+		padding-block: clamp(6rem, 10vw, 9.5rem);
+		border-top: 1px solid var(--color-line);
+	}
+
+	.theme-light {
+		--color-bg: #eef1f4;
+		--color-surface: #f8f9fa;
+		--color-panel: #ffffff;
+		--color-ink: #11151c;
+		--color-muted: #596474;
+		--color-faint: #758091;
+		--color-line: rgba(17, 21, 28, 0.18);
+		--color-line-strong: rgba(17, 21, 28, 0.3);
+		--color-accent: #2f67dc;
+		--color-accent-strong: #1f4fae;
+		--color-secondary: #285fda;
+		--color-visited: #654f77;
+		background: var(--color-bg);
+		color: var(--color-ink);
+		color-scheme: light;
+	}
+
+	.meta-label {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		line-height: 1.45;
+		text-transform: uppercase;
+		color: var(--color-muted);
+	}
+
+	.text-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		color: var(--color-ink);
+		font-size: 0.88rem;
+		font-weight: 600;
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-line-strong);
+		padding-bottom: 0.3rem;
+		transition:
+			color 180ms var(--ease-cinematic),
+			border-color 180ms var(--ease-cinematic),
+			transform 180ms var(--ease-cinematic);
+	}
+
+	.text-link:hover {
+		color: var(--color-secondary);
+		border-color: var(--color-accent);
+	}
+
 	.reveal {
 		opacity: 0;
-		transform: translateY(18px);
+		transform: translateY(1.75rem);
 		transition:
-			opacity 0.7s var(--ease-soft),
-			transform 0.7s var(--ease-soft);
-		transition-delay: var(--reveal-delay, 0ms);
-		will-change: opacity, transform;
+			opacity 650ms var(--ease-cinematic),
+			transform 650ms var(--ease-cinematic);
 	}
-	.reveal.is-visible {
+
+	.reveal[data-visible='true'] {
 		opacity: 1;
 		transform: none;
 	}
 
-	/* Custom cursor */
-	.cursor-dot,
-	.cursor-ring {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 90;
-		pointer-events: none;
-		border-radius: 9999px;
-		transform: translate3d(-50%, -50%, 0);
-		mix-blend-mode: multiply;
-	}
-	.cursor-dot {
-		width: 6px;
-		height: 6px;
-		background: var(--color-accent);
-	}
-	.cursor-ring {
-		width: 36px;
-		height: 36px;
-		border: 1px solid var(--color-accent);
-		transition:
-			width 0.25s var(--ease-soft),
-			height 0.25s var(--ease-soft),
-			background-color 0.25s var(--ease-soft),
-			opacity 0.25s var(--ease-soft);
-	}
-	.cursor-ring.is-hover {
-		width: 56px;
-		height: 56px;
-		background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+	@media (prefers-reduced-motion: reduce) {
+		.reveal {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
-	.blueprint-grid {
-		background-image:
-			linear-gradient(color-mix(in srgb, var(--color-accent) 10%, transparent) 1px, transparent 1px),
-			linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 10%, transparent) 1px, transparent 1px);
-		background-size: 28px 28px;
-	}
+	@media (min-width: 768px) {
+		.container-page,
+		.container-reading {
+			width: min(calc(100% - 4rem), var(--container-page));
+		}
 
-	.blueprint-grid-strong {
-		background-image:
-			linear-gradient(color-mix(in srgb, var(--color-accent) 16%, transparent) 1px, transparent 1px),
-			linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 16%, transparent) 1px, transparent 1px);
-		background-size: 22px 22px;
+		.container-reading {
+			max-width: var(--container-reading);
+		}
 	}
 }

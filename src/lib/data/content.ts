@@ -1,5 +1,6 @@
 import type {
 	PortfolioData,
+	HomeContent,
 	Project,
 	ProjectCategory,
 	ProjectCompany,
@@ -34,21 +35,46 @@ export const content = {
 		url: 'https://dotorowoo.com',
 		...contactLinks,
 		social: [
-			// GitHub link temporarily disabled
-			// { label: 'GitHub', href: contactLinks.github },
-			{ label: 'Email', href: `mailto:${contactLinks.email}` }
+			{ label: 'Email', href: `mailto:${contactLinks.email}` },
+			{ label: 'Resume', href: contactLinks.resumeUrl },
+			{ label: 'GitHub', href: contactLinks.github }
 		] satisfies SocialLink[]
 	},
 
 	/** Top-level navigation. `key` maps to the i18n `nav.*` namespace. */
 	navItems: [
 		{ key: 'projects', path: '/projects' },
-		// Temporarily hidden from the public navigation.
-		// { key: 'blog', path: '/blog' },
+		{ key: 'notes', path: '/notes' },
 		{ key: 'about', path: '/about' }
 	],
 
 	mascotImages,
+
+	home: {
+		proofs: [
+			{
+				value: 'LIVE',
+				label: { ko: '운영 중인 생성형 AI 백엔드', en: 'Production generative AI backend' }
+			},
+			{
+				value: '3',
+				label: { ko: '대표 시스템 사례 연구', en: 'Selected system case studies' }
+			},
+			{
+				value: '5',
+				label: { ko: '문서 유형별 처리 경로', en: 'Document-format pipelines' }
+			},
+			{
+				value: '2',
+				label: { ko: '업무 도구 생태계 연동', en: 'Workspace ecosystems integrated' }
+			}
+		],
+		statement: {
+			ko: ['문제를 재현하고.', '시스템 경계를 다시 설계하고.', '운영 경로에서 끝까지 검증합니다.'],
+			en: ['Reproduce the problem.', 'Redesign the system boundaries.', 'Verify the full production path.']
+		},
+		architectureProjectSlug: 'kbot-vector-db-migration'
+	} satisfies HomeContent,
 
 	skillCategories: ['AI/LLM', 'backend', 'database', 'devops-infra', 'frontend'] satisfies SkillCategory[],
 
@@ -71,9 +97,8 @@ export const content = {
 				en: 'I started out in data analysis and now build Generative AI (K-Bot), a production AI feature in K-System AI, at Younglimwon Soft Lab. I work mainly on Python/FastAPI backends, RAG retrieval with Vector DBs and embeddings, and Azure-based data pipelines — and when needed I build the frontend myself with Svelte and TypeScript.\n\nWhen I take on a feature, I see it through end to end — reproducing the problem, designing, implementing, and shipping. I reproduce issues precisely, separate state from boundaries, and document the process so it can be reused.\n\nRather than staying within a single technology, I am growing into an engineer who connects data, backend, and AI to solve real problems. I want to treat technology not as a mere means of implementation, but as a tool to resolve the problems my teammates and the business face more clearly.'
 			},
 			location: { ko: 'Seoul, Korea', en: 'Seoul, Korea' },
-			photoUrl: mascotImages.profile,
-				// TODO: replace with a real photo; using a placeholder avatar for now.
-				realPhotoUrl: '/images/doto-profile.jpg',
+			photoUrl: '/images/doto-profile.jpg',
+			realPhotoUrl: '/images/doto-profile.jpg',
 			...contactLinks
 		},
 		skills: [
@@ -92,7 +117,8 @@ export const content = {
 					{ name: 'Hybrid Search / Reranking', level: 'working' },
 					{ name: 'Prompt Engineering', level: 'working' },
 					{ name: 'MCP / Agent Tooling', level: 'working' }
-				]
+				],
+				evidenceProjectSlugs: ['kbot-document-analysis', 'kbot-citation-viewer', 'kbot-vector-db-migration']
 			},
 			{
 				category: 'backend',
@@ -107,7 +133,8 @@ export const content = {
 					{ name: 'REST API', level: 'core' },
 					{ name: 'OAuth 2.0 / 2.1', level: 'working' },
 					{ name: 'Google Workspace / Microsoft Graph API', level: 'working' }
-				]
+				],
+				evidenceProjectSlugs: ['kbot-document-analysis', 'external-knowledge-ingestion', 'workspace-mcp-server']
 			},
 			{
 				category: 'database',
@@ -121,7 +148,8 @@ export const content = {
 					{ name: 'Vector DB Design', level: 'core' },
 					{ name: 'PostgreSQL', level: 'working' },
 					{ name: 'Schema Design', level: 'working' }
-				]
+				],
+				evidenceProjectSlugs: ['kbot-vector-db-migration', 'kbot-citation-viewer']
 			},
 			{
 				category: 'devops-infra',
@@ -133,7 +161,8 @@ export const content = {
 				items: [
 					{ name: 'Docker', level: 'core' },
 					{ name: 'Azure (Logic Apps / Blob / App Service)', level: 'core' },
-				]
+				],
+				evidenceProjectSlugs: ['external-knowledge-ingestion', 'kbot-vector-db-migration']
 			},
 			{
 				category: 'frontend',
@@ -146,7 +175,8 @@ export const content = {
 					{ name: 'Svelte 5 / SvelteKit', level: 'working' },
 					{ name: 'TypeScript', level: 'working' },
 					{ name: 'Tailwind CSS', level: 'working' }
-				]
+				],
+				evidenceProjectSlugs: ['kbot-citation-viewer']
 			}
 		],
 		timeline: [

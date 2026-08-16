@@ -1,232 +1,167 @@
 {
-	"meta": {
-		"title": "doto — Developer Portfolio",
-		"description": "Projects and engineering notes from doto, covering AI, backend, frontend, and infrastructure work."
-	},
-	"nav": {
-		"home": "Home",
-		"projects": "Projects",
-		"blog": "Blog",
-		"about": "About",
-		"menu": "Menu",
-		"close": "Close"
-	},
-	"theme": {
-		"toggle": "Toggle dark mode"
-	},
-	"language": {
-		"label": "Language",
-		"ko": "한국어",
-		"en": "English"
-	},
-	"hero": {
-		"eyebrow": "Developer Portfolio · AI · Backend · Frontend",
-		"title": "I build RAG systems\nthat real users rely on",
-		"subtitle": "A personal portfolio of AI document workflows, backend data flows, frontend experience, and deployment operations.",
-		"ctaPrimary": "View projects",
-		"ctaAbout": "About me",
-		"ctaSecondary": "Resume PDF",
-		"scroll": "Scroll down",
-		"signals": {
-			"capture": "Define",
-			"organize": "Design",
-			"share": "Verify"
-		}
-	},
-	"pillars": {
-		"eyebrow": "What drives me",
-		"title": "Aiming for the best, moving without fear",
-		"items": {
-			"templates": {
-				"title": "Depth that never settles",
-				"body": "I keep learning instead of settling for the familiar answer, digging into a problem until I reach real depth in my field."
-			},
-			"writing": {
-				"title": "Fearless experimentation",
-				"body": "I treat failure as part of learning and, with a positive mindset, try new approaches first to drive change."
-			},
-			"projects": {
-				"title": "Notes worth reusing",
-				"body": "I calmly organize what I explore and learn so it can be pulled back out for the team and the next problem."
-			}
-		}
-	},
-	"featured": {
-		"eyebrow": "Featured Work",
-		"title": "Recent projects I focused on",
-		"subtitle": "Work that follows problems across AI, backend, frontend, and infrastructure until the system is usable.",
-		"cta": "View all projects"
-	},
-	"blogPreview": {
-		"eyebrow": "Engineering Notes",
-		"title": "Notes from solving problems",
-		"subtitle": "Short technical notes on debugging, design, deployment, and portfolio iteration.",
-		"cta": "Go to blog",
-		"readMore": "Read"
-	},
-	"aboutTeaser": {
-		"eyebrow": "Profile",
-		"title": "Experience and collaboration style",
-		"body": "I care more about root-cause analysis, implementation judgment, and operational structure than surface polish alone. Resume and contact paths are organized here.",
-		"cta": "View profile"
-	},
-	"footer": {
-		"tagline": "AI engineer building production RAG systems.",
-		"explore": "Explore",
-		"connect": "Connect",
-		"newsletterHint": "Get updates on new projects and posts.",
-		"rights": "All rights reserved.",
-		"madeWith": "Built in Seoul"
-	},
-	"projectsPage": {
-		"eyebrow": "Projects",
-		"title": "Projects and problem-solving records",
-		"subtitle": "Browse projects quickly with category filters and search.",
-		"all": "All",
-		"searchLabel": "Search projects",
-		"searchPlaceholder": "Search by stack, role, problem, or outcome",
-		"viewDetail": "View details",
-		"empty": "No projects match these filters.",
-		"categories": {
-			"ai": "AI",
-			"backend": "Backend",
-			"frontend": "Frontend",
-			"infra": "Infra"
-		},
-		"categoryLabel": "Category",
-		"companyLabel": "Company",
-		"companies": {
-			"younglimwon": "Younglimwon Soft Lab",
-			"ls-itc": "LS ITC"
-		}
-	},
-	"projectPage": {
-		"backToProjects": "Back to projects",
-		"role": "Role",
-		"stack": "Stack",
-		"impact": "Impact",
-		"caseStudy": "Problem-solving process",
-		"highlights": "Highlights",
-		"github": "View GitHub",
-		"live": "View live",
-		"related": "Related projects"
-	},
-	"blogPage": {
-		"eyebrow": "Blog",
-		"title": "Engineering Notes",
-		"subtitle": "Technical writing managed as Markdown.",
-		"readOn": "Read post",
-		"backToBlog": "Back to blog",
-		"searchLabel": "Search posts",
-		"searchPlaceholder": "Search by tag, title, or content",
-		"empty": "No posts match this search."
-	},
-	"aboutPage": {
-		"eyebrow": "About",
-		"title": "A developer who narrows problems to the end",
-		"intro": "I work across AI, backend, frontend, and infrastructure to build flows that actually work.",
-		"story": "Before writing code, I look at the user problem and where the system fails. In debugging, I value reproducible evidence. In implementation, I value clear state and boundaries. In deployment, I value an order that operators can follow.",
-		"valuesTitle": "Working principles",
-		"values": {
-			"clarity": { "title": "Clear causes", "body": "I do not only patch symptoms. I trace request flows and state changes to the end." },
-			"craft": { "title": "Operable implementation", "body": "I design for retries, failures, and deployed environments so the code can last." },
-			"sharing": { "title": "Written context", "body": "I write down problem-solving paths as notes and case studies to reduce collaboration cost." }
-		},
-		"contactTitle": "Contact"
-	},
-	"portfolio": {
-		"profileEyebrow": "Profile",
-		"summaryEyebrow": "Experience & Skills",
-		"summaryTitle": "Experience and skills I've built so far",
-		"summarySubtitle": "A quick overview of my core stack, career, and education.",
-		"viewFullProfile": "View full profile",
-		"skillsEyebrow": "Skills",
-		"skillsTitle": "Technical stack",
-		"skillsSubtitle": "Frontend, backend, AI/LLM, database, and DevOps/Infra are organized by category.",
-		"timelineEyebrow": "Timeline",
-		"timelineTitle": "Education, certifications, career, and activities",
-		"timelineSubtitle": "Frequently updated profile history is managed as a structured timeline.",
-		"contactTitle": "Open to new opportunities",
-		"openLink": "Open link",
-		"flipHint": "Click to flip",
-		"skillLevels": {
-			"core": "Core",
-			"working": "Working",
-			"learning": "Learning"
-		},
-		"timelineCategories": {
-			"career": "Career",
-			"education": "Education",
-			"certification": "Certification",
-			"activity": "Activity"
-		}
-	},
-	"mascot": {
-		"emptyAlt": "doto character",
-		"emptyEyebrow": "No Results",
-		"emptyHint": "Try changing the search term or filter to find another record.",
-		"authorEyebrow": "Written by doto",
-		"authorTitle": "doto, a developer who records and verifies",
-		"authorBody": "I reproduce problems, organize system flows, and turn lessons into notes that can be reused.",
-		"authorContact": "Email me",
-		"noteImageAlt": "doto character writing by the beach",
-		"noteEyebrow": "Personal Note",
-		"noteTitle": "I record curiosity and follow problems to the end",
-		"noteBody": "doto — a seal exploring the emerald coast while journaling everything — is a mascot that mirrors how I work. I explore new problems freely, carefully sort and record what I run into and learn, keep technical decisions calm, and leave my notes organized so they can always be pulled back out and reused.",
-		"noteItems": {
-			"curiosity": "Explore",
-			"recording": "Record",
-			"craft": "Build"
-		}
-	},
-	"contact": {
-		"name": "Name",
-		"email": "Email",
-		"message": "Message",
-		"namePlaceholder": "Your name",
-		"emailPlaceholder": "you@example.com",
-		"messagePlaceholder": "Write your message.",
-		"submit": "Compose email"
-	},
-	"templatesPage": {
-		"eyebrow": "Projects",
-		"title": "Projects",
-		"subtitle": "Browse portfolio projects.",
-		"all": "All",
-		"categories": {
-			"productivity": "Productivity",
-			"finance": "Finance",
-			"study": "Study",
-			"creator": "Creator"
-		},
-		"from": "From",
-		"viewDetail": "View detail",
-		"empty": "No items in this category yet."
-	},
-	"productPage": {
-		"buy": "Open",
-		"features": "Included features",
-		"backToTemplates": "Back to list",
-		"related": "Related items",
-		"gallery": "Preview"
-	},
-	"common": {
-		"comingSoon": "Coming soon",
-		"backHome": "Back home"
-	},
-	"chat": {
-		"launcherLabel": "Ask doto",
-		"title": "Ask doto",
-		"subtitle": "Career, skills, projects — anything",
-		"greeting": "Hi, I'm doto! 👋 Ask me anything about my career, skills, and projects.",
-		"placeholder": "Type a message…",
-		"send": "Send",
-		"close": "Close",
-		"error": "Sorry, I couldn't fetch a reply just now. Please try again in a moment.",
-		"suggestionsTitle": "Try asking",
-		"suggest1": "What are you best at? 🧠",
-		"suggest2": "What projects have you built? 🚀",
-		"suggest3": "Tell me about your career 🧭",
-		"suggest4": "How can I reach you? 📫"
-	}
+  "meta": {
+    "title": "Suhyun Park (doto) — AI Engineer",
+    "description": "Suhyun Park's engineering portfolio: turning complex documents and data into AI features people can trust."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Work",
+    "capabilities": "Capabilities",
+    "experience": "Experience",
+    "notes": "Notes",
+    "about": "About",
+    "ask": "Ask doto",
+    "primary": "Primary navigation",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "language": {
+    "label": "Language",
+    "ko": "한국어",
+    "en": "English"
+  },
+  "hero": {
+    "kicker": "AI Engineer · Seoul, Korea",
+    "status": "Production systems · K-System AI",
+    "title": "I build AI systems that hold up in production.",
+    "subtitle": "I connect RAG, document processing, vector databases, and MCP across backend and infrastructure.",
+    "ctaPrimary": "View selected work",
+    "ctaSecondary": "Open resume"
+  },
+  "statement": {
+    "eyebrow": "How I engineer",
+    "note": "I design beyond the visible feature: cause, boundaries, failure, and recovery."
+  },
+  "architecture": {
+    "eyebrow": "Inside the system",
+    "title": "I treated a model replacement as a data migration, not a settings change.",
+    "subtitle": "The old service stays live while new embeddings are prepared, and traffic moves only after verification.",
+    "cta": "Read the full case study"
+  },
+  "capabilities": {
+    "eyebrow": "Capability index",
+    "title": "Not just the tools, but where and how I used them.",
+    "subtitle": "Each capability links to real project evidence so you can inspect the implementation scope and reasoning.",
+    "evidence": "Project evidence",
+    "expand": "Expand capability details",
+    "collapse": "Collapse capability details"
+  },
+  "experiencePreview": {
+    "eyebrow": "Experience",
+    "title": "From data analysis to production AI systems.",
+    "subtitle": "I started by narrowing problems with data. Today I build the backend and RAG systems behind production generative AI.",
+    "cta": "View full experience"
+  },
+  "aboutPreview": {
+    "eyebrow": "About doto",
+    "title": "I turn complex systems into structures teams can understand and operate.",
+    "body": "I go beyond shipping a feature. I document reproduction, boundary design, deployment, and verification as decisions that can be reused.",
+    "cta": "More about me and my work"
+  },
+  "askPreview": {
+    "eyebrow": "Ask doto",
+    "title": "Ask a question more specific than a résumé can answer.",
+    "body": "Answers use only the projects, experience, and technical notes published here.",
+    "continue": "Continue in Ask doto"
+  },
+  "featured": {
+    "eyebrow": "Selected work",
+    "title": "Selected systems tested in production",
+    "subtitle": "Work where I reproduced the problem, redesigned the structure, and made the result dependable for real users.",
+    "cta": "View all work"
+  },
+  "process": {
+    "eyebrow": "How I work",
+    "title": "I follow a problem from its cause through production.",
+    "body": "I do not stop at patching the visible symptom. I build reproducible evidence, separate state from boundaries, and implement the flow with failure and recovery in mind.",
+    "steps": {
+      "reproduce": "Narrow the problem into a reproducible case.",
+      "separate": "Separate state from system boundaries.",
+      "design": "Design the flow, including failure and recovery.",
+      "build": "Implement in small, connected units.",
+      "verify": "Verify the complete path in production conditions."
+    }
+  },
+  "notesPreview": {
+    "eyebrow": "Engineering notes",
+    "title": "Notes left while solving problems",
+    "cta": "View all notes"
+  },
+  "notesPage": {
+    "eyebrow": "Notes",
+    "title": "Engineering Notes",
+    "subtitle": "Reusable decisions from debugging, system design, and deployment work.",
+    "read": "Read",
+    "back": "Back to Notes",
+    "empty": "No public notes yet.",
+    "emptyCta": "View selected work"
+  },
+  "workPage": {
+    "eyebrow": "Work",
+    "title": "Work that turns problems into systems",
+    "subtitle": "Selected work goes deep into the problem, decisions, flow, and outcome. The rest stays as a concise project record.",
+    "selected": "Selected case studies",
+    "more": "More work",
+    "viewCase": "Read case study",
+    "viewNote": "Read project note"
+  },
+  "projectPage": {
+    "back": "Back to Work",
+    "problem": "Problem",
+    "constraints": "Constraints",
+    "decisions": "Decisions & approach",
+    "flow": "System flow",
+    "outcome": "Outcome",
+    "lessons": "Lessons",
+    "overview": "Project note",
+    "role": "Role",
+    "period": "Period",
+    "stack": "Stack",
+    "next": "Next case study"
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "title": "I narrow problems to the end and leave the reasoning reusable.",
+    "intro": "I began in data analysis and now build the backend and RAG flows behind production generative AI.",
+    "skills": "What I work with",
+    "timeline": "Experience",
+    "contact": "Contact",
+    "resume": "Open resume"
+  },
+  "portfolio": {
+    "timelineCategories": {
+      "career": "Career",
+      "education": "Education",
+      "certification": "Certification",
+      "activity": "Activity"
+    }
+  },
+  "footer": {
+    "tagline": "Turning complex documents and data into AI features people can trust."
+  },
+  "contact": {
+    "eyebrow": "Let's talk",
+    "title": "I'm open to new opportunities and technical conversations."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "backHome": "Back home"
+  },
+  "chat": {
+    "pageEyebrow": "Ask doto",
+    "pageTitle": "Ask me about my work.",
+    "pageDescription": "Answers are grounded in the career, skills, and projects published on this portfolio. I will not answer with private company information or unpublished facts.",
+    "title": "Chat with doto",
+    "scopeLabel": "Portfolio knowledge only",
+    "greeting": "Hi. Ask me anything about my career, skills, and projects.",
+    "placeholder": "Type your question",
+    "send": "Send",
+    "error": "I couldn't fetch a reply. Retry with the same question.",
+    "rateLimited": "There are too many requests right now. Please retry in a moment.",
+    "retry": "Retry",
+    "suggestionsTitle": "Try one of these",
+    "suggest1": "Give me a quick tour of your selected work",
+    "suggest2": "What matters most to you in a RAG system?",
+    "suggest3": "How do you approach difficult problems?"
+  }
 }

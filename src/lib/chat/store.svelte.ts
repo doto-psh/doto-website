@@ -1,7 +1,7 @@
 /**
- * Client-side chat widget state (Svelte 5 runes).
+ * Client-side state for the dedicated Ask doto page (Svelte 5 runes).
  *
- * Holds the open/closed state and the message list, and talks to the
+ * Holds the message list and request state, and talks to the
  * `/api/chat` streaming endpoint — appending text deltas to the latest
  * assistant message as they arrive.
  */
@@ -12,30 +12,27 @@ export interface UiMessage {
 }
 
 class ChatStore {
-	open = $state(false);
 	messages = $state<UiMessage[]>([]);
 	/** True while a response is streaming in. */
 	pending = $state(false);
+	errorKind = $state<'rate-limit' | 'generic' | null>(null);
+	lastFailedText = $state('');
 
-	toggle() {
-		this.open = !this.open;
-	}
-
-	close() {
-		this.open = false;
-	}
-
-	/** Seed the greeting once, the first time the panel is opened. */
+	/** Seed the greeting once and keep it in sync before a conversation starts. */
 	ensureGreeting(text: string) {
 		if (this.messages.length === 0) {
+			this.messages = [{ role: 'assistant', content: text }];
+		} else if (this.messages.length === 1 && this.messages[0].role === 'assistant') {
 			this.messages = [{ role: 'assistant', content: text }];
 		}
 	}
 
-	async send(text: string, errorText: string) {
+	async send(text: string) {
 		const trimmed = text.trim();
 		if (!trimmed || this.pending) return;
 
+		this.errorKind = null;
+		this.lastFailedText = '';
 		this.messages = [...this.messages, { role: 'user', content: trimmed }];
 		this.pending = true;
 
@@ -54,7 +51,10 @@ class ChatStore {
 				body: JSON.stringify({ messages: payload })
 			});
 
-			if (!res.ok || !res.body) throw new Error(`status ${res.status}`);
+			if (!res.ok || !res.body) {
+				const kind = res.status === 429 ? 'rate-limit' : 'generic';
+				throw new ChatRequestError(kind);
+			}
 
 			const reader = res.body.getReader();
 			const decoder = new TextDecoder();
@@ -67,16 +67,34 @@ class ChatStore {
 				this.updateAt(replyIndex, acc);
 			}
 
-			if (!acc.trim()) this.updateAt(replyIndex, errorText);
-		} catch {
-			this.updateAt(replyIndex, errorText);
+			if (!acc.trim()) throw new ChatRequestError('generic');
+		} catch (error) {
+			this.messages = this.messages.filter((_, index) => index !== replyIndex);
+			this.errorKind = error instanceof ChatRequestError ? error.kind : 'generic';
+			this.lastFailedText = trimmed;
 		} finally {
 			this.pending = false;
 		}
 	}
 
+	retry() {
+		if (!this.lastFailedText || this.pending) return;
+		const text = this.lastFailedText;
+		const failedUserIndex = this.messages.findLastIndex(
+			(message) => message.role === 'user' && message.content === text
+		);
+		if (failedUserIndex >= 0) this.messages = this.messages.filter((_, index) => index !== failedUserIndex);
+		void this.send(text);
+	}
+
 	private updateAt(index: number, content: string) {
 		this.messages = this.messages.map((m, i) => (i === index ? { ...m, content } : m));
+	}
+}
+
+class ChatRequestError extends Error {
+	constructor(public kind: 'rate-limit' | 'generic') {
+		super(kind);
 	}
 }
 

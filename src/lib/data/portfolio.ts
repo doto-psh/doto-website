@@ -1,10 +1,15 @@
 import { content } from '$lib/data/content';
-import type { PortfolioData, SkillCategory, TimelineCategory, TimelineItem } from '$lib/types';
+import type { HomeContent, PortfolioData, SkillCategory, TimelineCategory, TimelineItem } from '$lib/types';
 
 export const skillCategories: SkillCategory[] = [...content.skillCategories];
 export const timelineCategories: TimelineCategory[] = [...content.timelineCategories];
 export const mascotImages = content.mascotImages;
 export const portfolio: PortfolioData = content.portfolio;
+export const homeContent: HomeContent = content.home;
+
+export function getHomeContent(): HomeContent {
+	return homeContent;
+}
 
 export function getPortfolio(): PortfolioData {
 	return portfolio;

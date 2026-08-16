@@ -1,4 +1,8 @@
 import { env } from '$env/dynamic/private';
+import {
+	createChatCompletionPayload,
+	type OpenAIChatMessage
+} from '$lib/server/openai-request';
 
 /**
  * Server-only OpenAI helper. This module reads the secret API key from the
@@ -13,7 +17,6 @@ export interface ChatMessage {
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions';
 const DEFAULT_MODEL = 'gpt-4o-mini';
-const MAX_TOKENS = 600;
 
 /** Thrown when the server is missing its OpenAI key (config error, not user error). */
 export class MissingApiKeyError extends Error {
@@ -27,7 +30,9 @@ export class MissingApiKeyError extends Error {
  * Call OpenAI's chat completions API with streaming enabled and return a stream
  * of plain UTF-8 text deltas (the SSE envelope is parsed away here).
  */
-export async function streamChat(messages: ChatMessage[]): Promise<ReadableStream<Uint8Array>> {
+export async function streamChat(
+	messages: OpenAIChatMessage[]
+): Promise<ReadableStream<Uint8Array>> {
 	const apiKey = env.OPENAI_API_KEY;
 	if (!apiKey) throw new MissingApiKeyError();
 
@@ -37,13 +42,9 @@ export async function streamChat(messages: ChatMessage[]): Promise<ReadableStrea
 			'Content-Type': 'application/json',
 			Authorization: `Bearer ${apiKey}`
 		},
-		body: JSON.stringify({
-			model: env.OPENAI_MODEL || DEFAULT_MODEL,
-			messages,
-			stream: true,
-			temperature: 0.4,
-			max_tokens: MAX_TOKENS
-		})
+		body: JSON.stringify(
+			createChatCompletionPayload(env.OPENAI_MODEL || DEFAULT_MODEL, messages)
+		)
 	});
 
 	if (!upstream.ok || !upstream.body) {

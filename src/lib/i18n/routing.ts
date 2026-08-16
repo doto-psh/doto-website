@@ -3,7 +3,7 @@ import { DEFAULT_LOCALE, type Locale, type Localized } from '$lib/types';
 /**
  * Build a locale-aware href. The default locale (ko) has no prefix;
  * other locales are prefixed with /<locale>.
- *   localizeHref('/templates', 'en') -> '/en/templates'
+ *   localizeHref('/projects', 'en')  -> '/en/projects'
  *   localizeHref('/', 'ko')          -> '/'
  */
 export function localizeHref(path: string, locale: Locale): string {

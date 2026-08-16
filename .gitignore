@@ -12,3 +12,4 @@ vite.config.ts.timestamp-*
 
 # md
 my-task.md
+.gstack/

@@ -13,14 +13,14 @@ export type SkillCategory = 'frontend' | 'backend' | 'AI/LLM' | 'database' | 'de
 
 export interface Profile {
 	name: Localized;
-	/** Optional real name shown alongside the brand handle (e.g. on the About profile). */
+	/** Optional real name shown alongside the brand handle. */
 	realName?: Localized;
 	role: Localized;
 	tagline: Localized;
 	bio: Localized;
 	location: Localized;
 	photoUrl: string;
-	/** Optional real photo revealed when the character image is clicked (flip interaction). */
+	/** Optional alternate photo retained for content compatibility. */
 	realPhotoUrl?: string;
 	email: string;
 	github: string;
@@ -38,6 +38,18 @@ export interface SkillGroup {
 	title: Localized;
 	description: Localized;
 	items: SkillItem[];
+	evidenceProjectSlugs: string[];
+}
+
+export interface ProofPoint {
+	value: string;
+	label: Localized;
+}
+
+export interface HomeContent {
+	proofs: ProofPoint[];
+	statement: Localized<string[]>;
+	architectureProjectSlug: string;
 }
 
 export interface TimelineItem {
@@ -78,32 +90,28 @@ export interface Project {
 	impact: Localized<string[]>;
 	highlights: Localized<string[]>;
 	caseStudy: Localized<string>;
+	/** Structured editorial case study used by selected projects. */
+	caseStudyDetails?: ProjectCaseStudy;
 	githubUrl?: string;
 	liveUrl?: string;
 	featured: boolean;
 }
 
-export interface Product {
-	/** URL slug, e.g. "second-brain-os" */
-	slug: string;
-	title: Localized;
-	/** Short one-liner used on cards */
-	tagline: Localized;
-	/** Full description for the detail page */
-	description: Localized;
-	/** Bullet feature list shown on the detail page */
-	features: Localized<string[]>;
-	category: ProductCategory;
-	price: number;
-	currency: 'USD' | 'KRW' | 'JPY';
-	coverImage: string;
-	gallery: string[];
-	/** External purchase URL today (e.g. Gumroad); swappable for internal checkout later */
-	buyUrl: string;
-	featured: boolean;
+export interface ProjectCaseStudy {
+	problem: Localized;
+	constraints?: Localized<string[]>;
+	decisions: Localized<Array<{ title: string; detail: string }>>;
+	outcome: Localized<string[]>;
+	lessons?: Localized<string[]>;
+	flows: ProjectFlow[];
 }
 
-export type ProductCategory = 'productivity' | 'finance' | 'study' | 'creator';
+export interface ProjectFlow {
+	id: string;
+	title: Localized;
+	caption?: Localized;
+	steps: Localized<Array<{ label: string; detail?: string }>>;
+}
 
 export interface Post {
 	slug: string;

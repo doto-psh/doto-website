@@ -36,7 +36,9 @@
 	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description} />
 	<meta property="og:locale" content={ogLocale[locale]} />
+	<meta property="og:url" content={`${site.url}${localizeHref(barePath, locale)}`} />
 	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href={`${site.url}${localizeHref(barePath, locale)}`} />
 
 	{#each LOCALES as code (code)}
 		<link rel="alternate" hreflang={code} href={`${site.url}${localizeHref(barePath, code)}`} />

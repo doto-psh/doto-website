@@ -1,45 +1,41 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { _ } from 'svelte-i18n';
-	import { mascotImages } from '$lib/data/portfolio';
+	import { DEFAULT_LOCALE, type Locale } from '$lib/types';
+	import { localizeHref } from '$lib/i18n/routing';
 	import { chat } from '$lib/chat/store.svelte';
 	import ChatMessage from './ChatMessage.svelte';
 
+	let {
+		variant = 'full',
+		locale = DEFAULT_LOCALE
+	}: { variant?: 'full' | 'compact'; locale?: Locale } = $props();
 	let input = $state('');
 	let scroller = $state<HTMLDivElement | null>(null);
-	let textarea = $state<HTMLTextAreaElement | null>(null);
-
 	let messages = $derived(chat.messages);
 	let pending = $derived(chat.pending);
 	let lastIndex = $derived(messages.length - 1);
-	// Show starter chips until the visitor sends their first message.
-	let showSuggestions = $derived(!messages.some((m) => m.role === 'user'));
-	let suggestions = $derived([
-		$_('chat.suggest1'),
-		$_('chat.suggest2'),
-		$_('chat.suggest3'),
-		$_('chat.suggest4')
-	]);
+	let hasQuestion = $derived(messages.some((message) => message.role === 'user'));
+	let showSuggestions = $derived(!hasQuestion);
+	let suggestions = $derived([$_('chat.suggest1'), $_('chat.suggest2'), $_('chat.suggest3')]);
 
-	function ask(text: string) {
-		chat.send(text, $_('chat.error'));
-	}
+	onMount(() => chat.ensureGreeting($_('chat.greeting')));
 
-	// Auto-scroll to the bottom as messages stream in.
 	$effect(() => {
-		// Touch the values we want to react to.
 		void messages.length;
 		void messages.at(-1)?.content;
 		if (scroller) scroller.scrollTop = scroller.scrollHeight;
 	});
 
-	$effect(() => {
-		if (chat.open) textarea?.focus();
-	});
+	function ask(text: string) {
+		void chat.send(text);
+	}
 
 	function submit() {
-		const text = input;
+		const text = input.trim();
+		if (!text) return;
 		input = '';
-		chat.send(text, $_('chat.error'));
+		void chat.send(text);
 	}
 
 	function onkeydown(event: KeyboardEvent) {
@@ -50,105 +46,68 @@
 	}
 </script>
 
-<section
-	class="fixed right-0 bottom-0 z-50 flex h-[100dvh] w-full flex-col overflow-hidden border-[var(--color-line)] bg-[var(--color-bg)] shadow-[0_20px_60px_rgba(8,17,31,0.28)] sm:right-4 sm:bottom-24 sm:h-[min(560px,calc(100dvh-8rem))] sm:w-[380px] sm:rounded-2xl sm:border md:right-6"
-	aria-label={$_('chat.title')}
->
-	<!-- Header -->
-	<header
-		class="flex items-center gap-3 border-b border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3"
-	>
-		<img
-			src={mascotImages.profile}
-			alt=""
-			aria-hidden="true"
-			class="h-9 w-9 rounded-full border border-[var(--color-line)] bg-[var(--color-paper)] object-cover"
-		/>
-		<div class="min-w-0 flex-1">
-			<p class="truncate text-sm font-black text-[var(--color-ink)]">{$_('chat.title')}</p>
-			<p class="truncate text-xs text-[var(--color-muted)]">{$_('chat.subtitle')}</p>
-		</div>
-		<button
-			type="button"
-			onclick={() => chat.close()}
-			aria-label={$_('chat.close')}
-			class="grid h-8 w-8 place-items-center rounded-lg text-[var(--color-muted)] transition-colors hover:bg-[var(--color-surface-blue)] hover:text-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2.2"
-				stroke-linecap="round"
-				class="h-5 w-5"
-				aria-hidden="true"
-			>
-				<path d="M6 6l12 12M18 6L6 18" />
-			</svg>
-		</button>
+<section class:compact={variant === 'compact'} class="chat-panel" aria-label={$_('chat.title')}>
+	<header>
+		<div><span class="status-dot" aria-hidden="true"></span><h2>{$_('chat.title')}</h2></div>
+		<span class="meta-label !text-[var(--color-success)]">{$_('chat.scopeLabel')}</span>
 	</header>
 
-	<!-- Messages -->
-	<div bind:this={scroller} class="flex-1 space-y-3.5 overflow-y-auto px-4 py-4">
-		{#each messages as message, i (i)}
-			<ChatMessage {message} typing={pending && i === lastIndex} />
+	<div bind:this={scroller} class="chat-log" aria-live="polite" aria-busy={pending}>
+		{#each messages as message, index (index)}
+			<ChatMessage {message} typing={pending && index === lastIndex} />
 		{/each}
 
 		{#if showSuggestions}
-			<div class="space-y-2 pt-1 pl-9">
-				<p class="text-xs font-bold tracking-wide text-[var(--color-muted)]">
-					{$_('chat.suggestionsTitle')}
-				</p>
-				<div class="flex flex-wrap gap-2">
+			<div class="suggestions">
+				<p class="meta-label">{$_('chat.suggestionsTitle')}</p>
+				<div>
 					{#each suggestions as suggestion (suggestion)}
-						<button
-							type="button"
-							onclick={() => ask(suggestion)}
-							disabled={pending}
-							class="rounded-full border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
-						>
-							{suggestion}
-						</button>
+						<button type="button" onclick={() => ask(suggestion)} disabled={pending}>{suggestion}</button>
 					{/each}
 				</div>
 			</div>
 		{/if}
+
+		{#if chat.errorKind}
+			<div class="chat-error" role="alert">
+				<p>{chat.errorKind === 'rate-limit' ? $_('chat.rateLimited') : $_('chat.error')}</p>
+				<button type="button" onclick={() => chat.retry()}>{$_('chat.retry')} →</button>
+			</div>
+		{/if}
 	</div>
 
-	<!-- Composer -->
-	<div class="border-t border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-3">
-		<form
-			class="flex items-end gap-2"
-			onsubmit={(e) => {
-				e.preventDefault();
-				submit();
-			}}
-		>
-			<textarea
-				bind:this={textarea}
-				bind:value={input}
-				{onkeydown}
-				rows="1"
-				placeholder={$_('chat.placeholder')}
-				class="max-h-28 min-h-[2.75rem] flex-1 resize-none rounded-xl border border-[var(--color-line)] bg-[var(--color-bg)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] outline-none transition-colors placeholder:text-[var(--color-muted)] focus:border-[var(--color-accent)]"
-			></textarea>
-			<button
-				type="submit"
-				aria-label={$_('chat.send')}
-				disabled={pending || !input.trim()}
-				class="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[var(--color-accent)] bg-[var(--color-accent)] text-white transition-colors hover:bg-[var(--color-accent-strong)] disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-surface)]"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					fill="currentColor"
-					class="h-5 w-5"
-					aria-hidden="true"
-				>
-					<path d="M3.4 20.4l17.45-7.48a1 1 0 000-1.84L3.4 3.6a.993.993 0 00-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z" />
-				</svg>
-			</button>
-		</form>
-	</div>
+	<form onsubmit={(event) => { event.preventDefault(); submit(); }}>
+		<label for={`ask-doto-input-${variant}`} class="sr-only">{$_('chat.placeholder')}</label>
+		<textarea id={`ask-doto-input-${variant}`} bind:value={input} {onkeydown} rows={variant === 'compact' ? 1 : 2} maxlength="2000" placeholder={$_('chat.placeholder')}></textarea>
+		<button type="submit" disabled={pending || !input.trim()} aria-label={$_('chat.send')}>{pending ? '…' : '↑'}</button>
+	</form>
+
+	{#if variant === 'compact' && hasQuestion}
+		<a class="continue-link" href={localizeHref('/ask', locale)}>{$_('askPreview.continue')} <span aria-hidden="true">↗</span></a>
+	{/if}
 </section>
+
+<style>
+	.chat-panel { overflow: hidden; border: 1px solid var(--color-line); border-radius: 1.75rem; background: rgba(10,14,21,.76); box-shadow: 0 2.5rem 8rem rgba(0,0,0,.28); }
+	header { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0 1.4rem; border-bottom: 1px solid var(--color-line); }
+	header > div { display: flex; align-items: center; gap: .75rem; }
+	header h2 { margin: 0; font-size: .95rem; letter-spacing: -.02em; }
+	.status-dot { width: .45rem; height: .45rem; border-radius: 50%; background: var(--color-success); box-shadow: 0 0 1rem var(--color-success); }
+	.chat-log { min-height: 28rem; max-height: 60vh; display: flex; flex-direction: column; gap: 1.5rem; overflow-y: auto; padding: 1.5rem; }
+	.compact .chat-log { min-height: 22rem; max-height: 28rem; }
+	.suggestions { margin-top: auto; padding-top: 1.2rem; border-top: 1px solid var(--color-line); }
+	.suggestions > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .8rem; }
+	.suggestions button { min-height: 3.5rem; padding: .65rem .75rem; border: 1px solid var(--color-line); background: rgba(255,255,255,.025); color: var(--color-muted); text-align: left; font-size: .74rem; line-height: 1.45; transition: border-color 180ms, color 180ms; }
+	.suggestions button:hover { border-color: var(--color-accent); color: var(--color-ink); }
+	.chat-error { padding: 1rem; border-left: 2px solid var(--color-error); background: rgba(255,116,108,.06); }
+	.chat-error p { margin: 0; color: var(--color-ink); font-size: .8rem; }
+	.chat-error button { margin-top: .5rem; border: 0; background: transparent; color: var(--color-secondary); font-size: .76rem; }
+	form { display: grid; grid-template-columns: 1fr 3.25rem; gap: .6rem; padding: .75rem; border-top: 1px solid var(--color-line); }
+	textarea { width: 100%; min-height: 3.25rem; resize: vertical; border: 1px solid var(--color-line); border-radius: 1.6rem; background: rgba(255,255,255,.045); color: var(--color-ink); padding: .85rem 1rem; outline: 0; }
+	textarea:focus { border-color: var(--color-accent); }
+	textarea::placeholder { color: var(--color-faint); }
+	form > button { width: 3.25rem; height: 3.25rem; border: 0; border-radius: 50%; background: var(--color-accent); color: #fff; font-size: 1.1rem; }
+	form > button:disabled { cursor: not-allowed; opacity: .4; }
+	.continue-link { display: flex; justify-content: space-between; align-items: center; min-height: 3.5rem; padding: 0 1.25rem; border-top: 1px solid var(--color-line); color: var(--color-secondary); font-size: .76rem; font-weight: 600; }
+	@media (max-width: 620px) { .suggestions > div { grid-template-columns: 1fr; } .chat-log { min-height: 25rem; padding: 1rem; } header { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: .9rem; } }
+</style>

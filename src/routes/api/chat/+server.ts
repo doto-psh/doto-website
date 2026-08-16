@@ -51,7 +51,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 	];
 
 	try {
-		const stream = await streamChat(messages as ChatMessage[]);
+		const stream = await streamChat(messages);
 		return new Response(stream, {
 			headers: {
 				'Content-Type': 'text/plain; charset=utf-8',

@@ -1,128 +1,132 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import Seo from '$lib/components/layout/Seo.svelte';
-	import Container from '$lib/components/ui/Container.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
-	import ProjectCover from '$lib/components/project/ProjectCover.svelte';
-	import ProjectGrid from '$lib/components/project/ProjectGrid.svelte';
+	import ProjectFlow from '$lib/components/project/ProjectFlow.svelte';
 	import { localizeHref, pick } from '$lib/i18n/routing';
-	import { reveal } from '$lib/actions/reveal';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
-
 	let project = $derived(data.project);
+	let details = $derived(project.caseStudyDetails);
 	let title = $derived(pick(project.title, data.locale));
-	let impact = $derived(pick(project.impact, data.locale));
-	let highlights = $derived(pick(project.highlights, data.locale));
 </script>
 
 <Seo title={`${title} — doto`} description={pick(project.tagline, data.locale)} locale={data.locale} />
 
-<article class="py-12 md:py-20">
-	<Container>
-		<a
-			href={localizeHref('/projects', data.locale)}
-			class="inline-flex items-center gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-2 text-sm font-semibold text-[var(--color-muted)] transition-colors hover:text-[var(--color-accent)]"
-		>
-			<span aria-hidden="true">←</span> {$_('projectPage.backToProjects')}
-		</a>
-
-		<div class="mt-10 grid gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
-			<div use:reveal class="lg:sticky lg:top-28 lg:self-start">
-				<ProjectCover category={project.category} stack={project.stack} />
-			</div>
-
-			<div use:reveal={{ delay: 80 }} class="flex flex-col gap-6">
-				<div class="flex flex-wrap items-center gap-2">
-					{#if project.org}
-						<span class="w-fit rounded-md bg-[var(--color-accent)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-white">
-							{pick(project.org, data.locale)}
-						</span>
-					{/if}
-					{#each project.category as cat (cat)}
-						<span class="w-fit rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
-							{$_(`projectsPage.categories.${cat}`)}
-						</span>
-					{/each}
-					<span class="text-sm font-bold text-[var(--color-muted)]">{project.period}</span>
-				</div>
-
-				<h1 class="text-4xl font-black text-[var(--color-ink)] md:text-5xl">{title}</h1>
-				<p class="text-lg font-medium text-[var(--color-muted)]">{pick(project.tagline, data.locale)}</p>
-				<p class="leading-relaxed text-[var(--color-ink)]">{pick(project.description, data.locale)}</p>
-
-				<div class="grid gap-3 sm:grid-cols-2">
-					<div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-4">
-						<span class="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
-							{$_('projectPage.role')}
-						</span>
-						<p class="mt-2 font-bold text-[var(--color-ink)]">{pick(project.role, data.locale)}</p>
-					</div>
-					<div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] p-4">
-						<span class="text-xs font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
-							{$_('projectPage.stack')}
-						</span>
-						<p class="mt-2 font-bold text-[var(--color-ink)]">{project.stack.slice(0, 3).join(' · ')}</p>
-					</div>
-				</div>
-
+<article>
+	<header class="project-hero">
+		<div class="container-page">
+			<a href={localizeHref('/projects', data.locale)} class="text-link">← {$_('projectPage.back')}</a>
+			<div class="hero-grid">
 				<div>
-					<h2 class="mb-3 text-sm font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
-						{$_('projectPage.impact')}
-					</h2>
-					<ul class="flex flex-col gap-2">
-						{#each impact as item (item)}
-							<li class="flex items-start gap-3 text-[var(--color-ink)]">
-								<span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-accent)]"></span>
-								{item}
-							</li>
-						{/each}
-					</ul>
+					<p class="meta-label">{project.featured ? $_('workPage.selected') : $_('projectPage.overview')} · SYSTEM</p>
+					<h1>{title}</h1>
+					<p class="tagline">{pick(project.tagline, data.locale)}</p>
 				</div>
-
-				<div class="rounded-lg border border-[var(--color-line)] bg-[var(--color-surface-blue)] p-5">
-					<h2 class="text-sm font-black uppercase tracking-[0.14em] text-[var(--color-accent)]">
-						{$_('projectPage.caseStudy')}
-					</h2>
-					<p class="mt-3 leading-relaxed text-[var(--color-ink)]">{pick(project.caseStudy, data.locale)}</p>
-				</div>
-
-				<div>
-					<h2 class="mb-3 text-sm font-black uppercase tracking-[0.14em] text-[var(--color-muted)]">
-						{$_('projectPage.highlights')}
-					</h2>
-					<div class="flex flex-wrap gap-2">
-						{#each highlights as item (item)}
-							<span class="rounded-md border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-2 text-sm font-semibold text-[var(--color-muted)]">
-								{item}
-							</span>
-						{/each}
-					</div>
-				</div>
-
-				<div class="flex flex-wrap gap-3 border-t border-[var(--color-line)] pt-6">
-					{#if project.githubUrl}
-						<Button href={project.githubUrl} external variant="primary" size="lg">
-							{$_('projectPage.github')} <span aria-hidden="true">↗</span>
-						</Button>
-					{/if}
-					{#if project.liveUrl}
-						<Button href={project.liveUrl} external variant="outline" size="lg">
-							{$_('projectPage.live')} <span aria-hidden="true">↗</span>
-						</Button>
-					{/if}
-				</div>
+				<dl>
+					<div><dt>{$_('projectPage.role')}</dt><dd>{pick(project.role, data.locale)}</dd></div>
+					<div><dt>{$_('projectPage.period')}</dt><dd>{project.period}</dd></div>
+					<div><dt>{$_('projectPage.stack')}</dt><dd>{project.stack.join(' · ')}</dd></div>
+				</dl>
 			</div>
 		</div>
+	</header>
 
-		{#if data.related.length}
-			<div class="mt-24 border-t border-[var(--color-line)] pt-16">
-				<h2 use:reveal class="mb-10 text-2xl font-black text-[var(--color-ink)] md:text-3xl">
-					{$_('projectPage.related')}
-				</h2>
-				<ProjectGrid projects={data.related} locale={data.locale} />
+	{#if details}
+		<div class="case-body">
+			<section class="container-reading lead-section">
+				<p class="meta-label">01 / {$_('projectPage.problem')}</p>
+				<h2>{pick(details.problem, data.locale)}</h2>
+			</section>
+
+			{#if details.constraints}
+				<section class="theme-light case-section">
+					<div class="container-reading split-section">
+						<h2 class="meta-label">02 / {$_('projectPage.constraints')}</h2>
+						<ol class="number-list">{#each pick(details.constraints, data.locale) as item, index (item)}<li><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>{/each}</ol>
+					</div>
+				</section>
+			{/if}
+
+			<section class="case-section">
+				<div class="container-reading">
+					<h2 class="meta-label">03 / {$_('projectPage.decisions')}</h2>
+					<div class="decision-list">
+						{#each pick(details.decisions, data.locale) as decision, index (decision.title)}
+							<article><span>{String(index + 1).padStart(2, '0')}</span><h3>{decision.title}</h3><p>{decision.detail}</p></article>
+						{/each}
+					</div>
+				</div>
+			</section>
+
+			<section class="theme-light case-section">
+				<div class="container-reading">
+					<h2 class="meta-label flow-label">04 / {$_('projectPage.flow')}</h2>
+					{#each details.flows as flow (flow.id)}<ProjectFlow {flow} locale={data.locale} />{/each}
+				</div>
+			</section>
+
+			<section class="case-section">
+				<div class="container-reading split-section">
+					<h2 class="meta-label">05 / {$_('projectPage.outcome')}</h2>
+					<ul class="outcome-list">{#each pick(details.outcome, data.locale) as item (item)}<li>{item}</li>{/each}</ul>
+				</div>
+			</section>
+
+			{#if details.lessons}
+				<section class="lesson-section"><div class="container-reading"><p class="meta-label">06 / {$_('projectPage.lessons')}</p>{#each pick(details.lessons, data.locale) as item (item)}<blockquote>{item}</blockquote>{/each}</div></section>
+			{/if}
+		</div>
+	{:else}
+		<section class="theme-light case-section">
+			<div class="container-reading overview">
+				<p class="meta-label">01 / {$_('projectPage.overview')}</p>
+				<h2>{pick(project.description, data.locale)}</h2>
+				<p>{pick(project.caseStudy, data.locale)}</p>
+				<ul>{#each pick(project.impact, data.locale) as item (item)}<li>{item}</li>{/each}</ul>
 			</div>
-		{/if}
-	</Container>
+		</section>
+	{/if}
+
+	{#if data.next && details}
+		<footer class="next-project"><a class="container-page" href={localizeHref(`/projects/${data.next.slug}`, data.locale)}><span class="meta-label">{$_('projectPage.next')}</span><strong>{pick(data.next.title, data.locale)}</strong><i aria-hidden="true">↗</i></a></footer>
+	{/if}
 </article>
+
+<style>
+	.project-hero { padding: 8rem 0 5rem; border-bottom: 1px solid var(--color-line); }
+	.hero-grid { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(17rem,.65fr); gap: clamp(3rem,7vw,8rem); margin-top: 4.5rem; align-items: end; }
+	.meta-label { color: var(--color-secondary); }
+	h1 { max-width: 13ch; margin: 1.25rem 0 0; font-size: clamp(3.6rem,8vw,8rem); font-weight: 600; line-height: .88; letter-spacing: -.07em; }
+	.tagline { max-width: 49rem; margin: 2rem 0 0; color: var(--color-muted); font-size: 1.05rem; line-height: 1.75; }
+	dl { margin: 0; border-top: 1px solid var(--color-line); }
+	dl div { padding: 1rem 0; border-bottom: 1px solid var(--color-line); }
+	dt, dd { font-family: var(--font-mono); font-size: .63rem; line-height: 1.55; }
+	dt { color: var(--color-faint); text-transform: uppercase; }
+	dd { margin: .45rem 0 0; color: var(--color-muted); }
+	.lead-section, .case-section, .lesson-section { padding: 7rem 0; }
+	.lead-section h2, .overview h2 { margin: 2rem 0 0; font-size: clamp(2rem,4.5vw,4.2rem); font-weight: 550; line-height: 1.2; letter-spacing: -.045em; }
+	.split-section { display: grid; grid-template-columns: 10rem minmax(0,1fr); gap: 4rem; }
+	.number-list, .outcome-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-line); }
+	.number-list li { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--color-line); }
+	.number-list span, .decision-list > article > span { color: var(--color-faint); font-family: var(--font-mono); font-size: .62rem; }
+	.number-list p { margin: 0; color: var(--color-ink); line-height: 1.7; }
+	.decision-list { margin-top: 2rem; border-top: 1px solid var(--color-line); }
+	.decision-list article { display: grid; grid-template-columns: 3rem 13rem 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--color-line); }
+	.decision-list h3 { margin: 0; font-size: 1.1rem; font-weight: 650; }
+	.decision-list p { margin: 0; color: var(--color-muted); line-height: 1.75; }
+	.flow-label { margin-bottom: 1.5rem; }
+	.outcome-list li { padding: 1.4rem 0; border-bottom: 1px solid var(--color-line); font-size: clamp(1.15rem,2vw,1.6rem); line-height: 1.55; }
+	.lesson-section { border-block: 1px solid var(--color-line); background: radial-gradient(circle at 80% 10%,rgba(86,137,255,.12),transparent 30%); }
+	blockquote { max-width: 30ch; margin: 2rem 0 0; font-size: clamp(2rem,4.5vw,4.3rem); font-weight: 550; line-height: 1.15; letter-spacing: -.05em; }
+	.overview > p:not(.meta-label) { margin-top: 2rem; color: var(--color-muted); line-height: 1.8; }
+	.overview ul { margin: 3rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--color-line); }
+	.overview li { padding: 1.25rem 0; border-bottom: 1px solid var(--color-line); }
+	.next-project { border-top: 1px solid var(--color-line); }
+	.next-project a { display: grid; grid-template-columns: 10rem 1fr 3rem; gap: 2rem; align-items: center; padding-block: 4.5rem; color: var(--color-ink); }
+	.next-project strong { font-size: clamp(2rem,5vw,5rem); line-height: 1; letter-spacing: -.05em; }
+	.next-project i { font-style: normal; font-size: 1.3rem; }
+	.next-project a:hover strong { color: var(--color-accent); }
+	@media (max-width: 780px) { .hero-grid, .split-section { grid-template-columns: 1fr; gap: 2.5rem; } .decision-list article { grid-template-columns: 2rem 1fr; gap: 1rem; } .decision-list p { grid-column: 2; } .next-project a { grid-template-columns: 1fr 2rem; } .next-project .meta-label { grid-column: 1 / -1; } }
+	@media (max-width: 620px) { .project-hero { padding: 7.5rem 0 4rem; } .hero-grid { margin-top: 3rem; } .lead-section, .case-section, .lesson-section { padding: 5rem 0; } }
+</style>
