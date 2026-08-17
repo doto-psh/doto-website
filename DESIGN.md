@@ -22,11 +22,12 @@ The site should feel authored rather than assembled. It uses a dark, continuous 
 - Panel: `#111823`
 - Primary text: `#f3f6fa`
 - Muted text: `#98a4b5`
+- Subtle text: `#7c899b`
 - Accent: `#5689ff`
 - Secondary accent: `#94b5ff`
-- Light section background: `#edf0f3`
+- Light section background: `#eef1f4`
 - Light section text: `#10141a`
-- Success: `#62d89b`
+- Success: `#4dcd82`
 - Error: `#ff746c`
 
 The source of truth is `src/app.css`.
@@ -35,14 +36,34 @@ The source of truth is `src/app.css`.
 
 - Display and body: Pretendard Variable.
 - System metadata and technical labels: IBM Plex Mono.
-- Hero titles use compact line height, tight tracking, and sentence-case language.
-- Reading pages keep a narrow measure and relaxed line height.
-- Metadata is small, uppercase, and never carries essential meaning by itself.
+- Body copy starts at `17px`; long-form prose starts at `18px` with a `1.9` line height and a `42rem` maximum measure.
+- Controls and navigational links never drop below `16px`; readable metadata starts at `14px` and meets WCAG AA contrast in both themes.
+- Readable metadata uses at least a `1.65` line height. Consecutive metadata rows keep `12px` of vertical separation instead of relying on browser-default margins.
+- The `12px` decorative metadata role is reserved for redundant indices and ornaments. It must never carry instructions, state, dates, or other essential information.
+- Hero and page titles use compact line height and tight tracking. Section and item titles step down through a consistent hierarchy instead of introducing one-off sizes.
+- Korean headings use looser line height and tracking than English headings, while Korean body text keeps words intact and wraps between words where possible.
+
+### Semantic type roles
+
+- `type-display`: homepage hero statement only.
+- `type-page-title`: top-level title for Projects, Notes, About, Ask, and detail pages.
+- `type-section-title`: major section heading or mobile navigation label.
+- `type-item-title`: project, note, capability, or experience entry title.
+- `type-lead`: introductory paragraph that establishes page context.
+- `type-body`: standard explanatory copy.
+- `type-prose`: long-form project and note reading text.
+- `type-body-small`: secondary but still readable supporting copy.
+- `type-meta`: meaningful dates, roles, categories, and technical context.
+- `type-meta-decorative`: redundant numbering and visual notation only.
+- `type-control`: buttons, navigation, and text links.
+- `type-code`: code blocks and technical output.
+
+The role definitions and responsive values live in `src/app.css`. Components should consume these roles instead of declaring new numeric font sizes.
 
 ## Layout
 
 - Page container: `90rem` maximum.
-- Reading container: `48rem` maximum.
+- Reading shell: `48rem` maximum; prose measure: `42rem` maximum.
 - Desktop side margin: `2rem`; mobile side margin: `1rem`.
 - Home is a long-form sequence: Hero → statement → work → architecture → capabilities → experience → notes → about → Ask.
 - Project and Notes indexes use full-width rows rather than card grids.

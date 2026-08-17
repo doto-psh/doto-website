@@ -13,11 +13,11 @@
 	<div class="container-page ask-grid">
 		<header>
 			<p class="meta-label">{$_('chat.pageEyebrow')} · ONLINE</p>
-			<h1>{$_('chat.pageTitle')}</h1>
-			<p class="description">{$_('chat.pageDescription')}</p>
+			<h1 class="type-page-title">{$_('chat.pageTitle')}</h1>
+			<p class="description type-body">{$_('chat.pageDescription')}</p>
 			<div class="scope">
-				<span>Context</span><p>Projects · experience · technical decisions</p>
-				<span>Response</span><p>Portfolio-grounded answers</p>
+				<span class="type-meta">Context</span><p class="type-meta">Projects · experience · technical decisions</p>
+				<span class="type-meta">Response</span><p class="type-meta">Portfolio-grounded answers</p>
 			</div>
 		</header>
 		<ChatPanel locale={data.locale} />
@@ -29,12 +29,12 @@
 	.ask-grid { display: grid; grid-template-columns: minmax(18rem,.72fr) minmax(0,1.28fr); gap: clamp(3rem,7vw,8rem); align-items: start; }
 	header { position: sticky; top: 8rem; }
 	.meta-label { color: var(--color-secondary); }
-	h1 { max-width: 9ch; margin: 1.5rem 0 0; font-size: clamp(3.8rem,7vw,7.2rem); line-height: .9; font-weight: 600; letter-spacing: -.065em; }
-	.description { max-width: 31rem; margin: 2rem 0 0; color: var(--color-muted); line-height: 1.8; }
+	h1 { max-width: 9ch; margin: 1.5rem 0 0; }
+	.description { max-width: 31rem; margin: 2rem 0 0; color: var(--color-muted); }
 	.scope { display: grid; grid-template-columns: 5.5rem 1fr; gap: .75rem 1rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-line); }
-	.scope span, .scope p { margin: 0; font-family: var(--font-mono); font-size: .64rem; line-height: 1.6; }
-	.scope span { color: var(--color-faint); text-transform: uppercase; }
+	.scope span, .scope p { margin: 0; }
+	.scope span { color: var(--color-subtle); text-transform: uppercase; }
 	.scope p { color: var(--color-muted); }
 	@media (max-width: 900px) { .ask-grid { grid-template-columns: 1fr; } header { position: static; } h1 { max-width: 12ch; } }
-	@media (max-width: 620px) { .ask-page { padding: 7.5rem 0 4rem; } h1 { font-size: 3.7rem; } }
+	@media (max-width: 620px) { .ask-page { padding: 7.5rem 0 4rem; } }
 </style>

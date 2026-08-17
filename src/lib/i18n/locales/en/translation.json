@@ -22,7 +22,6 @@
   },
   "hero": {
     "kicker": "AI Engineer · Seoul, Korea",
-    "status": "Production systems · K-System AI",
     "title": "I build AI systems that hold up in production.",
     "subtitle": "I connect RAG, document processing, vector databases, and MCP across backend and infrastructure.",
     "ctaPrimary": "View selected work",

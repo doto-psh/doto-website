@@ -22,7 +22,6 @@
   },
   "hero": {
     "kicker": "AI Engineer · Seoul, Korea",
-    "status": "Production systems · K-System AI",
     "title": "운영 환경에서 끝까지 동작하는 AI 시스템을 만듭니다.",
     "subtitle": "RAG, 문서 처리, Vector DB, MCP를 백엔드와 인프라까지 연결합니다.",
     "ctaPrimary": "대표 작업 보기",

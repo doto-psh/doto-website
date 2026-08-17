@@ -20,7 +20,7 @@
 			hreflang={code}
 			data-no-visited
 			aria-current={locale === code ? 'page' : undefined}
-			class="min-h-11 min-w-11 content-center text-center text-xs font-semibold uppercase tracking-[0.1em] transition-colors duration-150 {locale === code
+			class="type-meta min-h-11 min-w-11 content-center text-center font-semibold uppercase tracking-[0.08em] transition-colors duration-150 {locale === code
 				? 'text-[var(--color-ink)] underline decoration-[var(--color-ink)] underline-offset-4'
 				: 'text-[var(--color-muted)] hover:text-[var(--color-accent)]'}"
 		>

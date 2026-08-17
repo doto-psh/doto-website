@@ -14,7 +14,7 @@
 		<p class="meta-label pt-1 text-[var(--color-accent)]">doto</p>
 	{/if}
 
-	<div class="max-w-3xl border-l border-[var(--color-line)] pl-4 text-[0.96rem] leading-7 text-[var(--color-ink)]">
+	<div class="type-body max-w-3xl border-l border-[var(--color-line)] pl-4 text-[var(--color-ink)]">
 		{#if isUser}
 			<p class="whitespace-pre-wrap font-medium">{message.content}</p>
 		{:else if typing && !message.content}
@@ -33,11 +33,11 @@
 	@media (prefers-reduced-motion: reduce) { .typing-dot { animation: none; } }
 	.chat-md :global(:first-child) { margin-top: 0; }
 	.chat-md :global(:last-child) { margin-bottom: 0; }
-	.chat-md :global(h1), .chat-md :global(h2), .chat-md :global(h3), .chat-md :global(h4) { margin: 1.1rem 0 0.35rem; font-family: var(--font-sans); font-weight: 700; color: var(--color-ink); }
+	.chat-md :global(h1), .chat-md :global(h2), .chat-md :global(h3), .chat-md :global(h4) { margin: 1.25rem 0 0.45rem; font-family: var(--font-sans); font-size: var(--type-lead-size); line-height: 1.4; font-weight: 700; color: var(--color-ink); }
 	.chat-md :global(p) { margin: 0.45rem 0; }
 	.chat-md :global(ul) { margin: 0.5rem 0; padding-left: 1.2rem; list-style: disc; }
 	.chat-md :global(a) { color: var(--color-accent); text-decoration: underline; }
-	.chat-md :global(code) { background: var(--color-bg); padding: 0.08rem 0.3rem; }
+	.chat-md :global(code) { background: var(--color-bg); padding: 0.08rem 0.3rem; font-size: var(--type-code-size); }
 	.chat-md :global(pre) { margin: 0.75rem 0; overflow-x: auto; background: var(--color-ink); padding: 0.8rem; color: var(--color-surface); }
 	.chat-md :global(pre code) { background: transparent; padding: 0; }
 </style>

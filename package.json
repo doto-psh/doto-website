@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "test": "node --test tests/openai-request.test.ts",
+    "test": "node --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "test:all": "npm test && npm run check && npm run build && npm run test:e2e",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@sveltejs/adapter-vercel": "^5.5.0",
     "@sveltejs/kit": "^2.8.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.0",

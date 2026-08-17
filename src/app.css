@@ -10,6 +10,7 @@
 	--color-panel: #111823;
 	--color-ink: #f3f6fa;
 	--color-muted: #98a4b5;
+	--color-subtle: #7c899b;
 	--color-faint: #667386;
 	--color-line: rgba(255, 255, 255, 0.12);
 	--color-line-strong: rgba(255, 255, 255, 0.23);
@@ -28,6 +29,7 @@
 
 	--container-page: 90rem;
 	--container-reading: 48rem;
+	--container-prose: 42rem;
 	--ease-cinematic: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -35,6 +37,19 @@
 	:root {
 		font-synthesis: none;
 		color-scheme: dark;
+
+		--type-display-size: clamp(3.25rem, 7vw, 7.5rem);
+		--type-page-title-size: clamp(3rem, 6.5vw, 6.5rem);
+		--type-section-title-size: clamp(2.25rem, 4vw, 4.25rem);
+		--type-item-title-size: clamp(1.5rem, 2.5vw, 2.5rem);
+		--type-lead-size: clamp(1.125rem, 1.45vw, 1.25rem);
+		--type-body-size: 1.0625rem;
+		--type-prose-size: 1.125rem;
+		--type-body-small-size: 1rem;
+		--type-meta-size: 0.875rem;
+		--type-meta-decorative-size: 0.75rem;
+		--type-control-size: 1rem;
+		--type-code-size: 0.9375rem;
 	}
 
 	html {
@@ -51,8 +66,8 @@
 			radial-gradient(circle at 86% 2%, rgba(86, 137, 255, 0.09), transparent 30rem),
 			var(--color-bg);
 		font-family: var(--font-sans);
-		font-size: 1rem;
-		line-height: 1.65;
+		font-size: var(--type-body-size);
+		line-height: 1.75;
 		overflow-x: clip;
 	}
 
@@ -66,8 +81,6 @@
 	h4 {
 		font-family: var(--font-sans);
 		font-weight: 650;
-		line-height: 1.05;
-		letter-spacing: -0.045em;
 	}
 
 	a {
@@ -152,7 +165,8 @@
 		--color-surface: #f8f9fa;
 		--color-panel: #ffffff;
 		--color-ink: #11151c;
-		--color-muted: #596474;
+		--color-muted: #4f5b6b;
+		--color-subtle: #596474;
 		--color-faint: #758091;
 		--color-line: rgba(17, 21, 28, 0.18);
 		--color-line-strong: rgba(17, 21, 28, 0.3);
@@ -167,12 +181,12 @@
 
 	.meta-label {
 		font-family: var(--font-mono);
-		font-size: 0.68rem;
+		font-size: var(--type-meta-size);
 		font-weight: 600;
-		letter-spacing: 0.15em;
-		line-height: 1.45;
+		letter-spacing: 0.1em;
+		line-height: 1.65;
 		text-transform: uppercase;
-		color: var(--color-muted);
+		color: var(--color-subtle);
 	}
 
 	.text-link {
@@ -180,7 +194,7 @@
 		align-items: center;
 		gap: 0.65rem;
 		color: var(--color-ink);
-		font-size: 0.88rem;
+		font-size: var(--type-control-size);
 		font-weight: 600;
 		text-decoration: none;
 		border-bottom: 1px solid var(--color-line-strong);
@@ -194,6 +208,91 @@
 	.text-link:hover {
 		color: var(--color-secondary);
 		border-color: var(--color-accent);
+	}
+
+	.type-display,
+	.type-page-title,
+	.type-section-title,
+	.type-item-title {
+		font-family: var(--font-sans);
+		text-wrap: balance;
+	}
+
+	.type-display {
+		font-size: var(--type-display-size);
+		font-weight: 650;
+		line-height: 0.96;
+		letter-spacing: -0.06em;
+	}
+
+	.type-page-title {
+		font-size: var(--type-page-title-size);
+		font-weight: 620;
+		line-height: 1;
+		letter-spacing: -0.055em;
+	}
+
+	.type-section-title {
+		font-size: var(--type-section-title-size);
+		font-weight: 600;
+		line-height: 1.08;
+		letter-spacing: -0.045em;
+	}
+
+	.type-item-title {
+		font-size: var(--type-item-title-size);
+		font-weight: 620;
+		line-height: 1.15;
+		letter-spacing: -0.035em;
+	}
+
+	.type-lead {
+		font-size: var(--type-lead-size);
+		line-height: 1.75;
+	}
+
+	.type-body {
+		font-size: var(--type-body-size);
+		line-height: 1.75;
+	}
+
+	.type-prose {
+		font-size: var(--type-prose-size);
+		line-height: 1.9;
+	}
+
+	.type-body-small {
+		font-size: var(--type-body-small-size);
+		line-height: 1.65;
+	}
+
+	.type-meta {
+		font-family: var(--font-mono);
+		font-size: var(--type-meta-size);
+		line-height: 1.65;
+		color: var(--color-subtle);
+	}
+
+	.type-meta-decorative {
+		font-family: var(--font-mono);
+		font-size: var(--type-meta-decorative-size);
+		line-height: 1.45;
+		color: var(--color-faint);
+	}
+
+	.type-control {
+		font-size: var(--type-control-size);
+		line-height: 1.5;
+	}
+
+	.type-code {
+		font-family: var(--font-mono);
+		font-size: var(--type-code-size);
+		line-height: 1.65;
+	}
+
+	.prose-reading {
+		width: min(100%, var(--container-prose));
 	}
 
 	.reveal {
@@ -225,5 +324,21 @@
 		.container-reading {
 			max-width: var(--container-reading);
 		}
+	}
+
+	html[lang='ko'] .type-display {
+		line-height: 1.04;
+		letter-spacing: -0.035em;
+	}
+
+	html[lang='ko'] .type-page-title {
+		line-height: 1.08;
+		letter-spacing: -0.03em;
+	}
+
+	html[lang='ko'] .type-section-title,
+	html[lang='ko'] .type-item-title {
+		line-height: 1.2;
+		letter-spacing: -0.025em;
 	}
 }
